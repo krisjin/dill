@@ -20,7 +20,7 @@ public class RemoveElement {
     }
 
     public static void main(String[] args) {
-        int[] ids = {1, 2, 3, 4, 5, 6, 7};
+        int[] ids = {1, 2, 3, 4, 5, 6, 7, 5, 5};
         int len = removeElement(ids, 5);
         System.out.println(len);
     }
