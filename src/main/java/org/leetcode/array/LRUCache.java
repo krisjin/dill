@@ -1,4 +1,4 @@
-package org.leetcode.land.array;
+package org.leetcode.array;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

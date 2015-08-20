@@ -1,4 +1,4 @@
-package org.leetcode.land;
+package org.leetcode;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
