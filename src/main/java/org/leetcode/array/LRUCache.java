@@ -1,51 +1,49 @@
 package org.leetcode.array;
 
+import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
+ * LRU 最近最少使用算法，LRU算法主要用于缓存淘汰。主要目的就是把最近最少使用的数据移除内存，以增加其他数据。
  * <p/>
  * User : krisibm@163.com
  * Date: 2015/7/3
  * Time: 15:37
  */
 public class LRUCache {
+    /**
+     * 默认负载因子大小
+     */
     private final float DEFAULT_LOAD_FACTOR = 0.75f;
 
-    int capacity;
-    private Map<Integer, Integer> map;
+    int maxCapacity;
 
-    public LRUCache(final int capacity) {
-        this.capacity = capacity;
-//        int cap = (int) Math.ceil(capacity / DEFAULT_LOAD_FACTOR) + 1;
-        map = new LinkedHashMap<Integer, Integer>(capacity, DEFAULT_LOAD_FACTOR, true) {
+    private Map<Object, Object> map;
+
+    public LRUCache(final int maxCapacity) {
+        this.maxCapacity = maxCapacity;
+//        int cap = (int) Math.ceil(maxCapacity / DEFAULT_LOAD_FACTOR) + 1;
+        map = Collections.synchronizedMap(new LinkedHashMap<Object, Object>(maxCapacity, DEFAULT_LOAD_FACTOR, true) {
             @Override
-            protected boolean removeEldestEntry(Map.Entry<Integer, Integer> eldest) {
-                return size() > capacity;
+            protected boolean removeEldestEntry(Map.Entry<Object, Object> eldest) {
+                return size() > maxCapacity;
             }
-        };
+        });
     }
 
 
-    public int get(int key) {
-        Integer val = map.get(key);
+    public Object get(Object key) {
+        Object val = map.get(key);
         if (val == null) return -1;
         return val;
     }
 
-    public void set(int key, int value) {
+    public void set(Object key, Object value) {
         map.put(key, value);
     }
 
-
-    public static void main(String[] args) {
-
-        LRUCache cache = new LRUCache(10);
-
-        for (int i = 1; i < 11; i++) {
-            cache.set(i, i);
-        }
-        cache.set(11, 11);
-        System.out.println();
+    public int size() {
+        return map.size();
     }
 }
