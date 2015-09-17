@@ -17,7 +17,9 @@ public class ReverseInteger {
     public int reverse(int x) {
         long res = 0;
         while (x != 0) {
+            // 每一次都在原来结果的基础上变大10倍，再加上余数
             res = res * 10 + Long.valueOf(x % 10);
+            //对x不停除10
             x = x / 10;
         }
         if (res < Integer.MIN_VALUE || res > Integer.MAX_VALUE) return 0;
