@@ -73,6 +73,15 @@ public class MedianOfTwoSortedArrays {
         MedianOfTwoSortedArrays medianOfTwoSortedArrays = new MedianOfTwoSortedArrays();
         double median = medianOfTwoSortedArrays.findMedianSortedArrays(a, b);
         System.out.println(median);
+        String one = Integer.toBinaryString(178);
+        String two = Integer.toBinaryString(143);
+
+
+        System.out.println(one);
+        System.out.println(two);
+        System.out.println(178 & 143);
+
+
     }
 
 }
