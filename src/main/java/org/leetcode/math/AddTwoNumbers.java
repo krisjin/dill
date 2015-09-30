@@ -3,7 +3,7 @@ package org.leetcode.math;
 import org.leetcode.array.ListNode;
 
 /**
- * 难度：简单
+ * 难度：中等
  * 描述：
  * You are given two linked lists representing two non-negative numbers.
  * The digits are stored in reverse order and each of their nodes contain a single digit.
