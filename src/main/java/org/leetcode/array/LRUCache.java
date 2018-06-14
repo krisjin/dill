@@ -37,7 +37,10 @@ public class LRUCache {
         });
     }
 
-
+    /**
+     * @param key
+     * @return
+     */
     public Object get(Object key) {
         Object val = map.get(key);
         if (val == null) return -1;
