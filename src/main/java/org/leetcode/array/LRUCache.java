@@ -23,6 +23,9 @@ public class LRUCache {
 
     private Map<Object, Object> map;
 
+    /**
+     * @param maxCapacity
+     */
     public LRUCache(final int maxCapacity) {
         this.maxCapacity = maxCapacity;
 //        int cap = (int) Math.ceil(maxCapacity / DEFAULT_LOAD_FACTOR) + 1;
