@@ -1,5 +1,7 @@
 package org.leetcode.array;
 
+import org.leetcode.ListNode;
+
 /**
  * <p/>
  * User : krisibm@163.com

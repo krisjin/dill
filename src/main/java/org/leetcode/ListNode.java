@@ -1,4 +1,4 @@
-package org.leetcode.array;
+package org.leetcode;
 
 /**
  * 有序链表

@@ -1,4 +1,4 @@
-package org.leetcode.array;
+package org.leetcode;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,12 +23,15 @@ import java.util.Map;
  * <p/>
  * 这道题目的意思是给定一个数组和一个值，让求出这个数组中两个值的和等于这个给定值的坐
  * 标。输出是有要求的，1， 坐标较小的放在前面，较大的放在后面。2， 这俩坐标不能为零。
+ * 时间复杂度: O(N)******- 空间复杂度: O(N)
+ *
+ * tag:数组、hashmap
  * <p/>
  * User : krisibm@163.com
  * Date: 2015/9/16
  * Time: 21:38
  */
-public class TwoSum {
+public class TwoSum001 {
 
     Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 
@@ -46,4 +49,12 @@ public class TwoSum {
         return null;
     }
 
+
+    public static void main(String[] args) {
+        int[] nums = {2, 7, 11, 15};
+        TwoSum001 twoSum001 = new TwoSum001();
+        int[] result = twoSum001.twoSum(nums, 9);
+
+        System.out.println("index1=" + result[0] + ", index2=" + result[1]);
+    }
 }

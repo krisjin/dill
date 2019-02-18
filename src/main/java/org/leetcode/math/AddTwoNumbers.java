@@ -1,6 +1,6 @@
 package org.leetcode.math;
 
-import org.leetcode.array.ListNode;
+import org.leetcode.ListNode;
 
 /**
  * 难度：中等
