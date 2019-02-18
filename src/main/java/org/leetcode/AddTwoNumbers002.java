@@ -21,7 +21,7 @@ package org.leetcode;
  * Output: 7 -> 0 -> 8
  * Explanation: 342 + 465 = 807.
  * </pre>
- * User:shijingui
+ * User:krisibm
  * Date:2019/2/19
  */
 public class AddTwoNumbers002 {
