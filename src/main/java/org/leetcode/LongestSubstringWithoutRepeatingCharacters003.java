@@ -1,4 +1,4 @@
-package org.leetcode.string;
+package org.leetcode;
 
 import java.util.Arrays;
 
@@ -14,26 +14,26 @@ import java.util.Arrays;
  * Date: 2015/9/21
  * Time: 13:23
  */
-public class LongestSubstringWithoutRepeatingCharacters {
+public class LongestSubstringWithoutRepeatingCharacters003 {
 
-    public int lengthOfLongestSubstring_1(String s) {
-        boolean[] hash = new boolean[256];
-        Arrays.fill(hash, false);
-        int n = s.length();
-        if (n <= 1) return n;
-        int start = 0, end = 0, res = 0;
-        while (end < n && start + res < n) {
-            if (hash[s.charAt(end)] == false) {
-                hash[s.charAt(end++)] = true;
-            } else {
-                hash[s.charAt(start++)] = false;
-            }
-            res = Math.max(res, end - start);
+    /**
+     * 时间复杂度: O(N)******- 空间复杂度: O(1)******
+     *
+     * @param s
+     * @return
+     */
+    public int lengthOfLongestSubstring1(String s) {
+        int stIdx = 0, maxLen = 0;
+        int arr[] = new int[128];
+        for (int i = 0; i < s.length(); i++) {
+            stIdx = Math.max(arr[s.charAt(i)], stIdx);
+            maxLen = Math.max(maxLen, i - stIdx + 1);
+            arr[s.charAt(i)] = i + 1;
         }
-        return res;
+        return maxLen;
     }
 
-    public int lengthOfLongestSubstring_2(String s) {
+    public int lengthOfLongestSubstring2(String s) {
         int[] hash = new int[256];
         Arrays.fill(hash, -1);
         int n = s.length();
@@ -51,8 +51,8 @@ public class LongestSubstringWithoutRepeatingCharacters {
     }
 
     public static void main(String[] args) {
-        LongestSubstringWithoutRepeatingCharacters withoutRepeatingCharacters = new LongestSubstringWithoutRepeatingCharacters();
-        int s = withoutRepeatingCharacters.lengthOfLongestSubstring_2("abcabcbb");
+        LongestSubstringWithoutRepeatingCharacters003 withoutRepeatingCharacters = new LongestSubstringWithoutRepeatingCharacters003();
+        int s = withoutRepeatingCharacters.lengthOfLongestSubstring1("abcabcbb");
         System.out.println(s);
     }
 }
