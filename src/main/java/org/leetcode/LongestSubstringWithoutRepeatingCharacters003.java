@@ -28,7 +28,7 @@ public class LongestSubstringWithoutRepeatingCharacters003 {
         for (int i = 0; i < s.length(); i++) {
             stIdx = Math.max(arr[s.charAt(i)], stIdx);
             maxLen = Math.max(maxLen, i - stIdx + 1);
-            arr[s.charAt(i)] = i + 1;
+            arr[s.charAt(i)] = i + 1; //每个字的出现次数加1
         }
         return maxLen;
     }
@@ -53,6 +53,10 @@ public class LongestSubstringWithoutRepeatingCharacters003 {
     public static void main(String[] args) {
         LongestSubstringWithoutRepeatingCharacters003 withoutRepeatingCharacters = new LongestSubstringWithoutRepeatingCharacters003();
         int s = withoutRepeatingCharacters.lengthOfLongestSubstring1("abcabcbb");
-        System.out.println(s);
+//        System.out.println(s);
+        String aa = "abcdef";
+        int[] arrs = new int[128];
+        arrs[aa.charAt(1)] = 11;
+        System.out.println((int) "daefda".charAt(1));
     }
 }
