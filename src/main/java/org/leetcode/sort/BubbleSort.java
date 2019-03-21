@@ -21,4 +21,18 @@ public final class BubbleSort {
             }
         }
     }
+
+
+    public static void main(String[] args) {
+
+        int[] nums = {12, 343, 3, 4, 9};
+
+        sort(nums);
+        for (int num : nums) {
+            System.out.println(num);
+        }
+
+    }
+
+
 }
