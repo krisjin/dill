@@ -47,9 +47,17 @@ public class MergeSort {
         }
     }
 
+    /**
+     * 设定两个指针，最初位置分别为两个已经排序序列的起始位置
+     *
+     * @param array
+     * @param low
+     * @param high
+     */
     public static void sort(int[] array, int low, int high) {
         if (high <= low) return;
         int mid = low + (high - low) / 2;
+
         sort(array, low, mid);
         sort(array, mid + 1, high);
         merge(array, low, mid, high);
