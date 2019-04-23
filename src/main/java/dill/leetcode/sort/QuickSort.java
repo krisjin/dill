@@ -6,10 +6,8 @@ package dill.leetcode.sort;
  *  1.定基准——首先随机选择一个元素最为基准
  *  2.划分区——所有比基准小的元素置于基准左侧，比基准大的元素置于右侧
  *  3.递归调用——递归地调用此切分过程
- *
  * </pre>
- * User:krisjin
- * Date:2019/4/23
+ * https://algorithm.yuanbin.me/zh-hans/basics_sorting/quick_sort.html
  */
 public class QuickSort {
 

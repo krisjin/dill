@@ -7,7 +7,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * Date:2019/4/24
  *  多线程处理读写业务逻辑
  *
  * <pre>
