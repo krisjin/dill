@@ -9,14 +9,14 @@ package org.leetcode.sort;
  */
 public final class BubbleSort {
 
-    public static void sort(int[] arrs) {
-        int len = arrs.length;
+    public static void sort(int[] arr) {
+        int len = arr.length;
         for (int i = 0; i < len; i++) {
             for (int j = 1; j < len; j++) {
-                if (arrs[j - 1] > arrs[j]) {
-                    int tmp = arrs[j - 1];
-                    arrs[j - 1] = arrs[j];
-                    arrs[j] = tmp;
+                if (arr[j - 1] > arr[j]) {
+                    int tmp = arr[j - 1];
+                    arr[j - 1] = arr[j];
+                    arr[j] = tmp;
                 }
             }
         }

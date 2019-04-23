@@ -11,7 +11,7 @@ import java.util.List;
 public class LinkedListTest {
 
     public static ArrayList<Integer> printListFromTailToHead(ListNode headNode) {
-        ArrayList<Integer> ret = new ArrayList<>();
+        ArrayList<Integer> ret = new ArrayList();
         if (headNode != null) {
             ret.addAll(printListFromTailToHead(headNode.next));
             ret.add(headNode.val);
