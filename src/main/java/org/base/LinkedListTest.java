@@ -17,7 +17,12 @@ public class LinkedListTest {
             ret.add(headNode.val);
         }
         return ret;
+
+
     }
+
+
+
 
     public static ListNode iter(ListNode head) {
         ListNode prev = null;

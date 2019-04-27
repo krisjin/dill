@@ -55,15 +55,18 @@ public class MergeSort {
      * @param high
      */
     public static void sort(int[] array, int low, int high) {
-        if (high <= low) return;
-        int mid = low + (high - low) / 2;
+        if (low >= high) return;
+        //中出中间索引 min= le
+//        int mid = low + (high - low) / 2;
+        int mid = (low + high) / 2;
 
         sort(array, low, mid);
+
         sort(array, mid + 1, high);
         merge(array, low, mid, high);
-        for (int item : array) {
-            System.out.print(item + " ");
-        }
+//        for (int item : array) {
+//            System.out.print(item + " ");
+//        }
         System.out.println();
     }
 
