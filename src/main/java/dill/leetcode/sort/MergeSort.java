@@ -25,6 +25,7 @@ public class MergeSort {
         }
         // merge array[low...mid] and array[mid + 1...high]
         int i = low, j = mid + 1;
+
         for (int k = low; k <= high; k++) {
             // k means current location
             if (i > mid) {

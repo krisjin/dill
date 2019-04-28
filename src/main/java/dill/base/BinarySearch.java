@@ -8,7 +8,7 @@ package dill.base;
  *
  * <pre>
  *
- *     以lowerBound的实现为例，以上二分搜索的模板有几个非常优雅的实现：
+ * 以lowerBound的实现为例，以上二分搜索的模板有几个非常优雅的实现：
  *
  * while 循环中 lb + 1 < ub, 而不是等号，因为取等号可能会引起死循环。初始化lb < ub 时，最后循环退出时一定有lb + 1 == ub.
  * mid = lb + (ub - lb) / 2, 可有效防止两数相加后溢出。
@@ -28,7 +28,7 @@ package dill.base;
  * 尤其是 Find Peak Element 中 lb 和 ub 的初始值如果初始化为-1和数组长度会带来一些麻烦。
  * </pre>
  */
-public class BianrySearch {
+public class BinarySearch {
 
 
     public static void main(String[] args) {
