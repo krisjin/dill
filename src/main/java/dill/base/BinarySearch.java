@@ -42,6 +42,10 @@ public class BinarySearch {
         System.out.println("##########递归调用##############");
         System.out.println(rank(5, nums));
 
+        System.out.println("##########22222##############");
+        System.out.println(BinarySearchUtil.rank(4, nums));
+
+
     }
 
     /*
