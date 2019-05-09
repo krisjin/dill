@@ -3,9 +3,9 @@ package dill.base;
 /**
  *  二分搜索是一种在有序数组中寻找目标值的经典方法，也就是说使用前提是『有序数组』。非常简单的题中『有序』特征非常明显，
  * 但更多时候可能需要我们自己去构造『有序数组』。下面我们从最基本的二分搜索开始逐步深入。
- *
- *
- *
+ * <p>
+ * <p>
+ * <p>
  * <pre>
  *
  * 以lowerBound的实现为例，以上二分搜索的模板有几个非常优雅的实现：
@@ -37,6 +37,11 @@ public class BinarySearch {
         System.out.println(upperBound(nums, 6)); // 7
         System.out.println(lowerBound(nums, 7)); // 8
         System.out.println(upperBound(nums, 7)); // 7
+
+
+        System.out.println("##########递归调用##############");
+        System.out.println(rank(5, nums));
+
     }
 
     /*
@@ -73,5 +78,26 @@ public class BinarySearch {
         }
 
         return ub - 1;
+    }
+
+
+    //递归调用
+    public static int rank(int key, int[] arr) {
+        return rank(key, arr, 0, arr.length - 1);
+    }
+
+    public static int rank(int key, int[] arr, int lo, int hi) {
+        //如果key存在于arr[]中，它的索引不会小于lo且不会大于hi
+        if (lo > hi) {
+            return -1;
+        }
+
+        int mid = lo + (hi - lo) / 2;
+        if (key < arr[mid])
+            return rank(key, arr, lo, mid - 1);
+        else if (key > arr[mid])
+            return rank(key, arr, mid + 1, hi);
+        else return mid;
+
     }
 }
