@@ -3,6 +3,7 @@ package dill.base;
 import dill.leetcode.ListNode;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -17,8 +18,6 @@ public class LinkedListTest {
             ret.add(headNode.val);
         }
         return ret;
-
-
     }
 
 
@@ -59,6 +58,19 @@ public class LinkedListTest {
             System.out.print(ret2.val + " ");
             ret2 = ret2.next;
         }
+
+        System.out.println();
+        System.out.println("--------------------------------------");
+        LinkedList<String> l = new LinkedList();
+//        l.addFirst("1");
+        l.add("a");
+        l.add("b");
+        l.add("c");
+
+        System.out.println(l.size());
+
+        System.out.println(l.getLast());
+        System.out.println(l.getFirst());
     }
 
 }
