@@ -1,5 +1,8 @@
 package dill.leetcode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * User:krisjin
  * Date:2019-10-10
@@ -18,9 +21,35 @@ package dill.leetcode;
  * 因为 nums[0] + nums[1] = 2 + 7 = 9
  * 所以返回 [0, 1]
  *
+ * 这道题目的意思是给定一个数组和一个值，让求出这个数组中两个值的和等于这个给定值的坐
+ * 标。输出是有要求的，1， 坐标较小的放在前面，较大的放在后面。2， 这俩坐标不能为零。
+ * 时间复杂度: O(N)******- 空间复杂度: O(N)
  * </pre>
  */
 public class C0001 {
+    Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 
+    public int[] twoSum(int[] nums, int target) {
+
+        for (int i = 0; i < nums.length; ++i) {
+            int temp = target - nums[i];
+            if (map.get(temp) != null) {
+                return new int[]{map.get(temp), i + 1};
+            } else {
+                map.put(nums[i], i + 1);
+            }
+
+        }
+        return null;
+    }
+
+
+    public static void main(String[] args) {
+        int[] nums = {2, 7, 11, 15};
+        TwoSum001 twoSum001 = new TwoSum001();
+        int[] result = twoSum001.twoSum(nums, 9);
+
+        System.out.println("index1=" + result[0] + ", index2=" + result[1]);
+    }
 
 }

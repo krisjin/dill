@@ -3,7 +3,7 @@ package dill.leetcode.sort;
 import java.util.Arrays;
 
 /**
- * User:shijingui
+ * User:krisjin
  * Date:2019/4/28
  *  
  */

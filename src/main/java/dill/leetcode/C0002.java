@@ -24,7 +24,7 @@ package dill.leetcode;
  * User:krisibm
  * Date:2019/2/19
  */
-public class AddTwoNumbers002 {
+public class C0002 {
 
     /**
      * 思路 1 ******- 时间复杂度: O(N)******- 空间复杂度: O(1)******
@@ -67,6 +67,8 @@ public class AddTwoNumbers002 {
 
     public static void main(String[] args) {
 
+
+
         ListNode l1 = new ListNode(2);
         l1.next = new ListNode(4);
         l1.next.next = new ListNode(3);
@@ -74,7 +76,7 @@ public class AddTwoNumbers002 {
         ListNode l2 = new ListNode(5);
         l2.next = new ListNode(6);
         l2.next.next = new ListNode(4);
-        AddTwoNumbers002 addTwoNumbers002 = new AddTwoNumbers002();
+        C0002 addTwoNumbers002 = new C0002();
 
         ListNode listNode = addTwoNumbers002.addTwoNumbers(l1, l2);
         System.out.println(listNode.val + " " + listNode.next.val + " " + listNode.next.next.val);
