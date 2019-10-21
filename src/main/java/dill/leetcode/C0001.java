@@ -6,9 +6,9 @@ import java.util.Map;
 /**
  * User:krisjin
  * Date:2019-10-10
- *
- * <pre>
+ * 两数之和
  * 链接：https://leetcode-cn.com/problems/two-sum
+ * <pre>
  *
  * 给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
  *
@@ -46,7 +46,7 @@ public class C0001 {
 
     public static void main(String[] args) {
         int[] nums = {2, 7, 11, 15};
-        TwoSum001 twoSum001 = new TwoSum001();
+        C0001 twoSum001 = new C0001();
         int[] result = twoSum001.twoSum(nums, 9);
 
         System.out.println("index1=" + result[0] + ", index2=" + result[1]);
