@@ -1,4 +1,4 @@
-package dill.leetcode.array;
+package dill.base.array;
 
 /**
  * Problem:    Median of Two Sorted Arrays

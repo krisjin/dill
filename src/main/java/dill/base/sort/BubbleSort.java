@@ -1,4 +1,4 @@
-package dill.leetcode.sort;
+package dill.base.sort;
 
 /**
  * 冒泡排序

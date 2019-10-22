@@ -1,6 +1,6 @@
 package dill.leetcode;
 
-import dill.leetcode.sort.BubbleSort;
+import dill.base.sort.BubbleSort;
 import org.junit.Test;
 
 /**

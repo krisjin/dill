@@ -1,6 +1,6 @@
 package dill.leetcode;
 
-import dill.leetcode.sort.SelectionSort;
+import dill.base.sort.SelectionSort;
 import org.junit.Test;
 
 /**

@@ -1,4 +1,4 @@
-package dill.leetcode.math;
+package dill.base.math;
 
 /**
  * 难度：简单

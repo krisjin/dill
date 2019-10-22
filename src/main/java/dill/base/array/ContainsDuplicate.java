@@ -1,4 +1,4 @@
-package dill.leetcode.array;
+package dill.base.array;
 
 import java.util.HashSet;
 import java.util.Set;

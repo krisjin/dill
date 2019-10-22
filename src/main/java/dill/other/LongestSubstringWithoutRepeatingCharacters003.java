@@ -1,4 +1,4 @@
-package dill.leetcode;
+package dill.other;
 
 import java.util.Arrays;
 

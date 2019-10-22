@@ -1,7 +1,7 @@
 package dill.leetcode;
 
 import org.junit.Test;
-import dill.leetcode.array.LRUCache;
+import dill.base.array.LRUCache;
 
 /**
  * <p/>

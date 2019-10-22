@@ -1,4 +1,4 @@
-package dill.leetcode.sort;
+package dill.base.sort;
 
 /**
  * 归并排序，归并排序是一种典型的分治应用。
