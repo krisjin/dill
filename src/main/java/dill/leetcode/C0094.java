@@ -49,16 +49,24 @@ public class C0094 {
     }
 
 
-
-
-
-
     //test
 
+    public static void main(String[] args) {
+
+        TreeNode treeNode = new TreeNode(1);
+
+        treeNode.left = new TreeNode(2);
+        treeNode.left.left = new TreeNode(3);
 
 
+        C0094 c0094 = new C0094();
+
+        List<Integer> aa = c0094.inorderTraversal(treeNode);
+
+        System.out.println(aa);
 
 
+    }
 
 
 }
