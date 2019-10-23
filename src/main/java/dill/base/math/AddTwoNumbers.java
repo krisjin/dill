@@ -1,6 +1,6 @@
 package dill.base.math;
 
-import dill.leetcode.ListNode;
+import dill.base.ListNode;
 
 /**
  * 难度：中等

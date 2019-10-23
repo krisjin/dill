@@ -4,8 +4,8 @@ package dill.leetcode;
  * 旋转数组
  *
  * @author krisjin on 2019/10/23
- *         <p>
- *         <pre>
+ * <p>
+ * <pre>
  *         给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。
  *
  *         示例 1:

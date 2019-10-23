@@ -1,5 +1,7 @@
 package dill.leetcode;
 
+import dill.base.ListNode;
+
 /**
  * User:krisjin
  * Date:2019-10-21

@@ -1,6 +1,6 @@
 package dill.other;
 
-import dill.leetcode.ListNode;
+import dill.base.ListNode;
 
 import java.util.ArrayList;
 import java.util.List;

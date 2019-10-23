@@ -35,7 +35,7 @@ public class C0070 {
 
 
     public int climbStairs(int n) {
-       return climb_Stairs(0, n);
+        return climb_Stairs(0, n);
     }
 
     public int climb_Stairs(int i, int n) {

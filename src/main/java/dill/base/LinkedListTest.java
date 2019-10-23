@@ -1,7 +1,5 @@
 package dill.base;
 
-import dill.leetcode.ListNode;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;

@@ -1,6 +1,6 @@
 package dill.base.array;
 
-import dill.leetcode.ListNode;
+import dill.base.ListNode;
 
 /**
  * Notes:

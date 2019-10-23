@@ -15,6 +15,4 @@ package dill.leetcode;
 public class C0141 {
 
 
-
-
 }

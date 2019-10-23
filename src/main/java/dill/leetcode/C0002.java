@@ -1,5 +1,7 @@
 package dill.leetcode;
 
+import dill.base.ListNode;
+
 /**
  * <pre>
  * 描述：英文
@@ -66,7 +68,6 @@ public class C0002 {
 
 
     public static void main(String[] args) {
-
 
 
         ListNode l1 = new ListNode(2);
