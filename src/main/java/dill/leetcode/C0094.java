@@ -4,6 +4,7 @@ import dill.base.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * User:krisjin
@@ -49,23 +50,89 @@ public class C0094 {
     }
 
 
+    public List<Integer> inorderTraversalWithStack(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode curr = root;
+
+        while (curr != null || !stack.isEmpty()) {
+            while (curr != null) {
+                stack.push(curr);
+                curr = curr.left;
+            }
+            curr = stack.pop();
+
+            res.add(curr.val);
+
+            curr = curr.right;
+        }
+        return res;
+    }
+
+
+    public static void postOrderTraversal(TreeNode root, List<Integer> nums) {
+        if (root == null) return;
+        postOrderTraversal(root.left, nums);
+        postOrderTraversal(root.right, nums);
+        nums.add(root.val);
+//        System.out.print(root.val + "\t");
+    }
+
+    /**
+     * 二叉树后续遍历
+     *
+     * @param root
+     * @return
+     */
+    public static List<Integer> postOrderWithStack(TreeNode root) {
+        List<Integer> retNodes = new ArrayList<>();
+
+        if (root != null) {
+            Stack<TreeNode> stack = new Stack<>();
+            stack.push(root);
+            TreeNode node = null;
+            while (!stack.isEmpty()) {
+                node = stack.peek();
+                if (node.left != null && root != node.left && root != node.right) {
+                    stack.push(node.left);
+                } else if (node.right != null && root != node.right) {
+                    stack.push(node.right);
+                } else {
+                    retNodes.add(stack.pop().val);
+                    root = node;
+                }
+            }
+        }
+        return retNodes;
+    }
+
+
     //test
 
     public static void main(String[] args) {
-
         TreeNode treeNode = new TreeNode(1);
-
         treeNode.left = new TreeNode(2);
-        treeNode.left.left = new TreeNode(3);
-
-
+        treeNode.left.left = new TreeNode(4);
+        treeNode.left.right = new TreeNode(5);
+        treeNode.right = new TreeNode(3);
+        treeNode.right.left = new TreeNode(6);
+        treeNode.right.right = new TreeNode(7);
         C0094 c0094 = new C0094();
 
-        List<Integer> aa = c0094.inorderTraversal(treeNode);
+//        List<Integer> nodes = c0094.inorderTraversal(treeNode);
+//        List<Integer> nodes = c0094.inorderTraversalWithStack(treeNode);
 
-        System.out.println(aa);
+
+        //后续递归测试
+//        List nums = new ArrayList<Integer>();
+//        postOrderTraversal(treeNode, nums);
 
 
+        //后续非递归测试
+        List nums = postOrderWithStack(treeNode);
+
+
+        System.out.println(nums);
     }
 
 

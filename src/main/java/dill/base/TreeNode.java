@@ -9,7 +9,7 @@ public class TreeNode {
     public TreeNode left;
     public TreeNode right;
 
-    public TreeNode(int x) {
+    public TreeNode(Integer x) {
         val = x;
     }
 
@@ -17,7 +17,7 @@ public class TreeNode {
         return val;
     }
 
-    public void setVal(int val) {
+    public void setVal(Integer val) {
         this.val = val;
     }
 
