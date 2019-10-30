@@ -72,7 +72,7 @@ public class C0017 {
 
     public static void main(String[] args) {
 
-        List<String> ff = letterCombinations("2345");
+        List<String> ff = letterCombinations("23");
 
         System.err.println(ff);
 
