@@ -2,10 +2,7 @@ package dill.leetcode;
 
 import dill.base.TreeNode;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * User:krisjin
@@ -60,6 +57,38 @@ public class C0102 {
         }
 
         return nums;
+    }
+
+
+    public ArrayList<Integer> levelOrder2(TreeNode root) {
+        ArrayList<Integer> lists = new ArrayList<Integer>();
+        if (root == null)
+            return lists;
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode tree = stack.pop();
+            //先往栈中压入右节点，再压左节点，这样出栈就是先左节点后右节点了。
+            if (tree.right != null)
+                stack.push(tree.right);
+            if (tree.left != null)
+                stack.push(tree.left);
+            lists.add(tree.val);
+        }
+        return lists;
+    }
+
+
+    public void depthOrderTraversalWithRecursive() {
+        depthTraversal(null);
+    }
+
+    private void depthTraversal(TreeNode tn) {
+        if (tn != null) {
+            System.out.print(tn.val + "  ");
+            depthTraversal(tn.left);
+            depthTraversal(tn.right);
+        }
     }
 
 
