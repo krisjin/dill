@@ -1,4 +1,4 @@
-package dill;
+package dill.leetcode;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
