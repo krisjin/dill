@@ -1,5 +1,6 @@
 package dill.leetcode;
 
+import dill.base.TreeNodBuilder;
 import dill.base.TreeNode;
 
 import java.util.ArrayList;
@@ -126,10 +127,12 @@ public class C0094 {
         //后续递归测试
 //        List nums = new ArrayList<Integer>();
 //        postOrderTraversal(treeNode, nums);
+        Integer[] a= {1,2,3,4,5,6,7};
+         TreeNode t= TreeNodBuilder.buildTreeNode(a);
 
 
         //后续非递归测试
-        List nums = postOrderWithStack(treeNode);
+        List nums = postOrderWithStack(t);
 
 
         System.out.println(nums);
