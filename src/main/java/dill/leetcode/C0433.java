@@ -1,5 +1,7 @@
 package dill.leetcode;
 
+import java.util.*;
+
 /**
  * User:krisjin
  * Date:2019-10-31
@@ -48,4 +50,94 @@ package dill.leetcode;
  * </pre>
  */
 public class C0433 {
+
+
+    public int minMutation(String start, String end, String[] bank) {
+        if (bank.length == 0) return -1;
+        if (start.length() != end.length()) return -1;
+        List<String> ban = Arrays.asList(bank);
+        if (!ban.contains(end)) return -1;
+        int cnt = backtrack(start, end, 0, ban);
+        return cnt;
+    }
+
+    public int backtrack(String start, String end, int num, List<String> bank) {
+        char[] charSet = new char[]{'A', 'C', 'G', 'T'};
+        List<String> visited = new ArrayList<>();
+        String begin = start;
+        for (int i = 0; i < start.length(); i++) {
+            char[] temp = begin.toCharArray();
+            for (char ch : charSet) {
+                temp[i] = ch;
+                String newStr = new String(temp);
+                if (bank.contains(newStr) && !visited.contains(newStr)) {
+                    num++;
+                    visited.add(newStr);
+                    if (end == newStr) {
+                        return num;
+                    }
+                    begin = newStr;
+                    i = -1;
+                }
+            }
+        }
+        return -1;
+    }
+
+
+    public int minMutation2(String start, String end, String[] bank) {
+        HashSet<String> set = new HashSet<>(Arrays.asList(bank));
+        if (!set.contains(end)) {
+            return -1;
+        }
+        char[] fourChar = {'A', 'C', 'G', 'T'};
+
+        Queue<String> queue = new LinkedList<>();
+        queue.offer(start);
+        set.remove(start);
+
+        int step = 0;
+
+        while (queue.size() > 0) {
+            step++;
+
+            for (int count = queue.size(); count > 0; --count) {
+                char[] tmpQueueChar = queue.poll().toCharArray();
+
+                for (int i = 0; i < tmpQueueChar.length; ++i) {
+
+                    char oldChar = tmpQueueChar[i];
+                    for (char c : fourChar) {
+                        tmpQueueChar[i] = c;
+                        String newStr = new String(tmpQueueChar);
+                        if (end.equals(newStr)) {
+                            return step;
+                        } else if (set.contains(newStr)) {
+                            set.remove(newStr);
+                            queue.offer(newStr);
+                        }
+                    }
+
+                    tmpQueueChar[i] = oldChar;
+                }
+            }
+        }
+
+        return -1;
+    }
+
+
+    public static void main(String[] args) {
+
+        String[] ret = {"AAAACCCC", "AAACCCCC", "AACCCCCC"};
+        C0433 c0433 = new C0433();
+
+        char[] fourChar = {'A', 'C', 'G', 'T'};
+
+
+        System.err.println(new String(fourChar));
+
+        int a = c0433.minMutation2("AAAAACCC", "AACCCCCC", ret);
+        System.out.println(a);
+    }
 }

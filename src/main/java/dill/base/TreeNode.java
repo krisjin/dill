@@ -2,7 +2,6 @@ package dill.base;
 
 /**
  * User:krisjin
- * Date:2019-10-23
  */
 public class TreeNode {
     public Integer val;

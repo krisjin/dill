@@ -45,7 +45,7 @@ public class C0344 {
 
 
     public static void main(String[] args) {
-        char[] c = "hello".toCharArray();
+        char[] c = "abcde".toCharArray();
         reverseString(c);
 
 

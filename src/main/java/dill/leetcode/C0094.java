@@ -9,7 +9,6 @@ import java.util.Stack;
 
 /**
  * User:krisjin
- * Date:2019-10-22
  * <p>
  * 二叉树的中序遍历
  * https://blog.csdn.net/jackey_jk/article/details/51033615
