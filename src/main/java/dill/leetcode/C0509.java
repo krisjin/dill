@@ -41,16 +41,33 @@ package dill.leetcode;
 public class C0509 {
 
 
-    public static int fact1(int n) {
+    public static int fib(int n, int[] memo) {
 
-        if (n == 1 || n == 2) return n;
+        if (n <= 1) return n;
 
-        return fact1(n - 1) + fact1(n - 2);
+        if (memo[n] == 0) {
+            memo[n] = fib(n - 1, memo) + fib(n - 2, memo);
+        }
+        return memo[n];
+    }
+
+
+    public static int fib1(int n) {
+
+        if (n <= 1) return n;
+
+        return fib1(n - 1) + fib1(n - 2);
     }
 
 
     public static void main(String[] args) {
+        int n = 30;
+        int[] mem = new int[n * 2];
+        long st = System.currentTimeMillis();
 
-        System.err.println(fact1(6));
+        int n1 = fib(n, mem);
+
+
+        System.err.println(System.currentTimeMillis() - st + " :" + n1);
     }
 }
