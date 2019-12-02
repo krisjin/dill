@@ -58,4 +58,17 @@ public class C0146 extends LinkedHashMap<Integer, Integer> {
     }
 
 
+    public static void main(String[] args) {
+        C0146 c0146  = new C0146(3);
+
+        c0146.put(1,1);
+        c0146.put(2,2);
+        c0146.put(3,3);
+        c0146.put(4,4);
+
+
+        System.err.println(c0146.size());
+
+    }
+
 }
