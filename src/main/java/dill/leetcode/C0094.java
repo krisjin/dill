@@ -126,8 +126,8 @@ public class C0094 {
         //后续递归测试
 //        List nums = new ArrayList<Integer>();
 //        postOrderTraversal(treeNode, nums);
-        Integer[] a= {1,2,3,4,5,6,7};
-         TreeNode t= TreeNodBuilder.buildTreeNode(a);
+        Integer[] a = {1, 2, 3, 4, 5, 6, 7};
+        TreeNode t = TreeNodBuilder.buildTreeNode(a);
 
 
         //后续非递归测试
