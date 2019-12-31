@@ -18,9 +18,6 @@ public class LinkedListTest {
         return ret;
     }
 
-
-
-
     public static ListNode iter(ListNode head) {
         ListNode prev = null;
         while (head != null) {

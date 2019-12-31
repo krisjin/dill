@@ -14,8 +14,6 @@ import java.util.Set;
  *  
  */
 public class NIOTest {
-
-
     ServerSocketChannel ssc = null;
     Selector selector = null;
 
