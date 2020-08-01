@@ -11,8 +11,6 @@ import java.nio.CharBuffer;
 public class BufferDemo {
 
     public static void main(String[] args) {
-
-
         createBuffer();
         limitTest();
     }
@@ -42,10 +40,10 @@ public class BufferDemo {
         charBuffer.limit(3);
 
         println("T2 capacity=" + charBuffer.capacity() + ", limit=" + charBuffer.limit() + " ,position=" + charBuffer.position());
-        charBuffer.put(0,'0');
-        charBuffer.put(1,'1');
-        charBuffer.put(2,'2');
-        charBuffer.put(3,'3');
+        charBuffer.put(0, '0');
+        charBuffer.put(1, '1');
+        charBuffer.put(2, '2');
+        charBuffer.put(3, '3');
 
         println("----------------------- limit end -----------------------");
     }
