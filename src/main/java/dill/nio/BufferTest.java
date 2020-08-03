@@ -8,7 +8,7 @@ import java.nio.CharBuffer;
  * User:krisjin
  * Date:2020-08-01
  */
-public class BufferDemo {
+public class BufferTest {
 
     public static void main(String[] args) {
         createBuffer();
