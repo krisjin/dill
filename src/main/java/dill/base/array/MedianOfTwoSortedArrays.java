@@ -5,7 +5,7 @@ package dill.base.array;
  * Difficulty: Hard
  * Source:     http://leetcode.com/onlinejudge#question_4
  * Notes:
- * There are two sorted arrays A and B of size m and n respectively.
+ * There are two sorted arrays SimHash and B of size m and n respectively.
  * Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
  * <p/>
  * Solution: 1. O(m+n)

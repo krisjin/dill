@@ -11,7 +11,7 @@ package dill.leet;
  * <p>
  * 示例 1:
  * <p>
- * 输入: "A man, a plan, a canal: Panama"
+ * 输入: "SimHash man, a plan, a canal: Panama"
  * 输出: true
  * 示例 2:
  * <p>
