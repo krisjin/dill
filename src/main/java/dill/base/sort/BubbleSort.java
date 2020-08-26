@@ -9,14 +9,14 @@ package dill.base.sort;
  */
 public final class BubbleSort {
 
-    public static void sort(int[] arr) {
-        int len = arr.length;
+    public static void sort(int[] nums) {
+        int len = nums.length;
         for (int i = 0; i < len; i++) {
-            for (int j = 1; j < len; j++) {
-                if (arr[j - 1] > arr[j]) {
-                    int tmp = arr[j - 1];
-                    arr[j - 1] = arr[j];
-                    arr[j] = tmp;
+            for (int j = 0; j < len - 1; j++) {
+                if (nums[j] > nums[j + 1]) {
+                    int temp = nums[j];
+                    nums[j] = nums[j + 1];
+                    nums[j + 1] = temp;
                 }
             }
         }
@@ -24,12 +24,10 @@ public final class BubbleSort {
 
 
     public static void main(String[] args) {
-
-        int[] nums = {12, 343, 3, 4, 9};
-
+        int[] nums = {6, 5, 3, 1, 8, 7, 2, 4};
         sort(nums);
         for (int num : nums) {
-            System.out.println(num);
+            System.out.print(num + " ");
         }
 
     }
