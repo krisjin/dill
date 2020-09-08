@@ -39,7 +39,7 @@ public class ContainsDuplicateII {
     public static void main(String[] args) {
         int[] arr = {7, 3, 4, 5, 1, 7, 6};
         ContainsDuplicateII containsDuplicateII = new ContainsDuplicateII();
-        boolean ret = containsDuplicateII.containsNearbyDuplicate(arr, 1);
+        boolean ret = containsDuplicateII.containsNearbyDuplicate(arr, 8);
         System.out.println(ret);
 
     }

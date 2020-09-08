@@ -32,7 +32,7 @@ public class ContainsDuplicate {
     }
 
     public static void main(String[] args) {
-        int[] arr = {2, 3, 4, 5, 6, 7, 1};
+        int[] arr = {2, 3, 4, 5, 2,6, 7, 1};
         ContainsDuplicate containsDuplicate = new ContainsDuplicate();
         boolean ret = containsDuplicate.containsDuplicate(arr);
         System.out.println(ret);
