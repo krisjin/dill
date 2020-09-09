@@ -40,11 +40,11 @@ public class C0094 {
     public void helper(TreeNode root, List<Integer> res) {
         if (root != null) {
             if (root.left != null) {
-                helper(root.left, res);
+                helper(root.left, res);//左
             }
-            res.add(root.val);
+            res.add(root.val); //根
             if (root.right != null) {
-                helper(root.right, res);
+                helper(root.right, res);//右
             }
         }
     }
@@ -132,8 +132,6 @@ public class C0094 {
 
         //后续非递归测试
         List nums = postOrderWithStack(t);
-
-
         System.out.println(nums);
     }
 
