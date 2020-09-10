@@ -1,7 +1,7 @@
 package dill.leet;
 
 /**
- * @author shijingui on 2019/12/4
+ * @author krisjin on 2019/12/4
  *         链接：https://leetcode-cn.com/problems/minesweeper
  *         <pre>
  *                 让我们一起来玩扫雷游戏！

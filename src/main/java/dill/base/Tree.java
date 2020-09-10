@@ -1,7 +1,7 @@
 package dill.base;
 
 /**
- * @User shijingui
+ * @User krisjin
  * @date 2020/9/6
  */
 public class Tree {

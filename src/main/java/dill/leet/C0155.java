@@ -3,7 +3,7 @@ package dill.leet;
 /**
  * 最小栈
  *
- * @author shijingui on 2019/10/23
+ * @author krisjin on 2019/10/23
  * <p>
  * <pre>
  *         设计一个支持 push，pop，top 操作，并能在常数时间内检索到最小元素的栈。
