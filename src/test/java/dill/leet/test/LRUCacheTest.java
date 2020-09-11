@@ -1,4 +1,4 @@
-package dill.leet;
+package dill.leet.test;
 
 import org.junit.Test;
 import dill.base.array.LRUCache;

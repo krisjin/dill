@@ -1,4 +1,4 @@
-package dill.leet;
+package dill.leet.test;
 
 import dill.base.sort.BubbleSort;
 import org.junit.Test;

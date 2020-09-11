@@ -26,17 +26,16 @@ import java.util.Map;
  * 时间复杂度: O(N)******- 空间复杂度: O(N)
  * </pre>
  */
-public class C0001 {
+public class TwoSum1 {
     Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 
     public int[] twoSum(int[] nums, int target) {
-
         for (int i = 0; i < nums.length; ++i) {
             int temp = target - nums[i];//获取另一个值
             if (map.get(temp) != null) {
-                return new int[]{map.get(temp), i + 1};
+                return new int[]{map.get(temp), i};
             } else {
-                map.put(nums[i], i + 1);
+                map.put(nums[i], i);
             }
         }
         return null;
@@ -44,8 +43,8 @@ public class C0001 {
 
 
     public static void main(String[] args) {
-        int[] nums = {10,5,7, 2, 11, 15};
-        C0001 twoSum001 = new C0001();
+        int[] nums = {10, 5, 7, 2, 11, 15};
+        TwoSum1 twoSum001 = new TwoSum1();
         int[] result = twoSum001.twoSum(nums, 9);
 
         System.out.println("index1=" + result[0] + ", index2=" + result[1]);

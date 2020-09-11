@@ -33,23 +33,20 @@ import java.util.Map;
  *
  * 链接：https://leetcode-cn.com/problems/lru-cache
  */
-public class C0146 extends LinkedHashMap<Integer, Integer> {
+public class LRUCache extends LinkedHashMap<Integer, Integer> {
     private int capacity;
 
-    public C0146(int capacity) {
+    public LRUCache(int capacity) {
         super(capacity, 0.75f, true);
         this.capacity = capacity;
     }
-
 
     public Integer get(int key) {
         return super.getOrDefault(key, -1);
     }
 
-
     public void put(int key, int value) {
         super.put(key, value);
-
     }
 
     @Override
@@ -57,17 +54,15 @@ public class C0146 extends LinkedHashMap<Integer, Integer> {
         return size() > capacity;
     }
 
-
     public static void main(String[] args) {
-        C0146 c0146  = new C0146(3);
+        LRUCache lruCache = new LRUCache(3);
+        lruCache.put(1, 1);
+        lruCache.put(2, 2);
+        lruCache.put(3, 3);
+        lruCache.put(4, 4);
 
-        c0146.put(1,1);
-        c0146.put(2,2);
-        c0146.put(3,3);
-        c0146.put(4,4);
-
-
-        System.err.println(c0146.size());
+        System.err.println(lruCache.get(1));
+        System.err.println(lruCache.size());
 
     }
 

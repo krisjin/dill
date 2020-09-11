@@ -1,4 +1,4 @@
-package dill.leet;
+package dill.leet.test;
 
 /**
  * User:krisjin
