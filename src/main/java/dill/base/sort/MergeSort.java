@@ -9,10 +9,9 @@ package dill.base.sort;
 public class MergeSort {
 
     public static void main(String[] args) {
-        int unsortedArray[] = new int[]{6, 5, 3, 1, 8, 7, 2, 4};
-        mergeSort(unsortedArray);
-        System.out.println("After sort: ");
-        for (int item : unsortedArray) {
+        int arr[] = new int[]{6, 5, 3, 1, 8, 7, 2, 4};
+        mergeSort(arr);
+        for (int item : arr) {
             System.out.print(item + " ");
         }
     }
