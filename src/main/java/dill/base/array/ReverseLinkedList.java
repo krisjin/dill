@@ -2,6 +2,7 @@ package dill.base.array;
 
 import dill.base.ListNode;
 
+
 /**
  * <p/>
  * User : krisibm@163.com
@@ -21,7 +22,6 @@ public class ReverseLinkedList {
         }
         return pre;
     }
-
 
     public static void main(String[] args) {
         ListNode node1 = new ListNode(1);
