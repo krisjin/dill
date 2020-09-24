@@ -23,6 +23,7 @@ public class ReverseList206 {
     /**
      * 在遍历列表时，将当前节点的 next 指针改为指向前一个元素。由于节点没有引用其上一个节点，因此必须事先存储其前一个元素。
      * 在更改引用之前，还需要另一个指针来存储下一个节点。不要忘记在最后返回新的头引用！
+     *
      * @param head
      * @return
      */
@@ -38,15 +39,6 @@ public class ReverseList206 {
         }
         return prev;
     }
-
-    public ListNode reverseList2(ListNode head) {
-        if (head == null || head.next == null) return head;
-        ListNode p = reverseList(head.next);
-        head.next.next = head;
-        head.next = null;
-        return p;
-    }
-
 
     public static void main(String[] args) {
         //构建单链表
