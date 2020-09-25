@@ -1,6 +1,7 @@
 package dill.leet;
 
 /**
+ * 插入区间
  * <pre>
  * 给出一个无重叠的 ，按照区间起始端点排序的区间列表。
  *
@@ -27,5 +28,7 @@ package dill.leet;
  * @User krisjin
  * @date 2020/9/9
  */
-public class C0057 {
+public class InsertInterval57 {
+
+
 }
