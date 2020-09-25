@@ -4,7 +4,7 @@ package dill.leet;
  * User:krisjin
  * Date:2019-10-21
  * 爬楼梯
- * https://leetcode-cn.com/problems/climbing-stairs
+ * https://leetcode-cn.com/problems/climbing-stairs/
  * <pre>
  *
  * 假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
@@ -36,29 +36,23 @@ public class ClimbStairs70 {
 
     public static int climbStairs(int n) {
         int[] memo = new int[n];
-        return climb_Stairs(0, n, memo);
+        return climbStairs(0, n, memo);
     }
 
-    public static int climb_Stairs(int i, int n) {
-        if (i > n) {
-            return 0;
-        }
-        if (i == n) {
-            return 1;
-        }
-        return climb_Stairs(i + 1, n) + climb_Stairs(i + 2, n);
-    }
-
-
-    public static int climb_Stairs(int i, int n, int[] memo) {
+    public static int climbStairs(int i, int n, int[] memo) {
         if (i > n) return 0;
         if (i == n) return 1;
         if (memo[i] > 0) return memo[i];
-        return climb_Stairs(i + 1, n, memo) + climb_Stairs(i + 2, n, memo);
+        return climbStairs(i + 1, n, memo) + climbStairs(i + 2, n, memo);
+    }
+
+    public static void main(String[] args) {
+        int i = climbStairsWithDp(4);
+        System.err.println(i);
     }
 
 
-    public int climbStairsWithDp(int n) {
+    public static int climbStairsWithDp(int n) {
         if (n == 1) {
             return 1;
         }
@@ -72,8 +66,13 @@ public class ClimbStairs70 {
     }
 
 
-    public static void main(String[] args) {
-        int i = climbStairs(4);
-        System.err.println(i);
+    public static int climbStairs(int i, int n) {
+        if (i > n) {
+            return 0;
+        }
+        if (i == n) {
+            return 1;
+        }
+        return climbStairs(i + 1, n) + climbStairs(i + 2, n);
     }
 }
