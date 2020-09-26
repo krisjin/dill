@@ -1,21 +1,19 @@
-package dill.base;
+package dill.leet;
 
 /**
  * 二分查找
  *
  * @author krisjin on 2019/5/9
  */
-public class BinarySearch {
+public class BinarySearch704 {
 
-
-    public static int rank(int key, int[] arr) {
+    public static int search(int[] nums, int target) {
         int lo = 0;
-        int hi = arr.length - 1;
-
+        int hi = nums.length - 1;
         while (lo <= hi) {
-            int mid = lo + (hi - lo) / 2;
-            if (key < arr[mid]) hi = mid - 1;
-            else if (key > arr[mid]) lo = mid + 1;
+            int mid = lo + (hi - lo) / 2;//防止left+right溢出
+            if (target < nums[mid]) hi = mid - 1;
+            else if (target > nums[mid]) lo = mid + 1;
             else return mid;
         }
         return -1;
@@ -37,10 +35,8 @@ public class BinarySearch {
 
     public static void main(String[] args) {
         int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-
-//        int index = rank(3, nums);
-        int index = recursionSearch(10, nums);
-
+        int index = search(nums, 8);
+//        int index = recursionSearch(10, nums);
         System.out.println(index);
     }
 
