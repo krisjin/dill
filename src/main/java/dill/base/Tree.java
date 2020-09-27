@@ -9,7 +9,6 @@ public class Tree {
     private Node root;
 
     //前序（根，左，右），中序，后序，
-
     static class Node {
         public String value;
         public Node left;
@@ -45,11 +44,8 @@ public class Tree {
 
     public static void main(String[] args) {
         Node left = new Node("a", new Node("al"), new Node("ar"));
-
         Node right = new Node("b", new Node("bl"), new Node("br"));
         Node root = new Node("root", left, right);
-
         printNode(root);
-
     }
 }

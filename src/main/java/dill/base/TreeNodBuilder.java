@@ -42,12 +42,9 @@ public class TreeNodBuilder {
         return treeNodes[0];
     }
 
-
     public static void main(String[] args) {
         Integer[] array = new Integer[]{1, null, 2, null, null, null, 3};
         TreeNode root = buildTreeNode(array);
-
         System.out.println(root);
-
     }
 }
