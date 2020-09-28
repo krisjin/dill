@@ -30,13 +30,8 @@ public class AddTwoNumbers2 {
      * @return
      */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        if (l1 == null) {
-            return l2;
-        }
-        if (l2 == null) {
-            return l1;
-        }
-
+        if (l1 == null) return l2;
+        if (l2 == null) return l1;
         ListNode head = new ListNode(0);
         ListNode p = head;
 
@@ -50,7 +45,6 @@ public class AddTwoNumbers2 {
                 tmp += l2.val;
                 l2 = l2.next;
             }
-
             p.next = new ListNode(tmp % 10);
             p = p.next;
             tmp = tmp / 10;
@@ -71,6 +65,5 @@ public class AddTwoNumbers2 {
 
         ListNode listNode = addTwoNumbers002.addTwoNumbers(l1, l2);
         System.out.println(listNode.val + " " + listNode.next.val + " " + listNode.next.next.val);
-
     }
 }
