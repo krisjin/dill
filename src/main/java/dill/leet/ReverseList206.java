@@ -30,7 +30,6 @@ public class ReverseList206 {
     public ListNode reverseList(ListNode head) {
         ListNode prev = null;
         ListNode curr = head;
-
         while (curr != null) {
             ListNode nextTemp = curr.next;
             curr.next = prev;
@@ -49,12 +48,10 @@ public class ReverseList206 {
 
         ReverseList206 reverseList206 = new ReverseList206();
         ListNode newList = reverseList206.reverseList(head);
-
         while (newList != null) {
             System.out.print(newList.val + " ");
             newList = newList.next;
         }
-
     }
 
 }

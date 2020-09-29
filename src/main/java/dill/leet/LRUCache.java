@@ -63,7 +63,6 @@ public class LRUCache extends LinkedHashMap<Integer, Integer> {
 
         System.err.println(lruCache.get(1));
         System.err.println(lruCache.size());
-
     }
 
 }
