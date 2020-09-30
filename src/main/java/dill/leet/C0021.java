@@ -5,7 +5,7 @@ import dill.base.ListNode;
 /**
  * @author krisjin on 2019/10/18
  * 合并两个有序链表
- * 链接：https://leetcode-cn.com/problems/merge-two-sorted-lists/solution/he-bing-liang-ge-you-xu-lian-biao-by-leetcode/
+ * https://leetcode-cn.com/problems/merge-two-sorted-lists/solution/he-bing-liang-ge-you-xu-lian-biao-by-leetcode/
  * <pre>
  *   将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 
  *
@@ -13,18 +13,14 @@ import dill.base.ListNode;
  *
  *   输入：1->2->4, 1->3->4
  *   输出：1->1->2->3->4->4
- *
  *   </pre>
  */
 public class C0021 {
-
-
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         // maintain an unchanging reference to node ahead of the return node.
         ListNode preHead = new ListNode(3);
 
         ListNode prev = preHead;
-
         while (l1 != null && l2 != null) {
             if (l1.val <= l2.val) {
                 prev.next = l1;
@@ -40,7 +36,6 @@ public class C0021 {
         prev.next = l1 == null ? l2 : l1;
         return preHead.next;
     }
-
 
     public static void main(String[] args) {
         ListNode node1 = new ListNode(2);

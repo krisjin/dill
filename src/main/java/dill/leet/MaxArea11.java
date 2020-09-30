@@ -16,9 +16,9 @@ package dill.leet;
  * 输出: 49
  * 链接：https://leetcode-cn.com/problems/container-with-most-water
  */
-public class C0011 {
+public class MaxArea11 {
     //暴力法
-    public int maxArea(int[] b) {
+    public int maxArea1(int[] b) {
         int max = 0;
         for (int i = 0; i < b.length - 1; ++i) {
             for (int j = i + 1; j < b.length; ++j) {
@@ -51,10 +51,19 @@ public class C0011 {
         return maxArea;
     }
 
+    public int maxArea(int[] container) {
+        int max = 0;
+        for (int i = 0, j = container.length - 1; i < j; ) {
+            int minHeight = container[i] < container[j] ? container[i++] : container[j--];
+            max = Math.max(max, (j - i + 1) * minHeight);
+        }
+        return max;
+    }
+
     public static void main(String[] args) {
-        C0011 c0011 = new C0011();
+        MaxArea11 maxArea11 = new MaxArea11();
         int[] b = {1, 8, 6, 2, 5, 4, 8, 3, 7};
-        int maxArea = c0011.maxArea(b);
+        int maxArea = maxArea11.maxArea(b);
         System.err.println(maxArea);
     }
 }
