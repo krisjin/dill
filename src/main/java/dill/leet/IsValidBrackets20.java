@@ -40,12 +40,11 @@ import java.util.Stack;
  * 输出: true
  * </pre>
  */
-public class C0020 {
-    // Hash table that takes care of the mappings.
+public class IsValidBrackets20 {
     private HashMap<Character, Character> mappings;
 
     // Initialize hash map with mappings. This simply makes the code easier to read.
-    public C0020() {
+    public IsValidBrackets20() {
         this.mappings = new HashMap<Character, Character>();
         this.mappings.put(')', '(');
         this.mappings.put('}', '{');
@@ -53,30 +52,36 @@ public class C0020 {
     }
 
     public boolean isValid(String s) {
-
-        // Initialize a stack to be used in the algorithm.
         Stack<Character> stack = new Stack<Character>();
-
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-
-            // If the current character is a closing bracket.
             if (this.mappings.containsKey(c)) {
-
-                // Get the top element of the stack. If the stack is empty, set a dummy value of '#'
                 char topElement = stack.empty() ? '#' : stack.pop();
-
-                // If the mapping for this bracket doesn't match the stack's top element, return false.
-                if (topElement != this.mappings.get(c)) {
-                    return false;
-                }
+                if (topElement != this.mappings.get(c)) return false;
             } else {
-                // If it was an opening bracket, push to the stack.
                 stack.push(c);
             }
         }
-
-        // If the stack still contains elements, then it is an invalid expression.
         return stack.isEmpty();
     }
+
+    public boolean isValid2(String s) {
+        Stack<Character> stack = new Stack<>();
+        for (Character c : s.toCharArray()) {
+            if (c == '(') stack.push(')');
+            else if (c == '{') stack.push('}');
+            else if (c == '[') stack.push(']');
+            else if (stack.isEmpty() || stack.pop() != c) return false;
+        }
+        return stack.isEmpty();
+    }
+
+
+    public static void main(String[] args) {
+        String s = "{[]}}}}";
+        IsValidBrackets20 isValidBrackets20 = new IsValidBrackets20();
+        System.err.println(isValidBrackets20.isValid(s));
+    }
+
+
 }
