@@ -31,7 +31,64 @@ public class MergeSortArray88 {
         Arrays.sort(nums1);
     }
 
-    public static void main(String[] args) {
+    public void merge1(int[] nums1, int m, int[] nums2, int n) {
+        int[] nums1Copy = new int[m];
+        System.arraycopy(nums1, 0, nums1Copy, 0, m);
+        int p1 = 0;
+        int p2 = 0;
+        int p = 0;
 
+        // Compare elements from nums1Copy and nums2
+        // and add the smallest one into nums1.
+        while ((p1 < m) && (p2 < n))
+            nums1[p++] = (nums1Copy[p1] < nums2[p2]) ? nums1Copy[p1++] : nums2[p2++];
+
+        // if there are still elements to add
+        if (p1 < m)
+            System.arraycopy(nums1Copy, p1, nums1, p1 + p2, m + n - p1 - p2);
+        if (p2 < n)
+            System.arraycopy(nums2, p2, nums1, p1 + p2, m + n - p1 - p2);
+    }
+
+
+    public void merge2(int[] nums1, int m, int[] nums2, int n) {
+        // two get pointers for nums1 and nums2
+        int p1 = m - 1;
+        int p2 = n - 1;
+        // set pointer for nums1
+        int p = m + n - 1;
+
+        // while there are still elements to compare
+        while ((p1 >= 0) && (p2 >= 0))
+            // compare two elements from nums1 and nums2
+            // and add the largest one in nums1
+            nums1[p--] = (nums1[p1] < nums2[p2]) ? nums2[p2--] : nums1[p1--];
+
+        // add missing elements from nums2
+        System.arraycopy(nums2, 0, nums1, 0, p2 + 1);
+    }
+
+    public void merge3(int[] num1, int m, int[] num2, int n) {
+        for (int idx = m + n - 1; idx >= 0; idx--) {
+            if (m <= 0) {
+                num1[idx] = num2[--n];
+            } else if (n <= 0) {
+                break;
+            } else if (num1[m - 1] < num2[n - 1]) {
+                num1[idx] = num2[--n];
+            } else {
+                num1[idx] = num1[--m];
+            }
+        }
+    }
+
+
+    public static void main(String[] args) {
+        int[] nums1 = {1, 2, 3, 0, 0, 0};
+        int[] nums2 = {2, 5, 6};
+
+        MergeSortArray88 mergeSortArray88 = new MergeSortArray88();
+        mergeSortArray88.merge3(nums1, 3, nums2, nums2.length);
+        System.err.println();
     }
 }
