@@ -24,7 +24,7 @@ import java.util.Arrays;
  *
  * </pre>
  */
-public class C0088 {
+public class MergeSortArray88 {
 
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         System.arraycopy(nums2, 0, nums1, m, n);
