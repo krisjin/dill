@@ -33,9 +33,27 @@ public class BinarySearch704 {
     }
 
 
+    //二分查找模板
+    public static int binarySearch(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1; // 注意
+
+        while (left <= right) {
+            int mid = (right + left) / 2;
+            if (nums[mid] == target)
+                return mid;
+            else if (nums[mid] < target)
+                left = mid + 1; // 注意
+            else if (nums[mid] > target)
+                right = mid - 1; // 注意
+        }
+        return -1;
+    }
+
+
     public static void main(String[] args) {
-        int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        int index = search(nums, 8);
+        int[] nums = {-1, 0, 3, 5, 9, 12};
+        int index = binarySearch(nums, 12);
 //        int index = recursionSearch(10, nums);
         System.out.println(index);
     }
