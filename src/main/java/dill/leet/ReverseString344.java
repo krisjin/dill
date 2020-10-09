@@ -42,7 +42,7 @@ public class ReverseString344 {
 
     public void reverseString2(char[] s) {
         int n = s.length;
-        for (int left = 0, right = n - 1; left <n; left++, right--) {
+        for (int left = 0, right = n - 1; left < right; left++, right--) {
             char tmp = s[left];
             s[left] = s[right];
             s[right] = tmp;
