@@ -25,31 +25,35 @@ package dill.leet;
  *
  * </pre>
  */
-public class C0344 {
+public class ReverseString344 {
 
     public static void reverseString(char[] s) {
         swap(0, s.length - 1, s);//初始调用
     }
 
     public static void swap(int start, int end, char[] s) {
-        if (start >= end) {
-            return;
-        }
+        if (start >= end) return;
 
         char temp = s[start];
         s[start] = s[end];
         s[end] = temp;
-
         swap(start + 1, end - 1, s);
+    }
+
+    public void reverseString2(char[] s) {
+        int n = s.length;
+        for (int left = 0, right = n - 1; left <n; left++, right--) {
+            char tmp = s[left];
+            s[left] = s[right];
+            s[right] = tmp;
+        }
     }
 
 
     public static void main(String[] args) {
         char[] c = "abcde".toCharArray();
-        reverseString(c);
-
-
+        ReverseString344 reverseString344 = new ReverseString344();
+        reverseString344.reverseString2(c);
         System.out.println(c);
     }
-
 }

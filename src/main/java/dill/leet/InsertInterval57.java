@@ -35,15 +35,15 @@ import java.util.List;
 public class InsertInterval57 {
 
     public int[][] insert(int[][] intervals, int[] newInterval) {
-        int[][] newArr = new int[intervals.length + 1][2];
-        newArr[0] = newInterval;
+        int[][] newIntervals = new int[intervals.length + 1][2];
+        newIntervals[0] = newInterval;
         for (int i = 0; i < intervals.length; i++)
-            System.arraycopy(intervals[i], 0, newArr[i + 1], 0, intervals[i].length);
-        Arrays.sort(newArr, (v1, v2) -> v1[0] - v2[0]);
+            System.arraycopy(intervals[i], 0, newIntervals[i + 1], 0, intervals[i].length);
+        Arrays.sort(newIntervals, (v1, v2) -> v1[0] - v2[0]);
 
         List<int[]> mergedList = new ArrayList<int[]>();
-        for (int i = 0; i < newArr.length; ++i) {
-            int L = newArr[i][0], R = newArr[i][1];//当前区间
+        for (int i = 0; i < newIntervals.length; ++i) {
+            int L = newIntervals[i][0], R = newIntervals[i][1];//当前区间
             //当前区间的左端点与mergedList最后一个数组中的右端点进行比较
             if (mergedList.size() == 0 || mergedList.get(mergedList.size() - 1)[1] < L) {
                 mergedList.add(new int[]{L, R});
@@ -53,6 +53,30 @@ public class InsertInterval57 {
         }
         return mergedList.toArray(new int[mergedList.size()][]);
     }
+
+    public int[][] insert2(int[][] intervals, int[] newInterval) {
+        if (newInterval == null || intervals == null) {
+            return intervals;
+        }
+        List<int[]> results = new ArrayList<int[]>();
+        int insertPos = 0;//插入位置
+        for (int[] interval : intervals) {//遍历intervals
+            if (interval[1] < newInterval[0]) {//如果当前区间的end小于新区间的start，说明无重叠，直接添加
+                results.add(new int[]{interval[0], interval[1]});
+                insertPos++;//插入位置+1
+            } else if (interval[0] > newInterval[1]) {//如果当前区间的start小于新区间的end，说明无重叠，直接添加
+                results.add(new int[]{interval[0], interval[1]});
+            } else {//否则一定有重叠，取两个区间的最小start，和最大end, 作为新区间
+                newInterval[0] = Math.min(interval[0], newInterval[0]);
+                newInterval[1] = Math.max(interval[1], newInterval[1]);
+            }
+        }
+
+        results.add(insertPos, new int[]{newInterval[0], newInterval[1]});
+        return results.toArray(new int[results.size()][2]);
+
+    }
+
 
     public static void main(String[] args) {
         InsertInterval57 mergeInterval56 = new InsertInterval57();

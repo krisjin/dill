@@ -45,7 +45,7 @@ public class MergeInterval56 {
                 mergedList.get(mergedList.size() - 1)[1] = Math.max(mergedList.get(mergedList.size() - 1)[1], R);
             }
         }
-        return mergedList.toArray(new int[mergedList.size()][]);
+        return mergedList.toArray(new int[mergedList.size()][2]);
     }
 
     public static void main(String[] args) {
