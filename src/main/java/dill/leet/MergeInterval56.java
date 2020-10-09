@@ -1,5 +1,9 @@
 package dill.leet;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * 合并区间
  * <pre>
@@ -24,4 +28,34 @@ package dill.leet;
  * @Date 2020/9/25
  */
 public class MergeInterval56 {
+
+    public int[][] merge(int[][] intervals) {
+        if (intervals.length == 0) {
+            return new int[0][2];
+        }
+        Arrays.sort(intervals, (v1, v2) -> v1[0] - v2[0]);
+
+        List<int[]> mergedList = new ArrayList<int[]>();
+        for (int i = 0; i < intervals.length; ++i) {
+            int L = intervals[i][0], R = intervals[i][1];//当前区间
+            //当前区间的左端点与mergedList最后一个数组中的右端点进行比较
+            if (mergedList.size() == 0 || mergedList.get(mergedList.size() - 1)[1] < L) {
+                mergedList.add(new int[]{L, R});
+            } else {
+                mergedList.get(mergedList.size() - 1)[1] = Math.max(mergedList.get(mergedList.size() - 1)[1], R);
+            }
+        }
+        return mergedList.toArray(new int[mergedList.size()][]);
+    }
+
+    public static void main(String[] args) {
+        MergeInterval56 mergeInterval56 = new MergeInterval56();
+        int[][] intervals = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
+//        int[][] intervals = {{1, 2}, {3, 4}, {0, 1}};
+        int[][] res = mergeInterval56.merge(intervals);
+        for (int i = 0; i < res.length; i++) {
+            System.out.println(Arrays.toString(res[i]));
+        }
+    }
+
 }

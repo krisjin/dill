@@ -1,5 +1,9 @@
 package dill.leet;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * 插入区间
  * <pre>
@@ -30,5 +34,34 @@ package dill.leet;
  */
 public class InsertInterval57 {
 
+    public int[][] insert(int[][] intervals, int[] newInterval) {
+        int[][] newArr = new int[intervals.length + 1][2];
+        newArr[0] = newInterval;
+        for (int i = 0; i < intervals.length; i++)
+            System.arraycopy(intervals[i], 0, newArr[i + 1], 0, intervals[i].length);
+        Arrays.sort(newArr, (v1, v2) -> v1[0] - v2[0]);
 
+        List<int[]> mergedList = new ArrayList<int[]>();
+        for (int i = 0; i < newArr.length; ++i) {
+            int L = newArr[i][0], R = newArr[i][1];//当前区间
+            //当前区间的左端点与mergedList最后一个数组中的右端点进行比较
+            if (mergedList.size() == 0 || mergedList.get(mergedList.size() - 1)[1] < L) {
+                mergedList.add(new int[]{L, R});
+            } else {
+                mergedList.get(mergedList.size() - 1)[1] = Math.max(mergedList.get(mergedList.size() - 1)[1], R);
+            }
+        }
+        return mergedList.toArray(new int[mergedList.size()][]);
+    }
+
+    public static void main(String[] args) {
+        InsertInterval57 mergeInterval56 = new InsertInterval57();
+        int[][] intervals = {{1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16}};
+        int[] insertVal = {4, 8};
+//        int[][] intervals = {{1, 2}, {3, 4}, {0, 1}};
+        int[][] res = mergeInterval56.insert(intervals, insertVal);
+        for (int i = 0; i < res.length; i++) {
+            System.out.println(Arrays.toString(res[i]));
+        }
+    }
 }
