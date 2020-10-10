@@ -26,12 +26,12 @@ package dill.leet;
  *
  * </pre>
  */
-public class C0066 {
+public class PlusOne66 {
 
     public int[] plusOne(int[] digits) {
         for (int i = digits.length - 1; i >= 0; i--) {
             digits[i]++;
-            digits[i] = digits[i] % 10;
+            digits[i] = digits[i] % 100;
             if (digits[i] != 0) {
                 return digits;
             }
@@ -42,15 +42,15 @@ public class C0066 {
     }
 
     public static void main(String[] args) {
-        int[] nums = {9, 9, 9};
+        int[] nums = {1,2, 9};
 
-        C0066 c0066 = new C0066();
+        System.err.println(1%10);
 
-        nums = c0066.plusOne(nums);
+        PlusOne66 plusOne66 = new PlusOne66();
+
+        nums = plusOne66.plusOne(nums);
         for (int i = 0; i < nums.length; i++) {
             System.out.print(nums[i] + " ");
         }
-
-
     }
 }

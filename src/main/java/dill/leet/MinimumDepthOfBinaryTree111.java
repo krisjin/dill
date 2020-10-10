@@ -5,7 +5,7 @@ import dill.base.TreeNode;
 /**
  * User:krisjin
  * Date:2019-11-04
- *
+ * 二叉树的最小深度
  * <pre>
  * 给定一个二叉树，找出其最小深度。
  *
@@ -27,7 +27,7 @@ import dill.base.TreeNode;
  * 链接：https://leetcode-cn.com/problems/minimum-depth-of-binary-tree
  * </pre>
  */
-public class C0111 {
+public class MinimumDepthOfBinaryTree111 {
 
     public int minDepth(TreeNode root) {
         if (root == null) {

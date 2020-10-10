@@ -5,17 +5,15 @@ import dill.base.ListNode;
 /**
  * @author krisjin on 2019/10/18
  * 合并两个有序链表
- * https://leetcode-cn.com/problems/merge-two-sorted-lists/solution/he-bing-liang-ge-you-xu-lian-biao-by-leetcode/
+ * https://leetcode-cn.com/problems/merge-two-sorted-lists/solution/
  * <pre>
- *   将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 
- *
+ *   将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
  *   示例：
- *
  *   输入：1->2->4, 1->3->4
  *   输出：1->1->2->3->4->4
- *   </pre>
+ * </pre>
  */
-public class C0021 {
+public class MergeTwoSortedList21 {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         // maintain an unchanging reference to node ahead of the return node.
         ListNode preHead = new ListNode(3);
@@ -24,10 +22,10 @@ public class C0021 {
         while (l1 != null && l2 != null) {
             if (l1.val <= l2.val) {
                 prev.next = l1;
-                l1 = l1.next;
+                l1 = l1.next;//get next node
             } else {
                 prev.next = l2;
-                l2 = l2.next;
+                l2 = l2.next;//get next node
             }
             prev = prev.next;
         }
@@ -46,9 +44,9 @@ public class C0021 {
         node2.next = new ListNode(6);
         node2.next.next = new ListNode(9);
 
-        C0021 c0021 = new C0021();
+        MergeTwoSortedList21 mergeTwoSortedList21 = new MergeTwoSortedList21();
 
-        ListNode l = c0021.mergeTwoLists(node1, node2);
+        ListNode l = mergeTwoSortedList21.mergeTwoLists(node1, node2);
 
         System.out.printf(l.val + " ");
         while (l.next != null) {
