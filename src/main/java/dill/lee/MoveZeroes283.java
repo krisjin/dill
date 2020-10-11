@@ -12,11 +12,11 @@ package dill.lee;
  * 必须在原数组上操作，不能拷贝额外的数组。
  * 尽量减少操作次数
  */
-public class C0283 {
+public class MoveZeroes283 {
 
 
     public void moveZeros(int[] nums) {
-        int j = 0;
+        int j = 0;//维护有值的索引
         for (int i = 0; i < nums.length; ++i) {
             if (nums[i] != 0) {
                 nums[j] = nums[i];
@@ -30,14 +30,11 @@ public class C0283 {
 
     public static void main(String[] args) {
         int[] nums = {0, 1, 0, 3, 12};
-
-        C0283 c0283 = new C0283();
-        c0283.moveZeros(nums);
+        MoveZeroes283 moveZeroes283 = new MoveZeroes283();
+        moveZeroes283.moveZeros(nums);
 
         for (int i = 0; i < nums.length; ++i) {
             System.out.printf(nums[i] + " ");
         }
     }
-
-
 }

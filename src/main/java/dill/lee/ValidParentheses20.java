@@ -40,11 +40,11 @@ import java.util.Stack;
  * 输出: true
  * </pre>
  */
-public class IsValidBrackets20 {
+public class ValidParentheses20 {
     private HashMap<Character, Character> mappings;
 
     // Initialize hash map with mappings. This simply makes the code easier to read.
-    public IsValidBrackets20() {
+    public ValidParentheses20() {
         this.mappings = new HashMap<Character, Character>();
         this.mappings.put(')', '(');
         this.mappings.put('}', '{');
@@ -79,9 +79,8 @@ public class IsValidBrackets20 {
 
     public static void main(String[] args) {
         String s = "{[]}}}}";
-        IsValidBrackets20 isValidBrackets20 = new IsValidBrackets20();
-        System.err.println(isValidBrackets20.isValid(s));
+        ValidParentheses20 validParentheses20 = new ValidParentheses20();
+        System.err.println(validParentheses20.isValid(s));
     }
-
 
 }
