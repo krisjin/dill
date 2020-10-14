@@ -45,7 +45,7 @@ import java.util.*;
  *
  * </pre>
  */
-public class C0127 {
+public class WordLadder127 {
 
 
     public static int ladderLength(String beginWord, String endWord, List<String> wordList) {
