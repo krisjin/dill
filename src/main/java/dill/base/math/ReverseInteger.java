@@ -17,23 +17,21 @@ package dill.base.math;
 public class ReverseInteger {
 
     public int reverse(int x) {
-        long res = 0;
+        int res = 0;
         while (x != 0) {
             // 每一次都在原来结果的基础上变大10倍，再加上余数
-            res = res * 10 + Long.valueOf(x % 10);
+            res = res * 10 + x % 10;
             //对x不停除10
             x = x / 10;
         }
         if (res < Integer.MIN_VALUE || res > Integer.MAX_VALUE) return 0;
-        return (int) res;
+        return res;
     }
 
     public static void main(String[] args) {
         ReverseInteger reverseInteger = new ReverseInteger();
-        int ret = reverseInteger.reverse(123);
-//        int ret2 = reverseInteger.reverse(-123);
-//        System.out.println(ret);
-//        System.out.println(ret2);
+        int ret = reverseInteger.reverse(-4532);
+        System.out.println(ret);
     }
 
 }
