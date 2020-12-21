@@ -1,5 +1,7 @@
 package dill.base.math;
 
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.Stack;
 
 /**
@@ -57,7 +59,7 @@ public class ReverseInteger {
             negative = "-";
             strX = strX.substring(1);
         }
-        Stack<Character> stack = new Stack();
+        Deque<Character> stack = new LinkedList();
 
         String result = negative;
         for (int i = 0; i < strX.length(); i++)
