@@ -14,11 +14,8 @@ import java.util.Map;
  * 所有在这个实现过程中，可以不可率Key重复的问题
  * <p/>
  * User : krisibm@163.com
- * Date: 2015/9/17
- * Time: 14:32
  */
 public class ContainsDuplicateII {
-
 
     public boolean containsNearbyDuplicate(int[] nums, int k) {
         if (nums == null || nums.length < 2) return false;
