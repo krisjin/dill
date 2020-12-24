@@ -24,7 +24,7 @@ import dill.base.TreeNode;
  *    15   7
  * 返回它的最小深度  2.
  *
- * 链接：https://leetcode-cn.com/problems/minimum-depth-of-binary-tree
+ * https://leetcode-cn.com/problems/minimum-depth-of-binary-tree
  * </pre>
  */
 public class MinimumDepthOfBinaryTree111 {

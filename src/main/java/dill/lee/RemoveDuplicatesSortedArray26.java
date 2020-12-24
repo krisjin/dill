@@ -40,7 +40,7 @@ package dill.lee;
  *      print(nums[i]);
  *  }
  *
- *  链接：https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array
+ *  https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array
  *  </pre>
  */
 public class RemoveDuplicatesSortedArray26 {

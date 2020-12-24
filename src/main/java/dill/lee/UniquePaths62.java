@@ -6,7 +6,7 @@ import java.util.Arrays;
  * User:krisjin
  * Date:2019-11-14
  * 不同路径
- * 链接：https://leetcode-cn.com/problems/unique-paths
+ * https://leetcode-cn.com/problems/unique-paths
  * <pre>
  * 一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为“Start” ）。
  *

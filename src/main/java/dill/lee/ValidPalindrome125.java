@@ -18,7 +18,7 @@ package dill.lee;
  * 输入: "race a car"
  * 输出: false
  * <p>
- * 链接：https://leetcode-cn.com/problems/valid-palindrome
+ * https://leetcode-cn.com/problems/valid-palindrome
  */
 public class ValidPalindrome125 {
 }

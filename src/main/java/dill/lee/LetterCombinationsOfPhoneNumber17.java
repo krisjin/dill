@@ -23,7 +23,7 @@ import java.util.Map;
  * 说明:
  * 尽管上面的答案是按字典序排列的，但是你可以任意选择答案输出的顺序。
  *
- * 链接：https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number
+ * https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number
  * </pre>
  */
 public class LetterCombinationsOfPhoneNumber17 {

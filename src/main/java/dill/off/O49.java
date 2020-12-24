@@ -17,7 +17,7 @@ package dill.off;
  * 1 是丑数。
  * n 不超过1690。
  *
- * 链接：https://leetcode-cn.com/problems/chou-shu-lcof
+ * https://leetcode-cn.com/problems/chou-shu-lcof
  * </pre>
  *
  * @User krisjin

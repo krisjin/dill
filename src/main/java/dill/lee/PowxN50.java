@@ -25,7 +25,7 @@ package dill.lee;
  * -100.0 < x < 100.0
  * n 是 32 位有符号整数，其数值范围是 [−231, 231 − 1] 。
  *
- * 链接：https://leetcode-cn.com/problems/powx-n
+ * https://leetcode-cn.com/problems/powx-n
  * </pre>
  */
 public class PowxN50 {

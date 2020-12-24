@@ -2,7 +2,7 @@ package dill.lee;
 
 /**
  * 扫雷游戏
- * 链接：https://leetcode-cn.com/problems/minesweeper
+ * https://leetcode-cn.com/problems/minesweeper
  * <pre>
  *                 让我们一起来玩扫雷游戏！
  *

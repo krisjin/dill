@@ -4,7 +4,7 @@ package dill.lee;
  * User:krisjin
  * Date:2019-10-18
  * 无重复字符的最长子串
- * 链接：https://leetcode-cn.com/problems/longest-substring-without-repeating-characters
+ * https://leetcode-cn.com/problems/longest-substring-without-repeating-characters
  * <pre>
  * 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
  *

@@ -25,7 +25,7 @@ import java.util.PriorityQueue;
  * 0 <= k <= arr.length <= 10000
  * 0 <= arr[i] <= 10000
  *
- * 链接：https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof
+ * https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof
  *
  * sort
  * </pre>

@@ -4,7 +4,7 @@ package dill.lee;
  * User:krisjin
  * Date:2019-11-03
  * x 的平方根
- * 链接：https://leetcode-cn.com/problems/sqrtx
+ * https://leetcode-cn.com/problems/sqrtx
  * <pre>
  * 实现 int sqrt(int x) 函数。
  *

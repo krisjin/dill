@@ -33,7 +33,7 @@ import java.util.List;
  * ]
  * 解释: 4 皇后问题存在两个不同的解法。
  *
- * 链接：https://leetcode-cn.com/problems/n-queens
+ * https://leetcode-cn.com/problems/n-queens
  * </pre>
  */
 public class NQueens51 {

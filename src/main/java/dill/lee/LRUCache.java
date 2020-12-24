@@ -31,7 +31,7 @@ import java.util.Map;
  * cache.get(3);       // 返回  3
  * cache.get(4);       // 返回  4
  *
- * 链接：https://leetcode-cn.com/problems/lru-cache
+ * https://leetcode-cn.com/problems/lru-cache
  */
 public class LRUCache extends LinkedHashMap<Integer, Integer> {
     private int capacity;

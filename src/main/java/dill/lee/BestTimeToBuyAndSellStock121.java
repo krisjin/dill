@@ -4,7 +4,7 @@ package dill.lee;
  * User:krisjin
  * Date:2019-11-18
  * 买卖股票的最佳时机
- * 链接：https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock
+ * https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock
  * <pre>
  * 给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
  *

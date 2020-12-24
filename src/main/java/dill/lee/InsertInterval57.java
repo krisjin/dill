@@ -26,7 +26,7 @@ import java.util.List;
  *
  * 注意：输入类型已在 2019 年 4 月 15 日更改。请重置为默认代码定义以获取新的方法签名。
  *
- * 链接：https://leetcode-cn.com/problems/insert-interval
+ * https://leetcode-cn.com/problems/insert-interval
  * </pre>
  *
  * @User krisjin

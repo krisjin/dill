@@ -4,7 +4,7 @@ package dill.lee;
  * User:krisjin
  * Date:2019-11-05
  * 按序打印
- * 链接：https://leetcode-cn.com/problems/print-in-order
+ * https://leetcode-cn.com/problems/print-in-order
  * <pre>
  *  我们提供了一个类：
  *

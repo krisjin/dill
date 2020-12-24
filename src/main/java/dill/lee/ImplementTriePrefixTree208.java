@@ -4,7 +4,7 @@ package dill.lee;
  * User:krisjin
  * Date:2019-11-06
  * 实现 Trie (前缀树)
- * 链接：https://leetcode-cn.com/problems/implement-trie-prefix-tree
+ * https://leetcode-cn.com/problems/implement-trie-prefix-tree
  *
  *
  * <pre>

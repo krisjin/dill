@@ -28,7 +28,7 @@ package dill.lee;
  * 输出: [1,2,3,4,8,12,11,10,9,5,6,7]
  *
  * 来源：力扣（LeetCode）
- * 链接：https://leetcode-cn.com/problems/spiral-matrix
+ * https://leetcode-cn.com/problems/spiral-matrix
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  *
  * </pre>

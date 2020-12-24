@@ -31,7 +31,7 @@ package dill.lee;
  * 你不需要考虑数组中超出新长度后面的元素。
  *
  * 来源：力扣（LeetCode）
- * 链接：https://leetcode-cn.com/problems/remove-element
+ * https://leetcode-cn.com/problems/remove-element
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  * </pre>
  * <p/>

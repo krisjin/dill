@@ -4,7 +4,7 @@ package dill.lee;
  * User:krisjin
  * Date:2019-11-01
  * 柠檬水找零
- * 链接：https://leetcode-cn.com/problems/lemonade-change
+ * https://leetcode-cn.com/problems/lemonade-change
  * <pre>
  * 在柠檬水摊上，每一杯柠檬水的售价为 5 美元。
  *

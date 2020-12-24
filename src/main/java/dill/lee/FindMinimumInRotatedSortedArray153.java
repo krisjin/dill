@@ -22,7 +22,7 @@ package dill.lee;
  * 输入: [4,5,6,7,0,1,2]
  * 输出: 0
  *
- * 链接：https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array
+ * https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array
  * </pre>
  */
 public class FindMinimumInRotatedSortedArray153 {

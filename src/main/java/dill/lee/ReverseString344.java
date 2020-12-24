@@ -4,7 +4,7 @@ package dill.lee;
  * User:krisjin
  * Date:2019-11-07
  * 反转字符串
- * 链接：https://leetcode-cn.com/problems/reverse-string
+ * https://leetcode-cn.com/problems/reverse-string
  * <pre>
  * 编写一个函数，其作用是将输入的字符串反转过来。输入字符串以字符数组 char[] 的形式给出。
  *

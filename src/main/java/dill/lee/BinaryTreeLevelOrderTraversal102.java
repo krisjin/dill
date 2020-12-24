@@ -27,7 +27,7 @@ import java.util.*;
  *   [15,7]
  * ]
  *
- * 链接：https://leetcode-cn.com/problems/binary-tree-level-order-traversal
+ * https://leetcode-cn.com/problems/binary-tree-level-order-traversal
  * </pre>
  */
 public class BinaryTreeLevelOrderTraversal102 {

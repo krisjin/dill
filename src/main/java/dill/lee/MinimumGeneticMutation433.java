@@ -7,7 +7,7 @@ import java.util.*;
  * Date:2019-10-31
  * 最小基因变化
  * <p>
- * 链接：https://leetcode-cn.com/problems/minimum-genetic-mutation
+ * https://leetcode-cn.com/problems/minimum-genetic-mutation
  *
  * <pre>
  * 一条基因序列由一个带有8个字符的字符串表示，其中每个字符都属于 "SimHash", "C", "G", "T"中的任意一个。

@@ -4,7 +4,7 @@ package dill.lee;
  * User:krisjin
  * Date:2019-11-03
  * 跳跃游戏
- * 链接：https://leetcode-cn.com/problems/jump-game
+ * https://leetcode-cn.com/problems/jump-game
  * <pre>
  * 给定一个非负整数数组，你最初位于数组的第一个位置。
  *

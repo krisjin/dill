@@ -21,7 +21,7 @@ import java.util.List;
  * ]
  *
  * 来源：力扣（LeetCode）
- * 链接：https://leetcode-cn.com/problems/generate-parentheses
+ * https://leetcode-cn.com/problems/generate-parentheses
  * </pre>
  */
 public class GenerateParentheses22 {

@@ -21,7 +21,7 @@ package dill.lee;
  * 输入数组中的所有数字都在32位整数的表示范围内。
  *
  *
- * 链接：https://leetcode-cn.com/problems/reverse-pairs
+ * https://leetcode-cn.com/problems/reverse-pairs
  * </pre>
  *
  * @User krisjin

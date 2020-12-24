@@ -18,7 +18,7 @@ package dill.lee;
  * 输入: k = 3, n = 9
  * 输出: [[1,2,6], [1,3,5], [2,3,4]]
  *
- * 链接：https://leetcode-cn.com/problems/combination-sum-iii
+ * https://leetcode-cn.com/problems/combination-sum-iii
  * </pre>
  *
  * @User krisjin

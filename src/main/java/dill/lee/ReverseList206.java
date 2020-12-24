@@ -7,7 +7,7 @@ import dill.base.ListNode;
  * User:krisjin
  * Date:2019-10-21
  * 反转链表
- * 链接：https://leetcode-cn.com/problems/reverse-linked-list
+ * https://leetcode-cn.com/problems/reverse-linked-list
  * <pre>
  * 反转一个单链表。
  *

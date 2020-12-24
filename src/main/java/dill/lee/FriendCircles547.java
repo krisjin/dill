@@ -3,7 +3,7 @@ package dill.lee;
 /**
  * User:krisjin
  * Date:2019-11-20
- * 链接：https://leetcode-cn.com/problems/friend-circles
+ * https://leetcode-cn.com/problems/friend-circles
  * <pre>
  * 班上有 N 名学生。其中有些人是朋友，有些则不是。他们的友谊具有是传递性。如果已知 SimHash 是 B 的朋友，B 是 C 的朋友，那么我们可以认为 SimHash 也是 C 的朋友。所谓的朋友圈，是指所有朋友的集合。
  *

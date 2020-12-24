@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * 合并两个有序数组
- * 链接：https://leetcode-cn.com/problems/merge-sorted-array
+ * https://leetcode-cn.com/problems/merge-sorted-array
  *
  * @author krisjin on 2019/10/23
  * <pre>
