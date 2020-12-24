@@ -24,7 +24,7 @@ package dill.lee;
 public class PlusOne66 {
 
     /**
-     * 1. 遍历整数数组，对每个数组进行处理
+     * 1. 遍历整数数组，对每个数进行处理
      * 2. 先将数组中的一个整数+1
      * 3. 再将当前的整数取模(i%10),如果当前数要是进位的话，那么取余数为0，不是的话，返回原值
      * 4. 判断当前整数值是否为0，就继续循环操作，从步骤2开始，这里面有个细节就是，每次遍历中先对当前值+1
@@ -55,7 +55,6 @@ public class PlusOne66 {
                 return digits;
             }
         }
-        //如果所有位都是进位，则长度+1
         digits = new int[digits.length + 1];
         digits[0] = 1;
         return digits;

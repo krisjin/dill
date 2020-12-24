@@ -1,8 +1,7 @@
-package dill.base.math;
+package dill.lee;
 
 import java.util.Deque;
 import java.util.LinkedList;
-import java.util.Stack;
 
 /**
  * 难度：简单
@@ -14,8 +13,7 @@ import java.util.Stack;
  * <p/>
  * 对反转的数值，总是对10取模，这样就每次都是获取最后一个数字，每次的结果乘以10加上余数就进行了一次反转。
  * 再对数值除以10，得到一个整数数进行下次取模加值。
- * User : krisibm@163.com
- * Date: 2015/9/17
+ * https://leetcode-cn.com/problems/reverse-integer/
  */
 public class ReverseInteger {
 
