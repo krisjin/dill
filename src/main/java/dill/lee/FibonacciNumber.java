@@ -13,8 +13,6 @@ package dill.lee;
  * F(N) = F(N - 1) + F(N - 2), 其中 N > 1.
  * 给定 N，计算 F(N)。
  *
- *  
- *
  * 示例 1：
  *
  * 输入：2
@@ -31,20 +29,20 @@ package dill.lee;
  * 输出：3
  * 解释：F(4) = F(3) + F(2) = 2 + 1 = 3.
  *  
- *
  * 提示：
  *
  * 0 ≤ N ≤ 30
- *
  * </pre>
  */
-public class FibonacciNumber509 {
+public class FibonacciNumber {
 
+    public static int fib(int n) {
+        int[] mem = new int[n * 2];
+        return fib(n, mem);
+    }
 
     public static int fib(int n, int[] memo) {
-
-        if (n <= 1) return n;
-
+        if (n < 2) return n;
         if (memo[n] == 0) {
             memo[n] = fib(n - 1, memo) + fib(n - 2, memo);
         }
@@ -53,21 +51,13 @@ public class FibonacciNumber509 {
 
 
     public static int fib1(int n) {
-
-        if (n <= 1) return n;
-
+        if (n < 2) return n;
         return fib1(n - 1) + fib1(n - 2);
     }
 
 
     public static void main(String[] args) {
-        int n = 30;
-        int[] mem = new int[n * 2];
-        long st = System.currentTimeMillis();
-
-        int n1 = fib(n, mem);
-
-
-        System.err.println(System.currentTimeMillis() - st + " :" + n1);
+        int n1 = fib1(2);
+        System.err.println(n1);
     }
 }

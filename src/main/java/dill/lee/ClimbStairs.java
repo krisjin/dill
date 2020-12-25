@@ -31,7 +31,7 @@ package dill.lee;
  *
  * </pre>
  */
-public class ClimbStairs70 {
+public class ClimbStairs {
 
 
     public static int climbStairs(int n) {
