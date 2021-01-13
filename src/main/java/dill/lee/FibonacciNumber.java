@@ -56,6 +56,11 @@ public class FibonacciNumber {
     }
 
 
+    public static int fib2(int n) {
+        if (n < 2) return n;
+        return 0;
+    }
+
     public static void main(String[] args) {
         int n1 = fib1(2);
         System.err.println(n1);
