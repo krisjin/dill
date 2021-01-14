@@ -24,8 +24,10 @@ public class BufferTest {
         //使用allocate分配指定容量大小，大小设置完成后，就不能修改。
         ByteBuffer byteBuffer = ByteBuffer.allocate(6);
 
-        //使用wrap包装器，传入一个初始化的字节数组，
+        //使用wrap包装器，传入一个初始化的字节数组
         ByteBuffer.wrap(buff);
+
+        ByteBuffer.allocateDirect(3);
 
     }
 
