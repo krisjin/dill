@@ -5,6 +5,7 @@ import java.nio.CharBuffer;
 
 
 /**
+ * 循序渐进
  * User:krisjin
  * Date:2020-08-01
  */
@@ -15,6 +16,20 @@ public class BufferTest {
         limitTest();
     }
 
+    /**
+     * 创建buffer具体实现有哪些方式
+     */
+    public static void createBuffer() {
+        byte[] buff = new byte[2];
+        //使用allocate分配指定容量大小，大小设置完成后，就不能修改。
+        ByteBuffer byteBuffer = ByteBuffer.allocate(6);
+
+        //使用wrap包装器，传入一个初始化的字节数组，
+        ByteBuffer.wrap(buff);
+
+    }
+
+
     public static void byteBufferTest() {
         println("----------------------- buffer crate start -----------------------");
         byte[] bytes = new byte[]{1, 2, 3, 4};
@@ -22,7 +37,7 @@ public class BufferTest {
         ByteBuffer byteBuffer = ByteBuffer.wrap(bytes);
 //        ByteBuffer byteBuffer = ByteBuffer.allocate(4);
 
-        byteBuffer.put((byte)1);//必须要put数据
+        byteBuffer.put((byte) 1);//必须要put数据
 
         String byteBufferName = byteBuffer.getClass().getName();
         println(byteBufferName);
