@@ -5,7 +5,8 @@ import java.nio.CharBuffer;
 
 
 /**
- * 循序渐进
+ * 1. 简要概述，为什么需要buffer
+ * NIO的buffer就是为了提升性能
  * User:krisjin
  * Date:2020-08-01
  */
@@ -13,7 +14,6 @@ public class BufferTest {
 
     public static void main(String[] args) {
         byteBufferTest();
-        limitTest();
     }
 
     /**
@@ -31,55 +31,86 @@ public class BufferTest {
 
     }
 
-
     public static void byteBufferTest() {
-        println("----------------------- buffer crate start -----------------------");
-        byte[] bytes = new byte[]{1, 2, 3, 4};
-        //创建并为写模式，position就是写数据的位置操作
+        byte[] bytes = new byte[]{1, 2, 3, 4, 5};
+
+        //创建缓冲区对象
         ByteBuffer byteBuffer = ByteBuffer.wrap(bytes);
+
+        println("初始操作：");
+        println("position=" + byteBuffer.position());
+        println("capacity=" + byteBuffer.capacity());
+        println("limit=" + byteBuffer.limit());
+        println("-------------------------------------------------------------------");
+
+
 //        ByteBuffer byteBuffer = ByteBuffer.allocate(4);
 
-        byteBuffer.put((byte) 1);//必须要put数据
+        //put数据
+        byteBuffer.put((byte) 1);
+        byteBuffer.put((byte) 2);
 
-        String byteBufferName = byteBuffer.getClass().getName();
-        println(byteBufferName);
+        println("put数据：");
         println("position=" + byteBuffer.position());
         println("capacity=" + byteBuffer.capacity());
         println("limit=" + byteBuffer.limit());
-        println("----------------------- buffer crate  end ----------------------- \n");
+        println("-------------------------------------------------------------------");
 
-        byteBuffer.flip();//flip切换为写模式
-        println("-------------------------flip after------------------------------");
+        println(byteBuffer.get(1));//我在这里读并不会报错
+        //切换为读模式
+        byteBuffer.flip();
+        println("flip切换读：");
         println("position=" + byteBuffer.position());
         println("capacity=" + byteBuffer.capacity());
         println("limit=" + byteBuffer.limit());
+        println("-------------------------------------------------------------------");
 
-        byte b = byteBuffer.get();
-        println(b);
+        //切换为写模式
+        byteBuffer.clear();
+        println("clear切换为写模式：");
+        println("position=" + byteBuffer.position());
+        println("capacity=" + byteBuffer.capacity());
+        println("limit=" + byteBuffer.limit());
+        println("-------------------------------------------------------------------");
+
+
+        //重新put数据,并在index=2时 mark一下
+        byteBuffer.put((byte) 1);
+        byteBuffer.put((byte) 2);
+        byteBuffer.mark();
+        byteBuffer.limit(4);
+        byteBuffer.put((byte) 3);
+        byteBuffer.put((byte) 4);
+
+        println("重新put数据,并在index=2时 mark一下,limit(4)：");
+        println("position=" + byteBuffer.position());
+        println("capacity=" + byteBuffer.capacity());
+        println("limit=" + byteBuffer.limit());
+        println("-------------------------------------------------------------------");
+
+        //reset 从标记位置开始读
+        byteBuffer.reset();
+        println("reset buffer:");
+        println("position=" + byteBuffer.position());
+        println("capacity=" + byteBuffer.capacity());
+        println("limit=" + byteBuffer.limit());
+        println("-------------------------------------------------------------------");
+
+        println("get()数据,这里连续取了两次值，在取值就报错了");
+        println(byteBuffer.get());
+        println(byteBuffer.get());
+        println("-------------------------------------------------------------------");
+
+
+        //rewind
+        byteBuffer.rewind();
+        println("rewind: 把position设为0,在读一遍");
+        println("position=" + byteBuffer.position());
+        println("capacity=" + byteBuffer.capacity());
+        println("limit=" + byteBuffer.limit());
+        println("-------------------------------------------------------------------");
+
     }
-
-    public static void limitTest() {
-        println("----------------------- limit start -----------------------");
-        char[] chars = new char[6];
-        CharBuffer charBuffer = CharBuffer.allocate(6);
-        println(charBuffer.getClass().getName());
-//        CharBuffer charBuffer = CharBuffer.wrap(chars);
-
-
-//        charBuffer.limit(3);
-
-//        charBuffer.put('0');
-        charBuffer.put(1, '1');
-//        charBuffer.put(2, '2');
-//        charBuffer.put(3, '3');
-        println("T1 capacity=" + charBuffer.capacity() + ", limit=" + charBuffer.limit() + " ,position=" + charBuffer.position());
-        charBuffer.flip();
-        println("T2 capacity=" + charBuffer.capacity() + ", limit=" + charBuffer.limit() + " ,position=" + charBuffer.position());
-
-
-        println("----------------------- limit end -----------------------");
-    }
-
 
     private static void println(Object obj) {
         System.out.println(obj);
