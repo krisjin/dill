@@ -41,8 +41,7 @@ public class BufferTest {
         println("position=" + byteBuffer.position());
         println("capacity=" + byteBuffer.capacity());
         println("limit=" + byteBuffer.limit());
-        println("-------------------------------------------------------------------");
-
+        println("----------------------------------------------");
 
 //        ByteBuffer byteBuffer = ByteBuffer.allocate(4);
 
@@ -54,7 +53,7 @@ public class BufferTest {
         println("position=" + byteBuffer.position());
         println("capacity=" + byteBuffer.capacity());
         println("limit=" + byteBuffer.limit());
-        println("-------------------------------------------------------------------");
+        println("----------------------------------------------");
 
         println(byteBuffer.get(1));//我在这里读并不会报错
         //切换为读模式
@@ -63,7 +62,7 @@ public class BufferTest {
         println("position=" + byteBuffer.position());
         println("capacity=" + byteBuffer.capacity());
         println("limit=" + byteBuffer.limit());
-        println("-------------------------------------------------------------------");
+        println("----------------------------------------------");
 
         //切换为写模式
         byteBuffer.clear();
@@ -71,7 +70,7 @@ public class BufferTest {
         println("position=" + byteBuffer.position());
         println("capacity=" + byteBuffer.capacity());
         println("limit=" + byteBuffer.limit());
-        println("-------------------------------------------------------------------");
+        println("----------------------------------------------");
 
 
         //重新put数据,并在index=2时 mark一下
@@ -86,7 +85,7 @@ public class BufferTest {
         println("position=" + byteBuffer.position());
         println("capacity=" + byteBuffer.capacity());
         println("limit=" + byteBuffer.limit());
-        println("-------------------------------------------------------------------");
+        println("----------------------------------------------");
 
         //reset 从标记位置开始读
         byteBuffer.reset();
@@ -94,12 +93,12 @@ public class BufferTest {
         println("position=" + byteBuffer.position());
         println("capacity=" + byteBuffer.capacity());
         println("limit=" + byteBuffer.limit());
-        println("-------------------------------------------------------------------");
+        println("----------------------------------------------");
 
         println("get()数据,这里连续取了两次值，在取值就报错了");
         println(byteBuffer.get());
         println(byteBuffer.get());
-        println("-------------------------------------------------------------------");
+        println("----------------------------------------------");
 
 
         //rewind
@@ -108,7 +107,7 @@ public class BufferTest {
         println("position=" + byteBuffer.position());
         println("capacity=" + byteBuffer.capacity());
         println("limit=" + byteBuffer.limit());
-        println("-------------------------------------------------------------------");
+        println("----------------------------------------------");
 
     }
 
