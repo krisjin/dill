@@ -14,7 +14,7 @@ import java.util.Stack;
  * https://blog.csdn.net/jackey_jk/article/details/51033615
  * https://leetcode-cn.com/problems/binary-tree-inorder-traversal
  * <pre>
- * 给定一个二叉树，返回它的中序 遍历。
+ * 给定一个二叉树，返回它的中序遍历。
  *
  * 示例:
  *
@@ -26,7 +26,7 @@ import java.util.Stack;
  *    3
  *
  * 输出: [1,3,2]
- * 进阶: 递归算法很简单，你可以通过迭代算法完成吗？
+ * 进阶:递归算法很简单，你可以通过迭代算法完成吗？
  * </pre>
  */
 public class BinaryTreeInorderTraversal94 {
