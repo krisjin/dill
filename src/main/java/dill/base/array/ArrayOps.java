@@ -33,6 +33,10 @@ public class ArrayOps {
         return avg;
     }
 
+    /**
+     * int 数组反转,使用numArr[N - 1 - i] 从数组尾部与数据头部进行交换
+     * @param numArr
+     */
     public static void reverse(int numArr[]) {
         int N = numArr.length;
         for (int i = 0; i < N / 2; i++) {
