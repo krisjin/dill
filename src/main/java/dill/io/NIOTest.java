@@ -11,7 +11,6 @@ import java.util.Set;
 /**
  * User:krisjin
  * Date:2019/4/24
- *  
  */
 public class NIOTest {
     ServerSocketChannel ssc = null;

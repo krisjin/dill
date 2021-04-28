@@ -178,7 +178,7 @@ public class SimHash {
         hash1.subByDistance(hash1, 3);
 
         // 删除首句话，并加入两个干扰串
-        s = "传统的 hash 算法只负责将原始内容尽量均匀随机地映射为一个签名值，"+
+        s = "传统的 hash 算法只负责将原始内容尽量均匀随机地映射为一个签名值，" +
 
                 "原理上相当于伪随机数产生算法。产生的两个签名，如果相等，说明原始内容在一定概 率 下是相等的；"
                 + "如果不相等，除了说明原始内容不相等外，不再提供任何信息，因为即使原始内容只相差一个字节，"
@@ -205,7 +205,7 @@ public class SimHash {
 //        System.out.println("============================");
 
         int dis = hash1.getDistance(hash1.strSimHash, hash2.strSimHash);
-        System.err.println(System.currentTimeMillis()-st);
+        System.err.println(System.currentTimeMillis() - st);
 //        System.out.println(hash1.hammingDistance(hash2) + " " + dis);
 //        // 根据鸽巢原理（也成抽屉原理，见组合数学），如果两个签名的海明距离在 3 以内，它们必有一块签名subByDistance()完全相同。
 //        int dis2 = hash1.getDistance(hash1.strSimHash, hash3.strSimHash);

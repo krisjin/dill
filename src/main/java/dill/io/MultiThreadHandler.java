@@ -7,14 +7,10 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- *  多线程处理读写业务逻辑
- *
- * <pre>
- *     在处理业务逻辑，也就是获取到IO的读写事件之后，交由线程池来处理，这样可以减小主reactor的性能开销，从而更专注的做事件分发工作了，从而提升整个应用的吞吐
- * </pre>
+ * 多线程处理读写业务逻辑
+ * 在处理业务逻辑，也就是获取到IO的读写事件之后，交由线程池来处理，这样可以减小主reactor的性能开销，从而更专注的做事件分发工作了，从而提升整个应用的吞吐
  */
 public class MultiThreadHandler implements Runnable {
-
     public static final int READING = 0, WRITING = 1;
     int state;
     final SocketChannel socket;
