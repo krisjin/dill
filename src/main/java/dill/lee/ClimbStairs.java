@@ -6,8 +6,7 @@ package dill.lee;
  * 爬楼梯
  * https://leetcode-cn.com/problems/climbing-stairs/
  * <pre>
- *
- * 假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
+ * 假设你正在爬楼梯。需要 n阶你才能到达楼顶。
  *
  * 每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
  *
@@ -28,11 +27,9 @@ package dill.lee;
  * 1.  1 阶 + 1 阶 + 1 阶
  * 2.  1 阶 + 2 阶
  * 3.  2 阶 + 1 阶
- *
  * </pre>
  */
 public class ClimbStairs {
-
 
     public static int climbStairs(int n) {
         int[] memo = new int[n];
@@ -46,16 +43,9 @@ public class ClimbStairs {
         return climbStairs(i + 1, n, memo) + climbStairs(i + 2, n, memo);
     }
 
-    public static void main(String[] args) {
-        int i = climbStairsWithDp(4);
-        System.err.println(i);
-    }
-
-
     public static int climbStairsWithDp(int n) {
-        if (n == 1) {
-            return 1;
-        }
+        if (n == 1) return 1;
+
         int[] dp = new int[n + 1];
         dp[1] = 1;
         dp[2] = 2;
@@ -75,4 +65,11 @@ public class ClimbStairs {
         }
         return climbStairs(i + 1, n) + climbStairs(i + 2, n);
     }
+
+    public static void main(String[] args) {
+        int i = climbStairs(4);
+        System.err.println(i);
+    }
+
+
 }
