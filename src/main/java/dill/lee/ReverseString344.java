@@ -20,7 +20,6 @@ package dill.lee;
  *
  * 输入：["H","a","n","n","a","h"]
  * 输出：["h","a","n","n","a","H"]
- *
  * </pre>
  */
 public class ReverseString344 {
@@ -38,6 +37,11 @@ public class ReverseString344 {
         swap(start + 1, end - 1, s);
     }
 
+    /**
+     *
+     * 左右交换
+     * @param s
+     */
     public void reverseString2(char[] s) {
         int n = s.length;
         for (int left = 0, right = n - 1; left < right; left++, right--) {
