@@ -39,7 +39,8 @@ public class ReverseString344 {
 
     /**
      *
-     * 左右交换
+     * 左右交换,
+     * 初始left=0,right=n - 1，条件是left<right, left++ ,right--
      * @param s
      */
     public void reverseString2(char[] s) {
