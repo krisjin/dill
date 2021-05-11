@@ -63,4 +63,9 @@ public class SumOfThree15 {
         }
         return ans;
     }
+
+
+    public static void main(int[] args) {
+
+    }
 }
