@@ -5,15 +5,12 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * User:krisjin
- * Date:2019-10-18
  * 三数之和
  * https://leetcode-cn.com/problems/3sum
  * <pre>
  *  给你一个包含 n 个整数的数组nums，判断nums中是否存在三个元素 a，b，c ，使得a + b + c = 0 ？请你找出所有和为 0 且不重复的三元组。
  *
  * 注意：答案中不可以包含重复的三元组。
- *
  *
  * 示例 1：
  *
@@ -46,7 +43,7 @@ public class SumOfThree15 {
         Arrays.sort(nums); // 排序
         for (int i = 0; i < len; i++) {
             if (nums[i] > 0) break; // 如果当前数字大于0，则三数之和一定大于0，所以结束循环
-            if (i > 0 && nums[i] == nums[i - 1]) continue; // 去重
+            if (i > 0 && nums[i] == nums[i - 1]) continue; // 相邻去重
             int L = i + 1;
             int R = len - 1;
             while (L < R) {
@@ -68,10 +65,6 @@ public class SumOfThree15 {
     public static void main(String[] args) {
         int[] numArr = new int[]{-1, 0, 1, 2, -1, -4};
         List<List<Integer>> result = threeSum(numArr);
-        System.err.println(result);
-//        result.stream().forEach(l -> {
-//
-//        });
-
+        System.out.println(result);
     }
 }
