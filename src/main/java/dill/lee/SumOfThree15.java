@@ -65,7 +65,13 @@ public class SumOfThree15 {
     }
 
 
-    public static void main(int[] args) {
+    public static void main(String[] args) {
+        int[] numArr = new int[]{-1, 0, 1, 2, -1, -4};
+        List<List<Integer>> result = threeSum(numArr);
+        System.err.println(result);
+//        result.stream().forEach(l -> {
+//
+//        });
 
     }
 }
