@@ -1,7 +1,6 @@
 package dill;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * @User krisjin
@@ -36,7 +35,6 @@ public class A {
         u1.setName("zhang");
         u1.setDt("2021-12-11");
 
-
         User u2 = new User();
         u2.setAge(11);
         u2.setName("zhang");
@@ -62,16 +60,6 @@ public class A {
 
 
         userList.sort(Comparator.comparing(User::getDt));
-
-        System.err.println(userList.size());
-
-//        Map<String, List<User>> aa = userList.stream().collect(Collectors.groupingBy(User::getName));
-//
-//        aa.forEach((k,v) ->{
-//            System.err.println(k);
-//
-//        });
-
     }
 
     public static class User {
@@ -104,11 +92,8 @@ public class A {
         }
     }
 
-
     public static void main(String[] args) {
-test();
+        test();
     }
-
-
 
 }
