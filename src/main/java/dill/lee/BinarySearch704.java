@@ -2,8 +2,6 @@ package dill.lee;
 
 /**
  * 二分查找
- *
- * @author krisjin on 2019/5/9
  */
 public class BinarySearch704 {
 
@@ -35,7 +33,7 @@ public class BinarySearch704 {
 
     //二分查找模板
     public static int binarySearch(int[] nums, int target) {
-        int left = 0;
+        int left = 0;//从0开始
         int right = nums.length - 1; // 注意
 
         while (left <= right) {
