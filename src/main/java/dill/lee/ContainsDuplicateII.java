@@ -1,5 +1,7 @@
 package dill.lee;
 
+import java.util.HashMap;
+
 /**
  * https://leetcode-cn.com/problems/contains-duplicate-ii
  * <pre>
@@ -24,5 +26,30 @@ package dill.lee;
  */
 public class ContainsDuplicateII {
 
+    public static boolean containsNearbyDuplicate(int[] nums, int k) {
+        if (nums.length == 0) {
+            return false;
+        }
+        // hashmap
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            // 如果含有
+            if (map.containsKey(nums[i])) {
+                //判断是否小于K，如果小于等于则直接返回
+                int abs = Math.abs(i - map.get(nums[i]));
+                if (abs <= k) return true;//小于等于则返回
+            }
+            //更新索引，此时有两种情况，不存在，或者存在时，将后出现的索引保存
+            map.put(nums[i], i);
+        }
+        return false;
+    }
+
+
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3, 1, 2, 3};
+        boolean result = containsNearbyDuplicate(nums, 2);
+        System.err.println(result);
+    }
 
 }
