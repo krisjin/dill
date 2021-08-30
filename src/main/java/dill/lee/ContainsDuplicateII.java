@@ -21,6 +21,11 @@ import java.util.HashMap;
  * 输出: false
  *
  * </pre>
+ * 解析
+ * 1.现有条件 int nums[] 和 int k
+ * 2.设定数组数组中的两个索引i、j, 满足 nums[i] = num[j], 且i 和 j 差的绝对值 >= k
+ * 3.值相等是比较的数组元素的值，i - j>= k，比较的是索引值
+ * <p>
  * User: krisjin
  * Date: 2021/8/30
  */
@@ -30,10 +35,10 @@ public class ContainsDuplicateII {
         if (nums.length == 0) {
             return false;
         }
-        // hashmap
+
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            // 如果含有
+
             if (map.containsKey(nums[i])) {
                 //判断是否小于K，如果小于等于则直接返回
                 int abs = Math.abs(i - map.get(nums[i]));

@@ -14,8 +14,6 @@ import java.util.Set;
  * <p/>
  * <p/>
  * User : krisibm@163.com
- * Date: 2015/9/17
- * Time: 14:32
  */
 public class ContainsDuplicate217 {
 
