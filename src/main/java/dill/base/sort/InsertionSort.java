@@ -28,7 +28,6 @@ public class InsertionSort {
         int[] numberArr = {98, 87, 67, 99, 34, 32, 42, 13, 22, 55, 76};
 
         insertionSort(numberArr);
-
     }
 
 

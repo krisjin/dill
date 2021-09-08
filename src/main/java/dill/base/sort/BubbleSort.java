@@ -1,12 +1,5 @@
 package dill.base.sort;
 
-/**
- * 冒泡排序
- * <p/>
- * User : krisibm@163.com
- * Date: 2015/8/20
- * Time: 13:09
- */
 public final class BubbleSort {
 
     public static void sort(int[] nums) {
@@ -22,15 +15,12 @@ public final class BubbleSort {
         }
     }
 
-
     public static void main(String[] args) {
         int[] nums = {6, 5, 3, 1, 8, 7, 2, 4};
         sort(nums);
         for (int num : nums) {
             System.out.print(num + " ");
         }
-
     }
-
 
 }
