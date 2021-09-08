@@ -1,7 +1,5 @@
 package dill.lee;
 
-import dill.base.array.ContainsDuplicateIII;
-
 import java.util.SortedSet;
 import java.util.TreeSet;
 
@@ -65,11 +63,5 @@ public class ContainsDuplicateIII220 {
         return false;
     }
 
-    public static void main(String[] args) {
-        int[] arr = {7, 3, 4, 5, 1, 7, 6};
-        ContainsDuplicateIII containsDuplicateIII = new ContainsDuplicateIII();
-        boolean ret = containsDuplicateIII.containsNearbyAlmostDuplicate(arr, 3, 5);
-        System.out.println(ret);
 
-    }
 }
