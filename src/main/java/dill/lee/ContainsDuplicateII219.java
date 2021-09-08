@@ -1,8 +1,10 @@
 package dill.lee;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
+ * 存在重复元素 II
  * https://leetcode-cn.com/problems/contains-duplicate-ii
  * <pre>
  * 给定一个整数数组和一个整数k，判断数组中是否存在两个不同的索引i和j，使得nums [i] = nums [j]，并且 i 和 j的差的 绝对值 至多为 k。
@@ -20,16 +22,14 @@ import java.util.HashMap;
  * 输入: nums = [1,2,3,1,2,3], k = 2
  * 输出: false
  *
- * </pre>
+ *
  * 解析
  * 1.现有条件 int nums[] 和 int k
  * 2.设定数组数组中的两个索引i、j, 满足 nums[i] = num[j], 且i 和 j 差的绝对值 >= k
  * 3.值相等是比较的数组元素的值，i - j>= k，比较的是索引值
- * <p>
- * User: krisjin
- * Date: 2021/8/30
+ * </pre>
  */
-public class ContainsDuplicateII {
+public class ContainsDuplicateII219 {
 
     public static boolean containsNearbyDuplicate(int[] nums, int k) {
         if (nums.length == 0) {
@@ -46,6 +46,22 @@ public class ContainsDuplicateII {
             }
             //更新索引，此时有两种情况，不存在，或者存在时，将后出现的索引保存
             map.put(nums[i], i);
+        }
+        return false;
+    }
+
+
+    public static boolean containsNearbyDuplicate_2(int[] nums, int k) {
+        if (nums == null || nums.length < 2) return false;
+
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for (int i = 0; i < nums.length; i++) {
+            if (map.containsKey(nums[i])) {
+                int j = map.get(nums[i]);
+                if (i - j <= k) return true;
+            } else {
+                map.put(nums[i], i);
+            }
         }
         return false;
     }
