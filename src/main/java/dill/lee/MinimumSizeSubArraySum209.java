@@ -27,7 +27,7 @@ package dill.lee;
 public class MinimumSizeSubArraySum209 {
 
 
-    public int minSubArrayLen(int target, int[] nums) {
+    public static int minSubArrayLen(int target, int[] nums) {
         if (nums.length == 0) {
             return 0;
         }
@@ -51,6 +51,11 @@ public class MinimumSizeSubArraySum209 {
             }
         }
         return result == nums.length + 1 ? 0 : result;
+    }
+
+
+    public static void main(String[] args) {
+
     }
 
 
