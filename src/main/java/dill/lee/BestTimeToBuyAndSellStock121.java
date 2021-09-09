@@ -1,8 +1,6 @@
 package dill.lee;
 
 /**
- * User:krisjin
- * Date:2019-11-18
  * 买卖股票的最佳时机
  * https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock
  * <pre>

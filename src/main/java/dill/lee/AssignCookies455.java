@@ -1,8 +1,6 @@
 package dill.lee;
 
 /**
- * User:krisjin
- * Date:2019-11-03
  * 分发饼干
  * https://leetcode-cn.com/problems/assign-cookies
  * <pre>

@@ -26,9 +26,6 @@ import java.util.PriorityQueue;
  *
  * sort
  * </pre>
- *
- * @User krisjin
- * @date 2020/9/1
  */
 public class O40 {
 
