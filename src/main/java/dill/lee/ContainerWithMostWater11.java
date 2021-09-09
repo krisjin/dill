@@ -2,6 +2,8 @@ package dill.lee;
 
 /**
  * 盛最多水的容器
+ * https://leetcode-cn.com/problems/container-with-most-water
+ * <p>
  * <p>
  * 给定 n 个非负整数 a1，a2，...，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0)。
  * 找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。
@@ -12,11 +14,12 @@ package dill.lee;
  * <p>
  * 输入: [1,8,6,2,5,4,8,3,7]
  * 输出: 49
- * https://leetcode-cn.com/problems/container-with-most-water
  */
-public class MaxArea11 {
+public class ContainerWithMostWater11 {
+
+
     //暴力法
-    public int maxArea1(int[] b) {
+    public static int maxArea1(int[] b) {
         int max = 0;
         for (int i = 0; i < b.length - 1; ++i) {
             for (int j = i + 1; j < b.length; ++j) {
@@ -37,7 +40,7 @@ public class MaxArea11 {
      * @param height
      * @return
      */
-    public int maxArea_2(int[] height) {
+    public static int maxArea_2(int[] height) {
         int maxArea = 0, l = 0, r = height.length - 1;
         while (l < r) {
             maxArea = Math.max(maxArea, Math.min(height[l], height[r]) * (r - l));
@@ -49,7 +52,7 @@ public class MaxArea11 {
         return maxArea;
     }
 
-    public int maxArea(int[] container) {
+    public static int maxArea(int[] container) {
         int max = 0;
         for (int i = 0, j = container.length - 1; i < j; ) {
             int minHeight = container[i] < container[j] ? container[i++] : container[j--];
@@ -59,9 +62,8 @@ public class MaxArea11 {
     }
 
     public static void main(String[] args) {
-        MaxArea11 maxArea11 = new MaxArea11();
         int[] b = {1, 8, 6, 2, 5, 4, 8, 3, 7};
-        int maxArea = maxArea11.maxArea(b);
+        int maxArea = maxArea(b);
         System.err.println(maxArea);
     }
 }

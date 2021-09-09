@@ -1,26 +1,42 @@
-package dill.base.array;
+package dill.lee;
 
 /**
- * Problem:    Median of Two Sorted Arrays
- * Difficulty: Hard
- * Source:     http://leetcode.com/onlinejudge#question_4
- * Notes:
- * There are two sorted arrays SimHash and B of size m and n respectively.
- * Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
- * <p/>
- * Solution: 1. O(m+n)
- * 2. O(log(m+n))
- * <p/>
- * 寻找两个已排序数组的中位数，要求时间复杂度为 log(m+n).
- * <p/>
- * User : krisibm@163.com
- * Date: 2015/9/17
- * Time: 9:44
+ * 寻找两个正序数组的中位数
+ * https://leetcode-cn.com/problems/median-of-two-sorted-arrays
+ * https://leetcode.com/problems/median-of-two-sorted-arrays/
+ * <p>
+ * <pre>
+ * 给定两个大小分别为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。请你找出并返回这两个正序数组的 中位数 。
+ *
+ * 示例 1：
+ *
+ * 输入：nums1 = [1,3], nums2 = [2]
+ * 输出：2.00000
+ * 解释：合并数组 = [1,2,3] ，中位数 2
+ * 示例 2：
+ *
+ * 输入：nums1 = [1,2], nums2 = [3,4]
+ * 输出：2.50000
+ * 解释：合并数组 = [1,2,3,4] ，中位数 (2 + 3) / 2 = 2.5
+ * 示例 3：
+ *
+ * 输入：nums1 = [0,0], nums2 = [0,0]
+ * 输出：0.00000
+ * 示例 4：
+ *
+ * 输入：nums1 = [], nums2 = [1]
+ * 输出：1.00000
+ * 示例 5：
+ *
+ * 输入：nums1 = [2], nums2 = []
+ * 输出：2.00000
+ *
+ * </pre>
  */
-public class MedianOfTwoSortedArrays {
+public class MedianOfTwoSortedArrays4 {
 
 
-    public double findMedianSortedArrays(int[] a, int[] b) {
+    public static double findMedianSortedArrays(int[] a, int[] b) {
         int aIndex = 0;
         int bIndex = 0;
 
@@ -59,10 +75,13 @@ public class MedianOfTwoSortedArrays {
             }
         }
 
-        if ((total & 1) == 0) //偶数个
+        //偶数个
+        if ((total & 1) == 0) {
             return (prev + last) / 2.0;
-        else //奇数个
+        } else {//奇数个
             return last;
+        }
+
     }
 
 
@@ -70,8 +89,7 @@ public class MedianOfTwoSortedArrays {
         int[] a = {1};
         int[] b = {2, 4};
 
-        MedianOfTwoSortedArrays medianOfTwoSortedArrays = new MedianOfTwoSortedArrays();
-        double median = medianOfTwoSortedArrays.findMedianSortedArrays(a, b);
+        double median = findMedianSortedArrays(a, b);
         System.out.println(median);
         String one = Integer.toBinaryString(178);
         String two = Integer.toBinaryString(143);
@@ -81,7 +99,5 @@ public class MedianOfTwoSortedArrays {
         System.out.println(two);
         System.out.println(178 & 143);
 
-
     }
-
 }
