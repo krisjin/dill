@@ -3,7 +3,6 @@ package dill.lee;
 /**
  * 删除有序数组中的重复项
  * https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array
- * <p>
  * <pre>
  *  给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。
  *
@@ -47,7 +46,6 @@ public class RemoveDuplicatesSortedArray26 {
 
     /**
      * 首先注意数组是有序的，那么重复的元素一定会相邻。
-     * <p>
      * 要求删除重复元素，实际上就是将不重复的元素移到数组的左侧。
      * 利用两个指针i, j,初始化值为0和1，当两个指针对应的值相等时，指针j+1，继续执行循环；
      * 而当两个指针对应的值不相等时，将指针i+1，并将指针j对应的值赋值给指针i，然后指针j+1，继续向下执行循环，直到循环结束。
@@ -66,6 +64,21 @@ public class RemoveDuplicatesSortedArray26 {
         return i + 1;
     }
 
+
+
+    public static int removeDuplicates_3(int[] nums) {
+        int len = nums.length;
+        if (len <= 2) {
+            return len;
+        }
+        int retLen = 2;
+        for (int i = 2; i < len; i++) {
+            if (nums[i] != nums[retLen - 2]) {
+                nums[retLen++] = nums[i];
+            }
+        }
+        return retLen;
+    }
 
     public static int removeDuplicates_2(int[] arr) {
         int j = 0;
