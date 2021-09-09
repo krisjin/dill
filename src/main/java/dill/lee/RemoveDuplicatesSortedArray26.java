@@ -1,9 +1,9 @@
 package dill.lee;
 
 /**
- * 删除排序数组中的重复项
- *
- * @author krisjin on 2019/10/23
+ * 删除有序数组中的重复项
+ * https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array
+ * <p>
  * <pre>
  *  给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。
  *
@@ -40,7 +40,7 @@ package dill.lee;
  *      print(nums[i]);
  *  }
  *
- *  https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array
+ *
  *  </pre>
  */
 public class RemoveDuplicatesSortedArray26 {
@@ -64,6 +64,18 @@ public class RemoveDuplicatesSortedArray26 {
             }
         }
         return i + 1;
+    }
+
+
+    public static int removeDuplicates_2(int[] arr) {
+        int j = 0;
+        int n = arr.length;
+        for (int i = 0; i < n; i++) {
+            if (i == 0 || arr[i] != arr[i - 1]) {
+                arr[j++] = arr[i];
+            }
+        }
+        return j;
     }
 
     public static void main(String[] args) {

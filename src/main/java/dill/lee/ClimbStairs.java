@@ -1,8 +1,6 @@
 package dill.lee;
 
 /**
- * User:krisjin
- * Date:2019-10-21
  * 爬楼梯
  * https://leetcode-cn.com/problems/climbing-stairs/
  * <pre>
