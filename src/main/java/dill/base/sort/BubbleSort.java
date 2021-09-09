@@ -1,5 +1,9 @@
 package dill.base.sort;
 
+
+/**
+ * 人生态度
+ */
 public final class BubbleSort {
 
     public static void sort(int[] nums) {
