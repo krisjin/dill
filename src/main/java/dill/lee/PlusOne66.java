@@ -1,6 +1,8 @@
 package dill.lee;
 
 /**
+ * 加一
+ * https://leetcode-cn.com/problems/plus-one
  * <pre>
  * 给定一个由整数组成的非空数组所表示的非负整数，在该数的基础上加一。
  * 最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。
@@ -17,8 +19,6 @@ package dill.lee;
  * 输入: [4,3,2,1]
  * 输出: [4,3,2,2]
  * 解释: 输入数组表示数字 4321。
- *
- * https://leetcode-cn.com/problems/plus-one
  * </pre>
  */
 public class PlusOne66 {
