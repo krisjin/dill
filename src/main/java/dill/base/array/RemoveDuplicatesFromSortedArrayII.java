@@ -1,11 +1,6 @@
 package dill.base.array;
 
-/**
- * <p/>
- * User : krisibm@163.com
- * Date: 2015/7/3
- * Time: 9:06
- */
+
 public class RemoveDuplicatesFromSortedArrayII {
 
     public static int removeDuplicates(int[] nums) {
