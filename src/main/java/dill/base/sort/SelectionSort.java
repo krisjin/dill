@@ -14,8 +14,6 @@ package dill.base.sort;
  * 运行时间与输入无关
  * 数据移动最少
  * </pre>
- * User : krisibm@163.com
- * Date: 2015/8/21
  */
 public class SelectionSort {
 
