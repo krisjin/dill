@@ -1,10 +1,7 @@
 package dill.base.array;
 
-/**
- * @User krisjin
- * @Date 2020/9/24
- */
 public class ArrayOps {
+
     /**
      * 数组求最大值
      * 使用一个地址，存储最大值。迭代遍历数组，迭代中的每个元素值都与该最大值进行比较，当num[i] 大于maxVal，执行maxVal = numArr[i]
@@ -15,7 +12,9 @@ public class ArrayOps {
     public static int maxVal(int[] numArr) {
         int maxVal = 0;
         for (int i = 0; i < numArr.length; i++) {
-            if (numArr[i] > maxVal) maxVal = numArr[i];
+            if (numArr[i] > maxVal) {
+                maxVal = numArr[i];
+            }
         }
         return maxVal;
     }
@@ -34,15 +33,16 @@ public class ArrayOps {
     }
 
     /**
-     * int 数组反转,使用numArr[N - 1 - i] 从数组尾部与数据头部进行交换
+     * int 数组反转, 使用numArr[N - 1 - i] 从数组尾部与数据头部进行交换
+     *
      * @param numArr
      */
     public static void reverse(int numArr[]) {
-        int N = numArr.length;
-        for (int i = 0; i < N / 2; i++) {
+        int len = numArr.length;
+        for (int i = 0; i < len / 2; i++) {
             int temp = numArr[i];
-            numArr[i] = numArr[N - 1 - i];
-            numArr[N - 1 - i] = temp;
+            numArr[i] = numArr[len - 1 - i];
+            numArr[len - 1 - i] = temp;
         }
     }
 
@@ -52,8 +52,9 @@ public class ArrayOps {
         System.out.println(ret);
 
         reverse(numArr);
-        for (int i = 0; i < numArr.length; i++)
+        for (int i = 0; i < numArr.length; i++) {
             System.out.print(numArr[i] + " ");
+        }
     }
 
 
