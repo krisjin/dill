@@ -16,7 +16,6 @@ package dill.base.sort;
  * </pre>
  * User : krisibm@163.com
  * Date: 2015/8/21
- * Time: 10:46
  */
 public class SelectionSort {
 
