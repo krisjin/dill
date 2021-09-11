@@ -9,16 +9,13 @@ import java.util.Iterator;
 import java.util.Set;
 
 /**
- * <pre>
- *
  * 这是最基本的单Reactor单线程模型。其中Reactor线程，负责多路分离套接字，有新连接到来触发connect 事件之后，
  * 交由Acceptor进行处理，有IO读写事件之后交给hanlder 处理。
- *
+ * <p>
  * Acceptor主要任务就是构建handler ，在获取到和client相关的SocketChannel之后 ，
  * 绑定到相应的hanlder上，对应的SocketChannel有读写事件之后，基于racotor 分发,hanlder就可以处理了（所有的IO事件都绑定到selector上，有Reactor分发）。
- *
+ * <p>
  * 该模型 适用于处理器链中业务处理组件能快速完成的场景。不过，这种单线程模型不能充分利用多核资源，所以实际使用的不多。
- * </pre>
  */
 public class ReactorTest {
 

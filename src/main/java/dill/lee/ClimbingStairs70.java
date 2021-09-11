@@ -27,7 +27,7 @@ package dill.lee;
  * 3.  2 阶 + 1 阶
  * </pre>
  */
-public class ClimbStairs {
+public class ClimbingStairs70 {
 
     public static int climbStairs(int n) {
         int[] memo = new int[n];
