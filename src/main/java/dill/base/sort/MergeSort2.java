@@ -1,8 +1,7 @@
 package dill.base.sort;
 
 /**
- * @User krisjin
- * @date 2020/9/12
+ *
  */
 public class MergeSort2 {
 

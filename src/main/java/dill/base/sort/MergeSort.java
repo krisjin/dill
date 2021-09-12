@@ -3,8 +3,6 @@ package dill.base.sort;
 /**
  * 归并排序，归并排序是一种典型的分治应用。
  * 核心：将两个有序对数组归并成一个更大的有序数组。通常做法为递归排序，并将两个不同的有序数组归并到第三个数组中。
- * User:krisjin
- * Date:2019/3/28
  */
 public class MergeSort {
 
