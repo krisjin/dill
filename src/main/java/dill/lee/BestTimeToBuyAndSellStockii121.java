@@ -1,8 +1,6 @@
 package dill.lee;
 
 /**
- * User:krisjin
- * Date:2019-11-01
  * 买卖股票的最佳时机 II
  * https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii
  * <pre>
@@ -30,12 +28,9 @@ package dill.lee;
  * 输入: [7,6,4,3,1]
  * 输出: 0
  * 解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
- *
- *
  * </pre>
  */
 public class BestTimeToBuyAndSellStockii121 {
-
 
 
     public int maxProfit(int[] prices) {
