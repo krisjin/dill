@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * @author krisjin on 2019/4/21
- */
 public class LinkedListTest {
 
     public static ArrayList<Integer> printListFromTailToHead(ListNode headNode) {

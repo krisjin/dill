@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  * 合并区间
+ * https://leetcode-cn.com/problems/merge-intervals
  * <pre>
  * 给出一个区间的集合，请合并所有重叠的区间。
  *
@@ -21,11 +22,7 @@ import java.util.List;
  * 输出: [[1,5]]
  * 解释: 区间 [1,4] 和 [4,5] 可被视为重叠区间。
  *
- * https://leetcode-cn.com/problems/merge-intervals
  * </pre>
- *
- * @User krisjin
- * @Date 2020/9/25
  */
 public class MergeInterval56 {
 
