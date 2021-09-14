@@ -25,19 +25,18 @@ public class InsertionSort {
         int len = arr.length;
 
         for (int i = 0; i < len; i++) {
-            int index = i, array_i = arr[i];
+            int index = i;
+            int arrVal = arr[i];
 
-            while (index > 0 && arr[index - 1] > array_i) {
+            while (index > 0 && arr[index - 1] > arrVal) {
                 arr[index] = arr[index - 1];
                 index -= 1;
             }
-            arr[index] = array_i;
+            arr[index] = arrVal;
 
-            // print sort process
-            for (int item : arr) {
-                System.out.print(item + " ");
-            }
-            System.out.println();
+        }
+        for (int item : arr) {
+            System.out.print(item + " ");
         }
     }
 
