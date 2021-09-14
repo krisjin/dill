@@ -33,7 +33,7 @@ public class InsertionSort {
             }
             arr[index] = array_i;
 
-            /* print sort process */
+            // print sort process
             for (int item : arr) {
                 System.out.print(item + " ");
             }
