@@ -35,6 +35,7 @@ public class InsertionSort {
             arr[index] = arrVal;
 
         }
+
         for (int item : arr) {
             System.out.print(item + " ");
         }
@@ -42,7 +43,7 @@ public class InsertionSort {
 
 
     public static void main(String[] args) {
-        int[] numberArr = {98, 87, 67, 99, 34, 32, 42, 13, 22, 55, 76};
+        int[] numberArr = {98, 87, 67, 99, 34, 32, 42, 13, 22, 55, 76, 1};
 
         insertionSort(numberArr);
     }
