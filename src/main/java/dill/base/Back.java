@@ -3,12 +3,7 @@ package dill.base;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * @author krisijn on 2019/10/28
- */
 public class Back {
-
-
     public void dfs(String pre, String str, List<String> res, int index) {
         if (index == str.length())
             res.add(pre);
@@ -33,7 +28,6 @@ public class Back {
         return res;
     }
 
-    // 测试
     public static void main(String[] args) {
         String S = "a1b";
         Back to784To = new Back();
