@@ -27,15 +27,15 @@ public class InsertionSort {
         int len = arr.length;
 
         for (int i = 0; i < len; i++) {
-            int index = i;
+            int idx = i;
             int arrVal = arr[i];
 
-            while (index > 0 && arr[index - 1] > arrVal) {
-                arr[index] = arr[index - 1];
-                index -= 1;
+            while (idx > 0 && arr[idx - 1] > arrVal) {
+                arr[idx] = arr[idx - 1];
+                idx -= 1;
             }
-            arr[index] = arrVal;
 
+            arr[idx] = arrVal;
         }
 
         for (int item : arr) {
