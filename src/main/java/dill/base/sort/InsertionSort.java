@@ -2,7 +2,8 @@ package dill.base.sort;
 
 /**
  * <pre>
- * 核心：通过构建有序序列，对于未排序序列，在已排序序列中从后向前扫描(对于单向链表则只能从前往后遍历)，找到相应位置并插入。实现上通常使用in-place排序(需用到O(1)的额外空间)
+ * 核心：通过构建有序序列，对于未排序序列，在已排序序列中从后向前扫描(对于单向链表则只能从前往后遍历)，找到相应位置并插入。
+ * 实现上通常使用in-place排序(需用到O(1)的额外空间)
  *
  * 从第一个元素开始，该元素可认为已排序
  * 取下一个元素，对已排序数组从后往前扫描
@@ -21,19 +22,20 @@ package dill.base.sort;
  * </pre>
  */
 public class InsertionSort {
+
     public static void insertionSort(int[] arr) {
         int len = arr.length;
 
         for (int i = 0; i < len; i++) {
-            int index = i;
+            int idx = i;
             int arrVal = arr[i];
 
-            while (index > 0 && arr[index - 1] > arrVal) {
-                arr[index] = arr[index - 1];
-                index -= 1;
+            while (idx > 0 && arr[idx - 1] > arrVal) {
+                arr[idx] = arr[idx - 1];
+                idx -= 1;
             }
-            arr[index] = arrVal;
 
+            arr[idx] = arrVal;
         }
 
         for (int item : arr) {
