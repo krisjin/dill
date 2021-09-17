@@ -5,9 +5,8 @@ import dill.base.TreeNode;
 import java.util.*;
 
 /**
- * User:krisjin
- * Date:2019-10-29
  * 二叉树的层次遍历
+ * https://leetcode-cn.com/problems/binary-tree-level-order-traversal
  * <pre>
  * 给定一个二叉树，返回其按层次遍历的节点值。 （即逐层地，从左到右访问所有节点）。
  *
@@ -27,20 +26,21 @@ import java.util.*;
  *   [15,7]
  * ]
  *
- * https://leetcode-cn.com/problems/binary-tree-level-order-traversal
+ *
  * </pre>
  */
 public class BinaryTreeLevelOrderTraversal102 {
 
 
-    public static List<Integer> levelOrder1(TreeNode root) {
+    public static List<Integer> levelOrder_1(TreeNode root) {
 
-        List<Integer> nums = new ArrayList<>();
+        List<Integer> numList = new ArrayList<>();
 
-        if (root == null) return nums;
+        if (root == null) {
+            return numList;
+        }
 
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
-
         queue.offer(root);
 
         while (!queue.isEmpty()) {
@@ -53,26 +53,36 @@ public class BinaryTreeLevelOrderTraversal102 {
             if (node.right != null) {
                 queue.offer(node.right);
             }
-            nums.add(node.val);
+            numList.add(node.val);
         }
 
-        return nums;
+        return numList;
     }
 
 
-    public ArrayList<Integer> levelOrder2(TreeNode root) {
+    public ArrayList<Integer> levelOrder_2(TreeNode root) {
+
         ArrayList<Integer> lists = new ArrayList<Integer>();
-        if (root == null)
+
+        if (root == null) {
             return lists;
+        }
+
         Stack<TreeNode> stack = new Stack<TreeNode>();
         stack.push(root);
+
         while (!stack.isEmpty()) {
             TreeNode tree = stack.pop();
+
             //先往栈中压入右节点，再压左节点，这样出栈就是先左节点后右节点了。
-            if (tree.right != null)
+            if (tree.right != null) {
                 stack.push(tree.right);
-            if (tree.left != null)
+            }
+
+            if (tree.left != null) {
                 stack.push(tree.left);
+            }
+
             lists.add(tree.val);
         }
         return lists;
@@ -109,7 +119,7 @@ public class BinaryTreeLevelOrderTraversal102 {
             helper(node.right, level + 1);
     }
 
-    public List<List<Integer>> levelOrder(TreeNode root) {
+    public List<List<Integer>> levelOrder_3(TreeNode root) {
         if (root == null) return levels;
         helper(root, 0);
         return levels;
@@ -125,10 +135,10 @@ public class BinaryTreeLevelOrderTraversal102 {
         treeNode.right.left = new TreeNode(6);
         treeNode.right.right = new TreeNode(7);
 
-        List<Integer> d = levelOrder1(treeNode);
+        List<Integer> d = levelOrder_1(treeNode);
 
         BinaryTreeLevelOrderTraversal102 binaryTreeLevelOrderTraversal102 = new BinaryTreeLevelOrderTraversal102();
-        List<List<Integer>> ll = binaryTreeLevelOrderTraversal102.levelOrder(treeNode);
+        List<List<Integer>> ll = binaryTreeLevelOrderTraversal102.levelOrder_3(treeNode);
 
         System.err.println(ll);
     }
