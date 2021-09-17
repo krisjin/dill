@@ -5,13 +5,13 @@ import java.util.List;
 
 public class Back {
     public void dfs(String pre, String str, List<String> res, int index) {
-        if (index == str.length())
+        if (index == str.length()) {
             res.add(pre);
-        else {
+        } else {
             char ch = str.charAt(index);
-            if (!Character.isLetter(ch))
+            if (!Character.isLetter(ch)) {
                 dfs(pre + ch, str, res, index + 1);
-            else {
+            } else {
                 // 小写字符分支
                 ch = Character.toLowerCase(ch);
                 dfs(pre + ch, str, res, index + 1);
