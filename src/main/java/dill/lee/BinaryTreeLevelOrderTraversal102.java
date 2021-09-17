@@ -31,7 +31,7 @@ import java.util.*;
  */
 public class BinaryTreeLevelOrderTraversal102 {
 
-    static List<List<Integer>> levels = new ArrayList<List<Integer>>();
+    static List<List<Integer>> levels = new ArrayList<>();
 
     public static List<Integer> levelOrder_1(TreeNode root) {
 
