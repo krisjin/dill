@@ -31,6 +31,7 @@ import java.util.*;
  */
 public class BinaryTreeLevelOrderTraversal102 {
 
+    static List<List<Integer>> levels = new ArrayList<List<Integer>>();
 
     public static List<Integer> levelOrder_1(TreeNode root) {
 
@@ -60,7 +61,7 @@ public class BinaryTreeLevelOrderTraversal102 {
     }
 
 
-    public ArrayList<Integer> levelOrder_2(TreeNode root) {
+    public static ArrayList<Integer> levelOrder_2(TreeNode root) {
 
         ArrayList<Integer> lists = new ArrayList<Integer>();
 
@@ -89,11 +90,11 @@ public class BinaryTreeLevelOrderTraversal102 {
     }
 
 
-    public void depthOrderTraversalWithRecursive() {
+    public static void depthOrderTraversalWithRecursive() {
         depthTraversal(null);
     }
 
-    private void depthTraversal(TreeNode tn) {
+    private static void depthTraversal(TreeNode tn) {
         if (tn != null) {
             System.out.print(tn.val + "  ");
             depthTraversal(tn.left);
@@ -102,9 +103,7 @@ public class BinaryTreeLevelOrderTraversal102 {
     }
 
 
-    List<List<Integer>> levels = new ArrayList<List<Integer>>();
-
-    public void helper(TreeNode node, int level) {
+    public static void helper(TreeNode node, int level) {
         // start the current level
         if (levels.size() == level)
             levels.add(new ArrayList<Integer>());
@@ -119,8 +118,10 @@ public class BinaryTreeLevelOrderTraversal102 {
             helper(node.right, level + 1);
     }
 
-    public List<List<Integer>> levelOrder_3(TreeNode root) {
-        if (root == null) return levels;
+    public static List<List<Integer>> levelOrder_3(TreeNode root) {
+        if (root == null) {
+            return levels;
+        }
         helper(root, 0);
         return levels;
     }
@@ -137,8 +138,7 @@ public class BinaryTreeLevelOrderTraversal102 {
 
         List<Integer> d = levelOrder_1(treeNode);
 
-        BinaryTreeLevelOrderTraversal102 binaryTreeLevelOrderTraversal102 = new BinaryTreeLevelOrderTraversal102();
-        List<List<Integer>> ll = binaryTreeLevelOrderTraversal102.levelOrder_3(treeNode);
+        List<List<Integer>> ll = levelOrder_3(treeNode);
 
         System.err.println(ll);
     }
