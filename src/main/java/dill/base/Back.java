@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Back {
+
     public void dfs(String pre, String str, List<String> res, int index) {
         if (index == str.length()) {
             res.add(pre);
@@ -29,8 +30,8 @@ public class Back {
     }
 
     public static void main(String[] args) {
-        String S = "a1b";
-        Back to784To = new Back();
-        System.out.println(to784To.letterCasePermutation(S));
+        String str = "a1b";
+        Back back = new Back();
+        System.out.println(back.letterCasePermutation(str));
     }
 }

@@ -22,8 +22,6 @@ package dill.lee;
  * 要点解析
  * 1.求数值1的最大连续数
  * 2.
- * User: krisjin
- * Date: 2021/9/1
  */
 public class MaxConsecutiveOnes485 {
 
@@ -45,7 +43,6 @@ public class MaxConsecutiveOnes485 {
 
     public static void main(String[] args) {
         int[] nums = {1, 1, 0, 1, 1, 1};
-
 
     }
 
