@@ -11,7 +11,7 @@ import java.util.*;
  * 给定一个二叉树，返回其按层次遍历的节点值。 （即逐层地，从左到右访问所有节点）。
  *
  * 例如:
- * 给定二叉树: [3,9,20,null,null,15,7],
+ * 给定二叉树:[3,9,20,null,null,15,7],
  *
  *     3
  *    / \
@@ -34,7 +34,6 @@ public class BinaryTreeLevelOrderTraversal102 {
     static List<List<Integer>> levels = new ArrayList<>();
 
     public static List<Integer> levelOrder_1(TreeNode root) {
-
         List<Integer> numList = new ArrayList<>();
 
         if (root == null) {
@@ -46,11 +45,9 @@ public class BinaryTreeLevelOrderTraversal102 {
 
         while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
-
             if (node.left != null) {
                 queue.offer(node.left);
             }
-
             if (node.right != null) {
                 queue.offer(node.right);
             }

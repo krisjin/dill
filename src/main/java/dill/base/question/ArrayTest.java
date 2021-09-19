@@ -37,6 +37,12 @@ public class ArrayTest {
         String TMP_PATH = System.getProperty("java.io.tmpdir", "/tmp");
         System.out.println(TMP_PATH);
 
+
+        System.out.println("------------------");
+        int n = (int) Math.ceil((double) 11 / (double) 10);
+
+        System.out.println(n);
+
     }
 
 
