@@ -7,16 +7,11 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
-/**
- * User: krisjin
- * Date: 2021/7/7
- */
 public class T {
     public static void main(String[] args) {
         User u1 = new User("2021-06-04", 1);
         User u2 = new User("2021-06-05", 1);
         User u3 = new User("2021-06-06", 1);
-
 
         List<User> userList = new ArrayList<>();
         List<User> userList2 = new ArrayList<>();
@@ -24,9 +19,7 @@ public class T {
         userList.add(u2);
         userList.add(u3);
 
-
         userList2.add(new User("11", 11));
-
         userList.addAll(userList2);
 
 
@@ -52,12 +45,9 @@ public class T {
         public String dt;
         public Integer id;
 
-
         public User(String dt, Integer id) {
             this.dt = dt;
             this.id = id;
         }
-
-
     }
 }
