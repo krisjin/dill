@@ -30,7 +30,9 @@ public class Tree {
     }
 
     public static void printNode(Node root) {
-        if (root == null) return;
+        if (root == null) {
+            return;
+        }
         System.err.println(root.value);
 
         Node left = root.left;
