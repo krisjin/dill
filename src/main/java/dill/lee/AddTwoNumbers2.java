@@ -16,13 +16,10 @@ import dill.base.ListNode;
  * 输出：7 -> 0 -> 8
  * 原因：342 + 465 = 807
  * </pre>
- *
  */
 public class AddTwoNumbers2 {
 
     /**
-     *
-     *
      * @param l1
      * @param l2
      * @return
@@ -47,9 +44,9 @@ public class AddTwoNumbers2 {
                 tmp += l2.val;
                 l2 = l2.next;
             }
-            p.next = new ListNode(tmp % 10);
+            p.next = new ListNode(tmp % 10);//余数计算
             p = p.next;
-            tmp = tmp / 10;
+            tmp = tmp / 10;//十进位 1
         }
         return head.next;
     }
