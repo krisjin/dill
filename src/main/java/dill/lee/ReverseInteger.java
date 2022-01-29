@@ -4,7 +4,8 @@ import java.util.Deque;
 import java.util.LinkedList;
 
 /**
- * 难度：简单
+ * 整数反转
+ * https://leetcode-cn.com/problems/reverse-integer/
  * <p/>
  * 描述：
  * Reverse digits of an integer.
@@ -13,7 +14,7 @@ import java.util.LinkedList;
  * <p/>
  * 对反转的数值，总是对10取模，这样就每次都是获取最后一个数字，每次的结果乘以10加上余数就进行了一次反转。
  * 再对数值除以10，得到一个整数数进行下次取模加值。
- * https://leetcode-cn.com/problems/reverse-integer/
+ *
  */
 public class ReverseInteger {
 

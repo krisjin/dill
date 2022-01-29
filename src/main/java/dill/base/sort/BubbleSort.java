@@ -7,6 +7,12 @@ package dill.base.sort;
  */
 public final class BubbleSort {
 
+    /**
+     * 1.嵌套循环
+     * 2.
+     *
+     * @param nums
+     */
     public static void sort(int[] nums) {
         int len = nums.length;
         for (int i = 0; i < len; i++) {
