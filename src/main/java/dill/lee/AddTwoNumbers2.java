@@ -35,7 +35,7 @@ public class AddTwoNumbers2 {
         ListNode head = new ListNode(0);
         ListNode p = head;
 
-        int tmp = 0;
+        int tmp = 0;//两个链表整数计算
         while (l1 != null || l2 != null || tmp != 0) {
             if (l1 != null) {
                 tmp += l1.val;
@@ -45,8 +45,8 @@ public class AddTwoNumbers2 {
                 tmp += l2.val;
                 l2 = l2.next;
             }
-            p.next = new ListNode(tmp % 10);//余数计算
-            p = p.next;
+            p.next = new ListNode(tmp % 10);//创建新的节点，余数计算
+            p = p.next;//使用next作为最新p节点，不会对head引用链表有影响
             tmp = tmp / 10;//十进位 1
         }
         return head.next;
