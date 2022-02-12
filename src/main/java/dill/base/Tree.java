@@ -40,8 +40,6 @@ public class Tree {
 
         printNode(left);
         printNode(right);
-
-
     }
 
     public static void main(String[] args) {

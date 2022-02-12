@@ -9,7 +9,7 @@ public final class BubbleSort {
 
     /**
      * 1.嵌套循环
-     * 2.
+     * 2.嵌套循环比较大小，使用临时的进行进行交换
      *
      * @param nums
      */
