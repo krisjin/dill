@@ -1,5 +1,6 @@
 package dill.off;
 
+import java.util.Arrays;
 import java.util.PriorityQueue;
 
 /**
@@ -27,7 +28,7 @@ import java.util.PriorityQueue;
  * sort
  * </pre>
  */
-public class O40 {
+public class MinimumNumberOfK {
 
     /**
      * 堆使用
@@ -48,10 +49,20 @@ public class O40 {
         return ans;
     }
 
+    public static int[] getLeastNumbers2(int[] arr, int k) {
+        int[] vec = new int[k];
+        Arrays.sort(arr);
+        for (int i = 0; i < k; i++) {
+            vec[i] = arr[i];
+        }
+        return vec;
+    }
+
+
     public static void main(String[] args) {
         int[] arr = new int[]{4, 3, 2, 6, 7, 1};
         int k = 3;
-        int[] ans = getLeastNumbers(arr, k);
+        int[] ans = getLeastNumbers2(arr, k);
 
         for (int i : ans)
             System.err.println(i);
