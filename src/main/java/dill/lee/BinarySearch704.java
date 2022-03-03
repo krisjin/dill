@@ -5,14 +5,23 @@ package dill.lee;
  */
 public class BinarySearch704 {
 
+    /**
+     * @param nums
+     * @param target
+     * @return
+     */
     public static int search(int[] nums, int target) {
-        int lo = 0;
-        int hi = nums.length - 1;
-        while (lo <= hi) {
-            int mid = lo + (hi - lo) / 2;//防止left+right溢出
-            if (target < nums[mid]) hi = mid - 1;
-            else if (target > nums[mid]) lo = mid + 1;
-            else return mid;
+        int left = 0;
+        int right = nums.length - 1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;//防止left+right溢出
+            if (target < nums[mid]) right = mid - 1;
+            else if (target > nums[mid]) {
+                left = mid + 1;
+            } else {
+                return mid;
+            }
         }
         return -1;
     }
