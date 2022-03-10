@@ -1,5 +1,8 @@
 package dill.base.array;
 
+/**
+ *
+ */
 public class ArrayOps {
 
     /**
@@ -38,7 +41,7 @@ public class ArrayOps {
      * @param numArr
      */
     public static void reverse(int numArr[]) {
-        int len = numArr.length;//
+        int len = numArr.length;
         for (int i = 0; i < len / 2; i++) {
             int temp = numArr[i];
             numArr[i] = numArr[len - 1 - i];
