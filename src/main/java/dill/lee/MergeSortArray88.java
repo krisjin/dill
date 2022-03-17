@@ -66,6 +66,12 @@ public class MergeSortArray88 {
         System.arraycopy(nums2, 0, nums1, 0, p2 + 1);
     }
 
+    /**
+     * @param num1
+     * @param m
+     * @param num2
+     * @param n
+     */
     public void merge3(int[] num1, int m, int[] num2, int n) {
         for (int idx = m + n - 1; idx >= 0; idx--) {
             if (m <= 0) {
