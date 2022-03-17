@@ -5,8 +5,6 @@ import java.util.Arrays;
 /**
  * 合并两个有序数组
  * https://leetcode-cn.com/problems/merge-sorted-array
- *
- * @author krisjin on 2019/10/23
  * <pre>
  * 给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。
  *
@@ -84,11 +82,17 @@ public class MergeSortArray88 {
 
 
     public static void main(String[] args) {
-        int[] nums1 = {1, 2, 3, 0, 0, 0};
-        int[] nums2 = {2, 5, 6};
+        int[] numberArr1 = {1, 2, 3, 0, 0, 0};
+        int[] numberArr2 = {2, 5, 6};
 
-        MergeSortArray88 mergeSortArray88 = new MergeSortArray88();
-        mergeSortArray88.merge3(nums1, 3, nums2, nums2.length);
-        System.err.println();
+        MergeSortArray88 mergeSortArray = new MergeSortArray88();
+        mergeSortArray.merge3(numberArr1, 3, numberArr2, numberArr2.length);
+
+        for (int i : numberArr1) {
+            System.out.print(i + " ");
+        }
+        System.err.println("");
+
+
     }
 }
