@@ -67,10 +67,13 @@ public class MergeSortArray88 {
     }
 
     /**
-     * @param num1
-     * @param m
-     * @param num2
-     * @param n
+     * 1.m数组大小是m+n的大小
+     * 2.数组空间从后向前填充
+     *
+     * @param num1 数组1
+     * @param m    数组1长度
+     * @param num2 数组2
+     * @param n    数组2长度
      */
     public void merge3(int[] num1, int m, int[] num2, int n) {
         for (int idx = m + n - 1; idx >= 0; idx--) {
