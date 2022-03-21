@@ -3,7 +3,7 @@ package dill.lee;
 import java.util.Arrays;
 
 /**
- * 合并两个有序数组
+ * 合并两个有序数组，为什么要合并两个有序的数组集合
  * https://leetcode-cn.com/problems/merge-sorted-array
  * <pre>
  * 给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。
@@ -50,17 +50,18 @@ public class MergeSortArray88 {
 
 
     public void merge2(int[] nums1, int m, int[] nums2, int n) {
-        // two get pointers for nums1 and nums2
+        // 定义p1 和 p2 指针
         int p1 = m - 1;
         int p2 = n - 1;
-        // set pointer for nums1
+        // 定义num1 值设置指针
         int p = m + n - 1;
 
         // while there are still elements to compare
-        while ((p1 >= 0) && (p2 >= 0))
+        while ((p1 >= 0) && (p2 >= 0)) {
             // compare two elements from nums1 and nums2
             // and add the largest one in nums1
             nums1[p--] = (nums1[p1] < nums2[p2]) ? nums2[p2--] : nums1[p1--];
+        }
 
         // add missing elements from nums2
         System.arraycopy(nums2, 0, nums1, 0, p2 + 1);
@@ -95,7 +96,7 @@ public class MergeSortArray88 {
         int[] numberArr2 = {2, 5, 6};
 
         MergeSortArray88 mergeSortArray = new MergeSortArray88();
-        mergeSortArray.merge3(numberArr1, 3, numberArr2, numberArr2.length);
+        mergeSortArray.merge2(numberArr1, 3, numberArr2, numberArr2.length);
 
         for (int i : numberArr1) {
             System.out.print(i + " ");
