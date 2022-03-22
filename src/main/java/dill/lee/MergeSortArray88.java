@@ -53,13 +53,13 @@ public class MergeSortArray88 {
         // 定义p1 和 p2 指针
         int p1 = m - 1;
         int p2 = n - 1;
+
         // 定义num1 值设置指针
         int p = m + n - 1;
 
-        // while there are still elements to compare
+        // 当p1和p2都包含数据元素是进行大小的比较并赋值给num1
         while ((p1 >= 0) && (p2 >= 0)) {
-            // compare two elements from nums1 and nums2
-            // and add the largest one in nums1
+            // compare two elements from nums1 and nums2 ,and add the largest one in nums1
             nums1[p--] = (nums1[p1] < nums2[p2]) ? nums2[p2--] : nums1[p1--];
         }
 
