@@ -36,7 +36,7 @@ public class MergeSortArray88 {
         int p2 = 0;
         int p = 0;
 
-        // Compare elements from nums1Copy and nums2
+        // Compare elements from nums1 Copy and nums2
         // and add the smallest one into nums1.
         while ((p1 < m) && (p2 < n))
             nums1[p++] = (nums1Copy[p1] < nums2[p2]) ? nums1Copy[p1++] : nums2[p2++];
@@ -59,11 +59,11 @@ public class MergeSortArray88 {
 
         // 当p1和p2都包含数据元素是进行大小的比较并赋值给num1
         while ((p1 >= 0) && (p2 >= 0)) {
-            // compare two elements from nums1 and nums2 ,and add the largest one in nums1
+            //比较nums1和nums2，将最大的值赋值给p索引
             nums1[p--] = (nums1[p1] < nums2[p2]) ? nums2[p2--] : nums1[p1--];
         }
 
-        // add missing elements from nums2
+        //添加nums2中缺少的元素
         System.arraycopy(nums2, 0, nums1, 0, p2 + 1);
     }
 
