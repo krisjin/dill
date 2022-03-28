@@ -36,8 +36,7 @@ public class MergeSortArray88 {
         int p2 = 0;
         int p = 0;
 
-        // Compare elements from nums1 Copy and nums2
-        // and add the smallest one into nums1.
+        // Compare elements from nums1 Copy and nums2 ,and add the smallest one into nums1.
         while ((p1 < m) && (p2 < n))
             nums1[p++] = (nums1Copy[p1] < nums2[p2]) ? nums1Copy[p1++] : nums2[p2++];
 
@@ -96,7 +95,7 @@ public class MergeSortArray88 {
         int[] numberArr2 = {2, 5, 6};
 
         MergeSortArray88 mergeSortArray = new MergeSortArray88();
-        mergeSortArray.merge2(numberArr1, 3, numberArr2, numberArr2.length);
+        mergeSortArray.merge1(numberArr1, 3, numberArr2, numberArr2.length);
 
         for (int i : numberArr1) {
             System.out.print(i + " ");
