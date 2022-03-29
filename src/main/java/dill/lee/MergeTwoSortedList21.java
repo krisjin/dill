@@ -14,22 +14,22 @@ import dill.base.ListNode;
  */
 public class MergeTwoSortedList21 {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        // maintain an unchanging reference to node ahead of the return node.
+        //定义一个不变的preHead头结点，最终返回有序的节点，通过preHead返回
         ListNode preHead = new ListNode(3);
 
         ListNode prev = preHead;
         while (l1 != null && l2 != null) {
             if (l1.val <= l2.val) {
                 prev.next = l1;
-                l1 = l1.next;//get next node
+                l1 = l1.next;//获取链表next对象
             } else {
                 prev.next = l2;
-                l2 = l2.next;//get next node
+                l2 = l2.next;//获取链表next对象
             }
             prev = prev.next;
         }
-        // exactly one of l1 and l2 can be non-null at this point, so connect
-        // the non-null list to the end of the merged list.
+
+        //将l1或l2非空数据添加到 preHead的末尾
         prev.next = l1 == null ? l2 : l1;
         return preHead.next;
     }
