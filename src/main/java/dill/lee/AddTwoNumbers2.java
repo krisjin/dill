@@ -31,7 +31,7 @@ public class AddTwoNumbers2 {
         if (l2 == null) {
             return l1;
         }
-        //创建返回的加和链表
+        //创建返回的加和链表,
         ListNode head = new ListNode(0);
         ListNode p = head;
 
