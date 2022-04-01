@@ -13,7 +13,6 @@ import java.util.PriorityQueue;
  * 请你将所有链表合并到一个升序链表中，返回合并后的链表。
  * <p>
  *  
- * <p>
  * 示例 1：
  * <p>
  * 输入：lists = [[1,4,5],[1,3,4],[2,6]]
@@ -74,30 +73,41 @@ public class MergeKSortedLists23 {
 
 
     //解法
-
-    public ListNode mergeKLists(ListNode[] lists) {
-        if (lists == null || lists.length == 0) return null;
-        return merge(lists, 0, lists.length - 1);
+    public ListNode mergeKLists(ListNode[] nodeArr) {
+        if (nodeArr == null || nodeArr.length == 0) {
+            return null;
+        }
+        return merge(nodeArr, 0, nodeArr.length - 1);
     }
 
-    private ListNode merge(ListNode[] lists, int left, int right) {
-        if (left == right) return lists[left];
+    /**
+     * @param nodeArr
+     * @param left
+     * @param right
+     * @return
+     */
+    private ListNode merge(ListNode[] nodeArr, int left, int right) {
+        if (left == right) return nodeArr[left];
         int mid = left + (right - left) / 2;
-        ListNode l1 = merge(lists, left, mid);
-        ListNode l2 = merge(lists, mid + 1, right);
+        ListNode l1 = merge(nodeArr, left, mid);
+        ListNode l2 = merge(nodeArr, mid + 1, right);
         return mergeTwoLists(l1, l2);
     }
 
-    private ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        if (l1 == null) return l2;
-        if (l2 == null) return l1;
-        if (l1.val < l2.val) {
-            l1.next = mergeTwoLists(l1.next, l2);
-            return l1;
+    private ListNode mergeTwoLists(ListNode node1, ListNode node2) {
+        if (node1 == null) return node2;
+        if (node2 == null) return node1;
+        if (node1.val < node2.val) {
+            node1.next = mergeTwoLists(node1.next, node2);
+            return node1;
         } else {
-            l2.next = mergeTwoLists(l1, l2.next);
-            return l2;
+            node2.next = mergeTwoLists(node1, node2.next);
+            return node2;
         }
     }
 
+
+    public static void main(String[] args) {
+
+    }
 }
