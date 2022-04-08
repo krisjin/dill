@@ -2,7 +2,9 @@ package dill.lee;
 
 import dill.base.ListNode;
 
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 import java.util.PriorityQueue;
 
 /**
@@ -44,7 +46,7 @@ import java.util.PriorityQueue;
 public class MergeKSortedLists23 {
 
     //解法1
-    public ListNode mergeKLists_1(ListNode[] lists) {
+    public static ListNode mergeKLists_1(ListNode[] lists) {
         if (lists == null || lists.length == 0) return null;
         PriorityQueue<ListNode> queue = new PriorityQueue<>(lists.length, new Comparator<ListNode>() {
             @Override
@@ -69,7 +71,7 @@ public class MergeKSortedLists23 {
 
 
     //解法
-    public ListNode mergeKLists(ListNode[] nodeArr) {
+    public static ListNode mergeKLists(ListNode[] nodeArr) {
         if (nodeArr == null || nodeArr.length == 0) {
             return null;
         }
@@ -82,7 +84,7 @@ public class MergeKSortedLists23 {
      * @param right
      * @return
      */
-    private ListNode merge(ListNode[] nodeArr, int left, int right) {
+    private static ListNode merge(ListNode[] nodeArr, int left, int right) {
         if (left == right) return nodeArr[left];
         int mid = left + (right - left) / 2;
         ListNode l1 = merge(nodeArr, left, mid);
@@ -90,7 +92,7 @@ public class MergeKSortedLists23 {
         return mergeTwoLists(l1, l2);
     }
 
-    private ListNode mergeTwoLists(ListNode node1, ListNode node2) {
+    private static ListNode mergeTwoLists(ListNode node1, ListNode node2) {
         if (node1 == null) return node2;
         if (node2 == null) return node1;
         if (node1.val < node2.val) {
@@ -112,6 +114,18 @@ public class MergeKSortedLists23 {
         ListNode node2 = new ListNode(3);
         node2.next = new ListNode(6);
         node2.next.next = new ListNode(9);
+
+        List<ListNode> nodeList = new ArrayList<>();
+        nodeList.add(node1);
+        nodeList.add(node2);
+
+        ListNode result = mergeKLists_1(nodeList.toArray(new ListNode[2]));
+
+        while (result !=null) {
+            System.out.print(result.val+" ");
+            result = result.next;
+
+        }
 
 
     }
