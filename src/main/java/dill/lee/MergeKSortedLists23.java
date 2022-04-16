@@ -82,6 +82,8 @@ public class MergeKSortedLists23 {
     }
 
     /**
+     * 左右双指针
+     *
      * @param nodeArr
      * @param left
      * @param right
@@ -122,12 +124,11 @@ public class MergeKSortedLists23 {
         nodeList.add(node1);
         nodeList.add(node2);
 
-        ListNode result = mergeKLists_1(nodeList.toArray(new ListNode[2]));
+        ListNode result = mergeKLists(nodeList.toArray(new ListNode[2]));
 
         while (result != null) {
             System.out.print(result.val + " ");
             result = result.next;
-
         }
 
     }
