@@ -90,7 +90,9 @@ public class MergeKSortedLists23 {
      * @return
      */
     private static ListNode merge(ListNode[] nodeArr, int left, int right) {
-        if (left == right) return nodeArr[left];
+        if (left == right) {
+            return nodeArr[left];
+        }
         int mid = left + (right - left) / 2;
         ListNode l1 = merge(nodeArr, left, mid);
         ListNode l2 = merge(nodeArr, mid + 1, right);
