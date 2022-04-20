@@ -3,7 +3,6 @@ package dill.lee;
 import dill.base.ListNode;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
@@ -45,36 +44,52 @@ import java.util.PriorityQueue;
  */
 public class MergeKSortedLists23 {
 
-    //解法1
+
+    /**
+     * @param lists
+     * @return
+     */
     public static ListNode mergeKLists_1(ListNode[] lists) {
-        if (lists == null || lists.length == 0) return null;
-        PriorityQueue<ListNode> queue = new PriorityQueue<>(lists.length, new Comparator<ListNode>() {
-            public int compare(ListNode o1, ListNode o2) {
-                if (o1.val < o2.val) {
-                    return -1;
-                } else if (o1.val == o2.val) {
-                    return 0;
-                } else {
-                    return 1;
-                }
+        if (lists == null || lists.length == 0) {
+            return null;
+        }
+
+        PriorityQueue<ListNode> queue = new PriorityQueue<>(lists.length, (o1, o2) -> {
+            if (o1.val < o2.val) {
+                return -1;
+            } else if (o1.val == o2.val) {
+                return 0;
+            } else {
+                return 1;
             }
         });
+
         ListNode dummy = new ListNode(0);
         ListNode p = dummy;
+
         for (ListNode node : lists) {
-            if (node != null) queue.add(node);
+            if (node != null) {
+                queue.add(node);
+            }
         }
+
         while (!queue.isEmpty()) {
             p.next = queue.poll();
             p = p.next;
-            if (p.next != null) queue.add(p.next);
+            if (p.next != null) {
+                queue.add(p.next);
+            }
         }
         return dummy.next;
     }
 
 
-    //解法
-    public static ListNode mergeKLists(ListNode[] nodeArr) {
+    /**
+     * @param nodeArr
+     * @return
+     */
+
+    public static ListNode mergeKLists_2(ListNode[] nodeArr) {
         if (nodeArr == null || nodeArr.length == 0) {
             return null;
         }
@@ -100,8 +115,12 @@ public class MergeKSortedLists23 {
     }
 
     private static ListNode mergeTwoLists(ListNode node1, ListNode node2) {
-        if (node1 == null) return node2;
-        if (node2 == null) return node1;
+        if (node1 == null) {
+            return node2;
+        }
+        if (node2 == null) {
+            return node1;
+        }
         if (node1.val < node2.val) {
             node1.next = mergeTwoLists(node1.next, node2);
             return node1;
@@ -126,7 +145,7 @@ public class MergeKSortedLists23 {
         nodeList.add(node1);
         nodeList.add(node2);
 
-        ListNode result = mergeKLists(nodeList.toArray(new ListNode[2]));
+        ListNode result = mergeKLists_1(nodeList.toArray(new ListNode[2]));
 
         while (result != null) {
             System.out.print(result.val + " ");
