@@ -54,6 +54,5 @@ public class PascalsTriangle {
             System.out.println("]");
         }
         System.out.println("]");
-
     }
 }
