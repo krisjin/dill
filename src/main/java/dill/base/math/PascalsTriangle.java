@@ -17,9 +17,6 @@ import java.util.List;
  * [1,4,6,4,1]
  * ]
  * <p/>
- * User : krisibm@163.com
- * Date: 2015/9/30
- * Time: 21:17
  */
 public class PascalsTriangle {
 

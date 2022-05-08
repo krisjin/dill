@@ -58,7 +58,6 @@ public class FindDuplicateNumInArray {
         for (int i : result) {
             System.out.println(i);
         }
-
     }
 
 
