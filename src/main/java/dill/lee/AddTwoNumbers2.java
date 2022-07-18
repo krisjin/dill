@@ -32,9 +32,9 @@ public class AddTwoNumbers2 {
         if (l2 == null) {
             return l1;
         }
-        //创建返回的加和链表,
-        ListNode head = new ListNode(0);
-        ListNode p = head;
+        //创建返回的加和链表
+        ListNode dummyNode = new ListNode(0);
+        ListNode p = dummyNode;
 
         int tmp = 0;//两个链表整数计算值
         //通过循环分别获取两个链表中的值，计算结果值存入新创建的链表节点，余数使用取模计算，整数进一，使用十进制位。
@@ -51,7 +51,7 @@ public class AddTwoNumbers2 {
             p = p.next;//使用next作为最新p节点，替换pre节点
             tmp = tmp / 10;//十进位 1
         }
-        return head.next;
+        return dummyNode.next;
     }
 
 
