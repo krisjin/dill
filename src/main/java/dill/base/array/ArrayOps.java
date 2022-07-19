@@ -1,8 +1,5 @@
 package dill.base.array;
 
-/**
- *
- */
 public class ArrayOps {
 
     /**
