@@ -1,13 +1,13 @@
 package dill.lee;
 
 /**
- * 二分查找
+ * 二分查找,前提是数组为有序的，取中值溢出
  */
 public class BinarySearch704 {
 
     /**
-     * @param nums
-     * @param target
+     * @param nums   查找数组
+     * @param target 目标值
      * @return
      */
     public static int search(int[] nums, int target) {
@@ -16,8 +16,9 @@ public class BinarySearch704 {
 
         while (left <= right) {
             int mid = left + (right - left) / 2;//防止left+right溢出
-            if (target < nums[mid]) right = mid - 1;
-            else if (target > nums[mid]) {
+            if (target < nums[mid]) {
+                right = mid - 1;
+            } else if (target > nums[mid]) {
                 left = mid + 1;
             } else {
                 return mid;
@@ -47,12 +48,9 @@ public class BinarySearch704 {
 
         while (left <= right) {
             int mid = (right + left) / 2;
-            if (nums[mid] == target)
-                return mid;
-            else if (nums[mid] < target)
-                left = mid + 1;
-            else if (nums[mid] > target)
-                right = mid - 1;
+            if (nums[mid] == target) return mid;
+            else if (nums[mid] < target) left = mid + 1;
+            else if (nums[mid] > target) right = mid - 1;
         }
         return -1;
     }
