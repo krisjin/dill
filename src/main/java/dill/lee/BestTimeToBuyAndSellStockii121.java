@@ -45,10 +45,10 @@ public class BestTimeToBuyAndSellStockii121 {
 
 
     public static void main(String[] args) {
-        int[] stocks = {7, 1, 5, 3, 6, 4};
+//        int[] stocks = {7, 1, 5, 3, 6, 4};
+        int[] stocks = {1, 2, 3, 4, 5, 6};
         int maxProfit = maxProfit(stocks);
         System.out.println(maxProfit);
-
     }
 
 }

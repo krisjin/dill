@@ -8,8 +8,7 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * User:krisjin
- * <p>
+ * 二叉树的中序遍历访问 左子树——根节点——右子树 遍历这棵树
  * 二叉树的中序遍历
  * https://blog.csdn.net/jackey_jk/article/details/51033615
  * https://leetcode-cn.com/problems/binary-tree-inorder-traversal
@@ -24,32 +23,30 @@ import java.util.Stack;
  *      2
  *     /
  *    3
- *
  * 输出: [1,3,2]
- * 进阶:递归算法很简单，你可以通过迭代算法完成吗？
  * </pre>
  */
 public class BinaryTreeInorderTraversal94 {
 
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
-        helper(root, res);
+        inorder(root, res);
         return res;
     }
 
-    public void helper(TreeNode root, List<Integer> res) {
-        if (root != null) {
-            if (root.left != null) {
-                helper(root.left, res);//左
-            }
-            res.add(root.val); //根
-            if (root.right != null) {
-                helper(root.right, res);//右
-            }
+    public void inorder(TreeNode root, List<Integer> res) {
+        if (root == null) {
+            return;
         }
+        inorder(root.left, res);//左
+        res.add(root.val); //根
+        inorder(root.right, res);//右
     }
 
-
+    /**
+     * @param root
+     * @return
+     */
     public List<Integer> inorderTraversalWithStack(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
@@ -61,21 +58,20 @@ public class BinaryTreeInorderTraversal94 {
                 curr = curr.left;
             }
             curr = stack.pop();
-
             res.add(curr.val);
-
             curr = curr.right;
         }
         return res;
     }
 
 
-    public static void postOrderTraversal(TreeNode root, List<Integer> nums) {
-        if (root == null) return;
-        postOrderTraversal(root.left, nums);
-        postOrderTraversal(root.right, nums);
-        nums.add(root.val);
-//        System.out.print(root.val + "\t");
+    public static void postOrderTraversal(TreeNode root, List<Integer> res) {
+        if (root == null) {
+            return;
+        }
+        postOrderTraversal(root.left, res);
+        postOrderTraversal(root.right, res);
+        res.add(root.val);
     }
 
     /**
@@ -106,22 +102,21 @@ public class BinaryTreeInorderTraversal94 {
         return retNodes;
     }
 
-
-    //test
-
     public static void main(String[] args) {
         TreeNode treeNode = new TreeNode(1);
+
         treeNode.left = new TreeNode(2);
         treeNode.left.left = new TreeNode(4);
         treeNode.left.right = new TreeNode(5);
+
         treeNode.right = new TreeNode(3);
         treeNode.right.left = new TreeNode(6);
         treeNode.right.right = new TreeNode(7);
-        BinaryTreeInorderTraversal94 binaryTreeInorderTraversal94 = new BinaryTreeInorderTraversal94();
 
-//        List<Integer> nodes = c0094.inorderTraversal(treeNode);
+        BinaryTreeInorderTraversal94 inorder = new BinaryTreeInorderTraversal94();
+
+        List<Integer> nodes = inorder.inorderTraversal(treeNode);
 //        List<Integer> nodes = c0094.inorderTraversalWithStack(treeNode);
-
 
         //后续递归测试
 //        List nums = new ArrayList<Integer>();
@@ -132,8 +127,7 @@ public class BinaryTreeInorderTraversal94 {
 
         //后续非递归测试
         List nums = postOrderWithStack(t);
-        System.out.println(nums);
+        System.out.println(nodes);
     }
-
 
 }
