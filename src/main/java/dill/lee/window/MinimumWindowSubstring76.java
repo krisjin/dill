@@ -85,7 +85,7 @@ public class MinimumWindowSubstring76 {
         char[] charS = s.toCharArray(), charT = t.toCharArray();
         int n = charS.length, m = charT.length;
 
-        int[] hash = new int[128];
+        int[] hash = new int[128];//字符
         for (char ch : charT) hash[ch]--;
 
         String res = "";
