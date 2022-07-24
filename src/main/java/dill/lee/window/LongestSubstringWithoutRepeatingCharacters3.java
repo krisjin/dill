@@ -1,6 +1,8 @@
-package dill.lee;
+package dill.lee.window;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -56,11 +58,47 @@ public class LongestSubstringWithoutRepeatingCharacters3 {
         return ans;
     }
 
-
+    /**
+     * 实验暴力解法
+     *
+     * @param s
+     * @return
+     */
     public int lengthOfLongestSubstring3(String s) {
         StringBuffer sb = new StringBuffer();
+        int maxLen = 0;
+        for (int i = 0; i < s.length(); i++) {
+            String c = String.valueOf(s.charAt(i));
+            if (sb.indexOf(c) >= 0) {
+                sb.delete(0, sb.indexOf(c) + 1);
+            }
+            sb.append(c);
+            maxLen = Math.max(maxLen, sb.length());  //每次记录最长子串
+        }
+        return maxLen;
+    }
 
-        return 0;
+
+    /**
+     * 滑动窗口
+     *
+     * @param s
+     * @return
+     */
+    public int lengthOfLongestSubstring4(String s) {
+        int maxLen = 0;
+        int strLen = s.length();
+        Map<Character, Integer> charMap = new HashMap();
+
+        for (int star = 0, end = 0; end < strLen; end++) {
+            Character c = s.charAt(end);
+            if (charMap.containsKey(c)) {
+                star = Math.max(star, charMap.get(c));//包含重复，滑动取最大开始值
+            }
+            maxLen = Math.max(maxLen, end - star + 1);//每次记录最长子串
+            charMap.put(s.charAt(end), end + 1);
+        }
+        return maxLen;
     }
 
 
@@ -98,7 +136,10 @@ public class LongestSubstringWithoutRepeatingCharacters3 {
     }
 
     public static void main(String[] args) {
+        String s = "abcabcbb";
+        LongestSubstringWithoutRepeatingCharacters3 withoutRepeating = new LongestSubstringWithoutRepeatingCharacters3();
 
+        System.out.println(withoutRepeating.lengthOfLongestSubstring4(s));
     }
 
 }
