@@ -6,7 +6,7 @@ import java.util.LinkedList;
 /**
  * 整数反转
  * https://leetcode-cn.com/problems/reverse-integer/
- * <p/>
+ * <p>
  * 描述：
  * Reverse digits of an integer.
  * Example1: x = 123, return 321
@@ -18,15 +18,16 @@ import java.util.LinkedList;
 public class ReverseInteger {
 
     public int reverse(int x) {
-        int res = 0;
+        int rev = 0;
         while (x != 0) {
-            // 每一次都在原来结果的基础上变大10倍，再加上余数 x%10，总是会获取最后一个数
-            res = res * 10 + x % 10;
-            //对x不停除10
-            x = x / 10;
+            if (rev < Integer.MIN_VALUE / 10 || rev > Integer.MAX_VALUE / 10) {
+                return 0;
+            }
+            int digit = x % 10;
+            x /= 10;
+            rev = rev * 10 + digit;
         }
-        if (res < Integer.MIN_VALUE || res > Integer.MAX_VALUE) return 0;
-        return res;
+        return rev;
     }
 
     /**
@@ -72,11 +73,11 @@ public class ReverseInteger {
 
     public static void main(String[] args) {
         ReverseInteger reverseInteger = new ReverseInteger();
-        int ret = reverseInteger.reverse(0);
-//        System.out.println(ret);
-        System.out.println(reverse2(-123));
-
-        System.out.println(reverse3(-123));
+        int ret = reverseInteger.reverse(1534236469);
+        System.out.println(ret);
+//        System.out.println(reverse2(-123));
+//
+//        System.out.println(reverse3(-123));
     }
 
 }

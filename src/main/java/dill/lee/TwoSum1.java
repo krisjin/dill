@@ -28,6 +28,7 @@ import java.util.Map;
  */
 public class TwoSum1 {
 
+    //使用map
     Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 
     public int[] twoSum(int[] nums, int target) {
