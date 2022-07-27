@@ -1,4 +1,4 @@
-package dill.lee;
+package dill.lee.linked;
 
 import dill.base.ListNode;
 
