@@ -1,4 +1,4 @@
-package dill.lee;
+package dill.lee.tree;
 
 import dill.base.TreeNode;
 

@@ -30,6 +30,7 @@ import java.util.Map;
  * cache.get(4);       // 返回  4
  */
 public class LRUCache extends LinkedHashMap<Integer, Integer> {
+
     private int capacity;
 
     public LRUCache(int capacity) {
@@ -45,6 +46,12 @@ public class LRUCache extends LinkedHashMap<Integer, Integer> {
         super.put(key, value);
     }
 
+    /**
+     * 移除最久的数据判断
+     *
+     * @param eldest
+     * @return
+     */
     @Override
     protected boolean removeEldestEntry(Map.Entry<Integer, Integer> eldest) {
         return size() > capacity;

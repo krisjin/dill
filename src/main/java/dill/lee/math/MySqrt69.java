@@ -1,4 +1,4 @@
-package dill.lee;
+package dill.lee.math;
 
 /**
  * User:krisjin
