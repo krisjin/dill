@@ -1,5 +1,7 @@
 package dill.base.sort;
 
+import java.util.Arrays;
+
 /**
  * https://algorithm.yuanbin.me/zh-hans/basics_sorting/quick_sort.html
  * 核心：快排是一种采用分治思想的排序算法，大致分为三个步骤。
@@ -15,13 +17,14 @@ public class QuickSort {
     }
 
     /**
-     * @param array
+     * @param array 数据
      * @param l     上界
      * @param u     下界
      */
     public static void sort(int[] array, int l, int u) {
         if (l >= u) return;
-        int pivot = array[l];
+        int pivot = array[l];//
+
         int left = l + 1;
         int right = u;
         while (left <= right) {
@@ -49,10 +52,7 @@ public class QuickSort {
     public static void main(String[] args) {
         int data[] = new int[]{6, 5, 3, 1, 8, 7, 2, 4};
         quickSort(data);
-
-        for (int item : data) {
-            System.out.print(item + " ");
-        }
+        System.out.print("item " + Arrays.toString(data));
     }
 
 }
