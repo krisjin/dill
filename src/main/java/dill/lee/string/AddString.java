@@ -24,6 +24,13 @@ package dill.lee.string;
  */
 public class AddString {
 
+    /**
+     * charAt(), % , /
+     *
+     * @param num1
+     * @param num2
+     * @return
+     */
     public static String addStrings(String num1, String num2) {
         int num1Len = num1.length() - 1;
         int num2Len = num2.length() - 1;

@@ -1,27 +1,22 @@
-package dill.lee;
+package dill.lee.string;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * User:krisjin
- * Date:2019-10-29
  * 括号生成
- * <pre>
- * 给出 n 代表生成括号的对数，请你写出一个函数，使其能够生成所有可能的并且有效的括号组合。
- *
- * 例如，给出 n = 3，生成结果为：
- *
- * [
- *   "((()))",
- *   "(()())",
- *   "(())()",
- *   "()(())",
- *   "()()()"
- * ]
- *
- * 来源：力扣（LeetCode）
  * https://leetcode-cn.com/problems/generate-parentheses
+ * <pre>
+ * 数字 n 代表生成括号的对数，请你设计一个函数，用于能够生成所有可能的并且 有效的 括号组合。
+ *
+ * 示例 1：
+ *
+ * 输入：n = 3
+ * 输出：["((()))","(()())","(())()","()(())","()()()"]
+ * 示例 2：
+ *
+ * 输入：n = 1
+ * 输出：["()"]
  * </pre>
  */
 public class GenerateParentheses22 {
@@ -59,7 +54,6 @@ public class GenerateParentheses22 {
 
 
     //2.回溯
-
     public List<String> generateParenthesis2(int n) {
         List<String> ans = new ArrayList();
         backtrack(ans, "", 0, 0, n);
@@ -79,14 +73,21 @@ public class GenerateParentheses22 {
     }
 
     //3.递归
-
-    public List<String> generateParenthesis_3(int n) {
+    public static List<String> generateParenthesis_3(int n) {
         List<String> result = new ArrayList<>();
         generate_3(0, 0, n, "", result);
         return result;
     }
 
-    private void generate_3(int left, int right, int n, String s, List result) {
+    /**
+     * @param left
+     * @param right
+     * @param n
+     * @param s
+     * @param result
+     */
+    private static void generate_3(int left, int right, int n, String s, List result) {
+        System.err.println(s);
         if (left == n && right == n) {
             result.add(s);
             return;
@@ -96,10 +97,7 @@ public class GenerateParentheses22 {
     }
 
     public static void main(String[] args) {
-        GenerateParentheses22 generateParentheses22 = new GenerateParentheses22();
-        List<String> dd = generateParentheses22.generateParenthesis_3(3);
-
+        List<String> dd = GenerateParentheses22.generateParenthesis_3(3);
         System.out.println(dd);
-
     }
 }
