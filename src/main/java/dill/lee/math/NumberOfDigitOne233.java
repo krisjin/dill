@@ -1,4 +1,4 @@
-package dill.lee;
+package dill.lee.math;
 
 /**
  * 数字1的个数
@@ -17,7 +17,7 @@ package dill.lee;
  */
 public class NumberOfDigitOne233 {
 
-    public int countDigitOne(int n) {
+    public static int countDigitOne(int n) {
         // mulk 表示 10^k
         // 在下面的代码中，可以发现 k 并没有被直接使用到（都是使用 10^k）
         // 但为了让代码看起来更加直观，这里保留了 k
@@ -29,4 +29,27 @@ public class NumberOfDigitOne233 {
         }
         return ans;
     }
+
+
+    public static int countDigitOne2(int num) {
+        int n = 0, ans = 0, ynum = num;
+        while(num > 0){
+            int k = num % 10;
+            num /= 10;
+            int temp = (int)Math.pow(10, n);
+            if(k == 1) ans += ynum % temp + 1;
+            ans += k * n * (temp / 10);
+            if(k > 1) ans += temp;
+            n++;
+        }
+        return ans;
+    }
+
+    public static void main(String[] args) {
+       int n =  countDigitOne2(14);
+
+        System.out.println(n);
+    }
+
+
 }

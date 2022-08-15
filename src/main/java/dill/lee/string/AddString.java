@@ -26,7 +26,7 @@ public class AddString {
 
     /**
      * charAt(), % , /
-     *
+     * 从低位到
      * @param num1
      * @param num2
      * @return

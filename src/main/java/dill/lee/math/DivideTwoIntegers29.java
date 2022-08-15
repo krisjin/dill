@@ -32,7 +32,7 @@ import java.util.List;
 public class DivideTwoIntegers29 {
 
 
-    public int divide(int dividend, int divisor) {
+    public static int divide(int dividend, int divisor) {
         // 考虑被除数为最小值的情况
         if (dividend == Integer.MIN_VALUE) {
             if (divisor == 1) {
@@ -80,5 +80,24 @@ public class DivideTwoIntegers29 {
         }
 
         return rev ? -ans : ans;
+    }
+
+    public static int divide2(int dividend, int divisor) {
+        int sign = ((dividend ^ divisor) >> 31 & 0x1) == 1 ? -1 : 1;
+        long result = 0;
+        long dividendLong = Math.abs(dividend);
+        long divisorLong = Math.abs(divisor);
+        while (dividendLong >= divisorLong) {
+            dividendLong -= divisorLong;
+            result++;
+        }
+        result *= sign;
+        return (int) result;
+    }
+
+
+    public static void main(String[] args) {
+        int r = divide2(-10, 3);
+        System.err.println(r);
     }
 }

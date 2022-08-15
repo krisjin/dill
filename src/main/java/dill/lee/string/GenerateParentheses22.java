@@ -87,8 +87,8 @@ public class GenerateParentheses22 {
      * @param result
      */
     private static void generate_3(int left, int right, int n, String s, List result) {
-        System.err.println(s);
         if (left == n && right == n) {
+            System.out.println(s);
             result.add(s);
             return;
         }

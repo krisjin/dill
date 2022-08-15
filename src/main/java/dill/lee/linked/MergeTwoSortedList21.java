@@ -1,4 +1,4 @@
-package dill.lee;
+package dill.lee.linked;
 
 import dill.base.ListNode;
 
@@ -15,7 +15,7 @@ import dill.base.ListNode;
 public class MergeTwoSortedList21 {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         //定义一个不变的preHead头结点，最终返回有序的节点，通过preHead返回
-        ListNode preHead = new ListNode(3);
+        ListNode preHead = new ListNode(-1);
         ListNode prev = preHead;
         while (l1 != null && l2 != null) {
             if (l1.val <= l2.val) {
