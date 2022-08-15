@@ -1,4 +1,4 @@
-package dill.lee;
+package dill.lee.dynamic;
 
 /**
  * 接雨水
@@ -24,7 +24,9 @@ package dill.lee;
  * </pre>
  */
 public class TrappingRainWater42 {
-    public int trap(int[] height) {
+
+
+    public static int trap(int[] height) {
         int ans = 0;
         int left = 0, right = height.length - 1;
         int leftMax = 0, rightMax = 0;
@@ -44,7 +46,10 @@ public class TrappingRainWater42 {
 
 
     public static void main(String[] args) {
+        int[] num = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
 
+        int a = trap(num);
+        System.out.println(a);
     }
 
 }
