@@ -1,11 +1,8 @@
-package dill.lee;
+package dill.lee.linked;
 
 import dill.base.ListNode;
 
 /**
- * 反转链表
- * User:krisjin
- * Date:2019-10-21
  * 反转链表
  * https://leetcode-cn.com/problems/reverse-linked-list
  * <pre>
@@ -25,7 +22,7 @@ public class ReverseList206 {
      * @param head
      * @return
      */
-    public ListNode reverseList(ListNode head) {
+    public static ListNode reverseList(ListNode head) {
         ListNode prev = null;
         ListNode curr = head;
         while (curr != null) {
@@ -37,6 +34,24 @@ public class ReverseList206 {
         return prev;
     }
 
+
+    /**
+     * 递归
+     *
+     * @param head
+     * @return
+     */
+    public static ListNode reverseList2(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode newHead = reverseList(head.next);
+        head.next.next = head;
+        head.next = null;
+        return newHead;
+    }
+
+
     public static void main(String[] args) {
         //构建单链表
         ListNode head = new ListNode(1);
@@ -44,8 +59,7 @@ public class ReverseList206 {
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(4);
 
-        ReverseList206 reverseList206 = new ReverseList206();
-        ListNode newList = reverseList206.reverseList(head);
+        ListNode newList = ReverseList206.reverseList2(head);
         while (newList != null) {
             System.out.print(newList.val + " ");
             newList = newList.next;

@@ -6,8 +6,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * User:krisjin
- * Date:2019-10-21
  * 环形链表
  * https://leetcode-cn.com/problems/linked-list-cycle/
  *
@@ -57,6 +55,24 @@ public class LinkedListCycle141 {
         return false;
     }
 
+
+    public static boolean hasCycle2(ListNode head) {
+        if (head == null || head.next == null) {
+            return false;
+        }
+        ListNode slow = head;
+        ListNode fast = head.next;
+        while (slow != fast) {
+            if (fast == null || fast.next == null) {
+                return false;
+            }
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return true;
+    }
+
+
     public static void main(String[] args) {
         ListNode head = new ListNode(3);
         ListNode node2 = new ListNode(2);
@@ -64,10 +80,10 @@ public class LinkedListCycle141 {
         head.next.next = new ListNode(0);
         ListNode cycleNode = new ListNode(-4);
         head.next.next.next = cycleNode;
-//        cycleNode.next = node2;
+        cycleNode.next = node2;
 
 
-        boolean isCycle = hasCycle(head);
+        boolean isCycle = hasCycle2(head);
         System.out.println(isCycle);
     }
 

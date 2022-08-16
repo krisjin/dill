@@ -8,6 +8,11 @@ public class ListNode {
         val = x;
     }
 
+    public ListNode(int x, ListNode next) {
+        val = x;
+        this.next = next;
+    }
+
     public static ListNode buildListNode() {
         ListNode head = new ListNode(1);
         head.next = new ListNode(2);
