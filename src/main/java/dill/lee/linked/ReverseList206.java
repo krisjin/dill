@@ -35,6 +35,12 @@ public class ReverseList206 {
     }
 
 
+
+
+
+
+
+
     /**
      * 递归
      *
@@ -59,7 +65,7 @@ public class ReverseList206 {
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(4);
 
-        ListNode newList = ReverseList206.reverseList2(head);
+        ListNode newList = ReverseList206.reverseList(head);
         while (newList != null) {
             System.out.print(newList.val + " ");
             newList = newList.next;
