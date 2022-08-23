@@ -1,4 +1,4 @@
-package dill.lee;
+package dill.lee.array;
 
 /**
  * 二分查找,前提是数组是有序的

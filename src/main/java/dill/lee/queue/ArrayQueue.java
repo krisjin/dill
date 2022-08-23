@@ -5,9 +5,9 @@ package dill.lee.queue;
  */
 public class ArrayQueue {
 
-
-    // 数组：items，数组大小：n
+    // 数组：items，
     private String[] items;
+    //数组大小：n
     private int n = 0;
     // head表示队头下标，tail表示队尾下标
     private int head = 0;
@@ -19,10 +19,22 @@ public class ArrayQueue {
         n = capacity;
     }
 
-    // 入队
+
+    // 入队操作，将item放入队尾
     public boolean enqueue(String item) {
-        // 如果tail == n 表示队列已经满了
-        if (tail == n) return false;
+        // tail == n表示队列末尾没有空间了
+        if (tail == n) {
+            // tail ==n && head==0，表示整个队列都占满了
+            if (head == 0) return false;
+            // 数据搬移
+            for (int i = head; i < tail; ++i) {
+                items[i - head] = items[i];
+            }
+            // 搬移完之后重新更新head和tail
+            tail -= head;
+            head = 0;
+        }
+
         items[tail] = item;
         ++tail;
         return true;
@@ -38,4 +50,24 @@ public class ArrayQueue {
         return ret;
     }
 
+
+    public static void main(String[] args) {
+
+        ArrayQueue queue = new ArrayQueue(5);
+        queue.enqueue("1");
+        queue.enqueue("2");
+        queue.enqueue("3");
+        queue.enqueue("4");
+
+        queue.enqueue("5");
+
+        for (int i = 0; i < 3; i++) {
+            String v = queue.dequeue();
+            System.out.println(v);
+        }
+        queue.enqueue("6");
+
+
+        System.out.println();
+    }
 }

@@ -1,4 +1,6 @@
-package dill.lee;
+package dill.lee.math;
+
+import dill.base.stdlib.In;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -36,8 +38,8 @@ public class ReverseInteger {
      * @param x
      * @return
      */
-    public static String reverse2(int x) {
-        String strX = x + "";
+    public String reverse2(int x) {
+        String strX = String.valueOf(x);
         String result = "";
         for (int i = strX.length(); i > 0; i--) {
             result += strX.charAt(i - 1);
@@ -73,11 +75,7 @@ public class ReverseInteger {
 
     public static void main(String[] args) {
         ReverseInteger reverseInteger = new ReverseInteger();
-        int ret = reverseInteger.reverse(1534236469);
-        System.out.println(ret);
-//        System.out.println(reverse2(-123));
-//
-//        System.out.println(reverse3(-123));
+        reverseInteger.reverse2(153423646);
     }
 
 }

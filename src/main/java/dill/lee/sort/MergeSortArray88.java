@@ -111,9 +111,13 @@ public class MergeSortArray88 {
                 result[r] = nums2[p2];
                 r++;
                 p2++;
-
             }
         }
+
+        while (p1 < nums1.length && p2 < nums2.length) {
+
+        }
+
 
         while (p1 < nums1.length) {
             result[r] = nums1[p1];
@@ -133,14 +137,13 @@ public class MergeSortArray88 {
 
 
     public static void main(String[] args) {
-        int[] numberArr1 = {1, 2, 3 };
+        int[] numberArr1 = {1, 2, 3};
         int[] numberArr2 = {2, 5, 6};
 
         MergeSortArray88 mergeSortArray = new MergeSortArray88();
 //        mergeSortArray.merge1(numberArr1, 3, numberArr2, numberArr2.length);
 
-        MergeSortArray88.mergeSortArray(numberArr1,numberArr2);
-
+        MergeSortArray88.mergeSortArray(numberArr1, numberArr2);
 
 
     }

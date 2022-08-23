@@ -1,4 +1,4 @@
-package dill.lee;
+package dill.lee.array;
 
 /**
  * 盛最多水的容器
@@ -16,7 +16,6 @@ package dill.lee;
  * 输出: 49
  */
 public class ContainerWithMostWater11 {
-
 
     //暴力法
     public static int maxArea1(int[] b) {
@@ -37,20 +36,23 @@ public class ContainerWithMostWater11 {
      * 在同样的条件下，移动指向较短线段的指针尽管造成了矩形宽度的减小，但却可能会有助于面积的增大。
      * 因为移动较短线段的指针会得到一条相对较长的线段，这可以克服由宽度减小而引起的面积减小。
      *
-     * @param height
+     * @param nums
      * @return
      */
-    public static int maxArea_2(int[] height) {
-        int maxArea = 0, l = 0, r = height.length - 1;
-        while (l < r) {
-            maxArea = Math.max(maxArea, Math.min(height[l], height[r]) * (r - l));
-            if (height[l] < height[r])
+    public static int maxArea2(int[] nums) {
+        int maxArea = 0, l = 0, r = nums.length - 1;
+        //左指针 右指针 0 5
+        while (l < r) { //左边指针小于右边指针，作为遍历条件，大于等于结束循环
+            //左右指针高度，取做小的高度乘以 右指针减左指针宽度，计算面积
+            maxArea = Math.max(maxArea, Math.min(nums[l], nums[r]) * (r - l));
+            if (nums[l] < nums[r])//移动指针，左值小于幼稚
                 l++;
             else
                 r--;
         }
         return maxArea;
     }
+
 
     public static int maxArea(int[] container) {
         int max = 0;
