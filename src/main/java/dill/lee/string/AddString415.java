@@ -22,7 +22,7 @@ package dill.lee.string;
  * 输出："0"
  * </pre>
  */
-public class AddString {
+public class AddString415 {
 
     /**
      * charAt(), % , /
