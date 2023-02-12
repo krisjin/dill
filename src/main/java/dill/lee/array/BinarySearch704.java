@@ -43,7 +43,9 @@ public class BinarySearch704 {
     }
 
 
-    //二分查找模板
+    /**
+     * 二分查找模板
+     */
     public static int binarySearch(int[] nums, int target) {
         int left = 0;
         int right = nums.length - 1;
