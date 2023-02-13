@@ -1,5 +1,7 @@
 package dill.base;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.IntStream;
 
 /**
@@ -11,7 +13,9 @@ public class IntStreamSample {
 
     public static void main(String[] args) {
 
-        initIntStream();
+//        initIntStream();
+
+        sumList();
 
     }
 
@@ -37,6 +41,36 @@ public class IntStreamSample {
         IntStream.of(1, 2).forEach(System.out::print);
 
 
+    }
+
+    public static void sumList() {
+
+        List<Person> personList = new ArrayList<>();
+        personList.add(new Person(11));
+        personList.add(new Person(22));
+        Integer num = personList.stream().map(Person::getAge).reduce(0, (a, b) -> a + b);
+
+        System.err.println(num);
+
+
+    }
+
+    static class Person {
+
+        private int age;
+
+        public Person(int age) {
+            this.age = age;
+        }
+
+
+        public int getAge() {
+            return age;
+        }
+
+        public void setAge(int age) {
+            this.age = age;
+        }
     }
 
 }
