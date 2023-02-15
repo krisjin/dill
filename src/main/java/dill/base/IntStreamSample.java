@@ -63,7 +63,6 @@ public class IntStreamSample {
             this.age = age;
         }
 
-
         public int getAge() {
             return age;
         }
