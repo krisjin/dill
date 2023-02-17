@@ -5,6 +5,13 @@ import java.util.Map;
 
 /**
  * 两数之和
+ * //
+ * 整数数组，给定一个目标整数值，求数组中两个数相加等于目标的两个整数，并返回它们的数组下表。
+ * 数组下标，数组是一个集合，通过下标操作数组中的元素。
+ * 9=7+2,  2=9-7, 通过将加法的方式，改成减法 ，这就是一个思路转换，遍历整数数组，目标值减去遍历值target - arr[i] 得到另一个变量值。
+ * 将另一个数组元素、元素下标存储起来，方便返回，这是使用map进行存储，key=element  value = index , 在每次遍历时，
+ * //
+ * <p>
  * https://leetcode-cn.com/problems/two-sum
  * <pre>
  * 给定一个整数数组 nums和一个目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回他们的数组下标。
@@ -42,7 +49,6 @@ public class TwoSum1 {
         }
         return null;
     }
-
 
     public static void main(String[] args) {
         int[] nums = {10, 5, 7, 2, 11, 15};
