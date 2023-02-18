@@ -55,10 +55,10 @@ public class ContainerWithMostWater11 {
     }
 
 
-    public static int maxArea(int[] container) {
+    public static int maxArea(int[] height) {
         int max = 0;
-        for (int l = 0, r = container.length - 1; l < r; ) {
-            int minHeight = container[l] < container[r] ? container[l++] : container[r--];
+        for (int l = 0, r = height.length - 1; l < r; ) {
+            int minHeight = height[l] < height[r] ? height[l++] : height[r--];
             max = Math.max(max, (r - l + 1) * minHeight);
         }
         return max;
