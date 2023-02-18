@@ -24,11 +24,11 @@ package dill.lee.array;
 public class PlusOne66 {
 
     /**
-     * 1. 遍历整数数组，对每个数进行处理
+     * 1. 遍历整数数组，从低位向高位遍历，对每个数进行处理，
      * 2. 先将数组中的一个整数+1
      * 3. 再将当前的整数取模(i%10),如果当前数要是进位的话，那么取余数为0，不是的话，返回原值
-     * 4. 判断当前整数值是否为0，就继续循环操作，从步骤2开始，这里面有个细节就是，每次遍历中先对当前值+1
-     * 5. 在最后如果没有在循环中执行return的话，那就是出现里[9,9,9] 这样的情况,所有的为都进位，那就要调整数组大小+1，并将下标是0的值设置为1
+     * 4. 判断当前整数值是否为0，不等于0就终止返回当前值，等于0，就继续循环操作，从步骤2开始，这里面有个细节就是，每次遍历中先对当前值+1
+     * 5. 在最后如果没有在循环中执行return的话，那就是出现里[9,9,9] 这样的情况,所有的数都进位，那就要调整数组大小+1，并将下标是0的值设置为1
      *
      * @param digits
      * @return
@@ -61,10 +61,10 @@ public class PlusOne66 {
     }
 
     public static void main(String[] args) {
-        int[] nums = {9, 9, 9};
+        int[] nums = {9, 9, 1};
         PlusOne66 plusOne66 = new PlusOne66();
 
-        nums = plusOne66.plusOne2(nums);
+        nums = plusOne66.plusOne(nums);
         for (int i = 0; i < nums.length; i++) {
             System.out.print(nums[i] + " ");
         }
