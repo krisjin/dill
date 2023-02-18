@@ -42,14 +42,14 @@ public class ContainerWithMostWater11 {
      * @return
      */
     public static int maxArea2(int[] nums) {
-        int maxArea = 0, l = 0, r = nums.length - 1;
+        int maxArea = 0, left = 0, right = nums.length - 1;
         //左指针 右指针 0 5
-        while (l < r) { //左边指针小于右边指针，作为遍历条件，大于等于结束循环
-            //左右指针高度，取做小的高度乘以 右指针减左指针宽度，计算面积
-            maxArea = Math.max(maxArea, Math.min(nums[l], nums[r]) * (r - l));
-            if (nums[l] < nums[r])//移动指针，左值小于幼稚
-                l++;
-            else r--;
+        while (left < right) { //左边指针小于右边指针，作为遍历条件，大于等于结束循环
+            //左右指针高度，取小的高度乘以 右指针减左指针宽度，计算面积
+            maxArea = Math.max(maxArea, Math.min(nums[left], nums[right]) * (right - left));
+            if (nums[left] < nums[right])//移动指针，左值小于右值,核心思想是比较两指针高端，保留高的，移动低的
+                left++;
+            else right--;
         }
         return maxArea;
     }
