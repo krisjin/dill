@@ -1,4 +1,4 @@
-package dill.lee;
+package dill.lee.array;
 
 /**
  * 加一
