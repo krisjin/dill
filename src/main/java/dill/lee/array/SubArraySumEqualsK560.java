@@ -4,7 +4,10 @@ import java.util.HashMap;
 
 /**
  * https://leetcode-cn.com/problems/subarray-sum-equals-k/
- *
+ * //
+ * 一个整数数组，一个目标值，返回一个结果的个数，在该数组中求解相邻元素值相加等于目标值。
+ * 有点
+ * //
  * <pre>
  * 给定一个整数数组和一个整数k，你需要找到该数组中和为k的连续的子数组的个数。
  *
@@ -17,15 +20,15 @@ import java.util.HashMap;
  * 数组的长度为 [1, 20,000]。
  * 数组中元素的范围是 [-1000, 1000] ，且整数的范围是[-1e7, 1e7]。
  * </pre>
- * User: krisjin
- * Date: 2021/8/24
  */
 public class SubArraySumEqualsK560 {
 
-    public int subarraySum_1(int[] nums, int k) {
+    public static int subArraySum(int[] nums, int k) {
         int count = 0;
+        //第一层循环i
         for (int start = 0; start < nums.length; ++start) {
             int sum = 0;
+            //第二层循环，从结束位置向前遍历，相当于从每次都是一个子数组，子数组在向前推移滑动，在分别却遍历求和与目标值比较
             for (int end = start; end >= 0; --end) {
                 sum += nums[end];
                 if (sum == k) {
@@ -51,6 +54,13 @@ public class SubArraySumEqualsK560 {
         }
         //返回
         return new int[]{};
+    }
+
+
+    public static void main(String[] args) {
+        int[] i = new int[]{1, 1, 1};
+        int count = subArraySum(i, 3);
+        System.err.println(count);
     }
 
 }
