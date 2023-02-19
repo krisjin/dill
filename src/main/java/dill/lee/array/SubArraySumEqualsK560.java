@@ -1,4 +1,4 @@
-package dill.lee;
+package dill.lee.array;
 
 import java.util.HashMap;
 

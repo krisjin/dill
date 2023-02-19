@@ -61,7 +61,7 @@ public class PlusOne66 {
     }
 
     public static void main(String[] args) {
-        int[] nums = {9, 9, 1};
+        int[] nums = {9, 9, 9};
         PlusOne66 plusOne66 = new PlusOne66();
 
         nums = plusOne66.plusOne(nums);
