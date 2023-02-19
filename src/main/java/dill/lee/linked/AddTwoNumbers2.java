@@ -27,7 +27,7 @@ public class AddTwoNumbers2 {
      * @return
      */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        //空判断
+        //空链表判断
         if (l1 == null) {
             return l2;
         }
@@ -50,7 +50,7 @@ public class AddTwoNumbers2 {
                 l2 = l2.next;
             }
             p.next = new ListNode(tmp % 10);//创建新的节点，余数计算
-            p = p.next;//使用next作为最新p节点，替换pre节点
+            p = p.next;//使用next作为最新p节点，替换pre节点，在dummyNode节点中存储了最新的节点
             tmp = tmp / 10;//十进位 1
         }
         return dummyNode.next;
@@ -95,7 +95,7 @@ public class AddTwoNumbers2 {
         l2.next.next = new ListNode(4);
         AddTwoNumbers2 addTwoNumbers002 = new AddTwoNumbers2();
 
-        ListNode listNode = addTwoNumbers002.addTwoNumbers1(l1, l2);
+        ListNode listNode = addTwoNumbers002.addTwoNumbers(l1, l2);
         System.out.println(listNode.val + " " + listNode.next.val + " " + listNode.next.next.val);
     }
 }
