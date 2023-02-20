@@ -15,9 +15,6 @@ import java.util.Set;
  * 如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。注意：pos 不作为参数进行传递 。仅仅是为了标识链表的实际情况。
  *
  * 如果链表中存在环 ，则返回 true 。 否则，返回 false 。
- *
- *  
- *
  * 示例 1：
  *
  *
@@ -40,14 +37,13 @@ import java.util.Set;
  * 输出：false
  * 解释：链表中没有环。
  * </pre>
- *  
  */
 public class LinkedListCycle141 {
 
     public static boolean hasCycle(ListNode head) {
-        Set<ListNode> seen = new HashSet<ListNode>();
+        Set<ListNode> set = new HashSet<ListNode>();
         while (head != null) {
-            if (!seen.add(head)) {
+            if (!set.add(head)) {
                 return true;
             }
             head = head.next;
