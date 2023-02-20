@@ -27,18 +27,12 @@ public class ReverseList206 {
         ListNode curr = head;
         while (curr != null) {
             ListNode nextTemp = curr.next;
-            curr.next = prev;
+            curr.next = prev;//关键思路
             prev = curr;
             curr = nextTemp;
         }
         return prev;
     }
-
-
-
-
-
-
 
 
     /**
@@ -65,7 +59,7 @@ public class ReverseList206 {
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(4);
 
-        ListNode newList = ReverseList206.reverseList(head);
+        ListNode newList = reverseList(head);
         while (newList != null) {
             System.out.print(newList.val + " ");
             newList = newList.next;
