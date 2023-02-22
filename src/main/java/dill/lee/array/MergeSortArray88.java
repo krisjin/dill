@@ -1,4 +1,4 @@
-package dill.lee.sort;
+package dill.lee.array;
 
 import java.util.Arrays;
 
