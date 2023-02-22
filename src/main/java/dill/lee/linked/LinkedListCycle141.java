@@ -40,6 +40,8 @@ import java.util.Set;
  */
 public class LinkedListCycle141 {
 
+
+    //判断是否环形链表，通过去重元素集合set
     public static boolean hasCycle(ListNode head) {
         Set<ListNode> set = new HashSet<ListNode>();
         while (head != null) {
