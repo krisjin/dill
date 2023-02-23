@@ -32,7 +32,7 @@ public class MergeSortArray88 {
         Arrays.sort(nums1);
     }
 
-    public void merge1(int[] nums1, int m, int[] nums2, int n) {
+    public static void merge1(int[] nums1, int m, int[] nums2, int n) {
         int[] nums1Copy = new int[m];
         System.arraycopy(nums1, 0, nums1Copy, 0, m);
         int p1 = 0;
@@ -40,14 +40,11 @@ public class MergeSortArray88 {
         int p = 0;
 
         //比较元素，从nums1 拷贝到nums2, 添加最小的元素到nums1
-        while ((p1 < m) && (p2 < n))
-            nums1[p++] = (nums1Copy[p1] < nums2[p2]) ? nums1Copy[p1++] : nums2[p2++];
+        while ((p1 < m) && (p2 < n)) nums1[p++] = (nums1Copy[p1] < nums2[p2]) ? nums1Copy[p1++] : nums2[p2++];
 
         //添加剩余元素
-        if (p1 < m)
-            System.arraycopy(nums1Copy, p1, nums1, p1 + p2, m + n - p1 - p2);
-        if (p2 < n)
-            System.arraycopy(nums2, p2, nums1, p1 + p2, m + n - p1 - p2);
+        if (p1 < m) System.arraycopy(nums1Copy, p1, nums1, p1 + p2, m + n - p1 - p2);
+        if (p2 < n) System.arraycopy(nums2, p2, nums1, p1 + p2, m + n - p1 - p2);
     }
 
 
@@ -55,7 +52,6 @@ public class MergeSortArray88 {
         // 定义p1 和 p2 指针
         int p1 = m - 1;
         int p2 = n - 1;
-
         // 定义num1 值设置指针
         int p = m + n - 1;
 
@@ -140,10 +136,8 @@ public class MergeSortArray88 {
         int[] numberArr1 = {1, 2, 3};
         int[] numberArr2 = {2, 5, 6};
 
-        MergeSortArray88 mergeSortArray = new MergeSortArray88();
-//        mergeSortArray.merge1(numberArr1, 3, numberArr2, numberArr2.length);
 
-        MergeSortArray88.mergeSortArray(numberArr1, numberArr2);
+//        merge1(numberArr1, numberArr2);
 
 
     }
