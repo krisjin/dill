@@ -133,11 +133,11 @@ public class MergeSortArray88 {
 
 
     public static void main(String[] args) {
-        int[] numberArr1 = {1, 2, 3};
+        int[] numberArr1 = {1, 2, 3, 0, 0, 0};
         int[] numberArr2 = {2, 5, 6};
 
 
-//        merge1(numberArr1, numberArr2);
+        merge1(numberArr1, 3, numberArr2, numberArr2.length);
 
 
     }

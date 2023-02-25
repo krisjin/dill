@@ -1,11 +1,5 @@
 package dill.base;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-import dill.lee.array.MergeSortArray88;
-
-import java.util.List;
-
 /**
  * @author kris
  * @date 2023/2/20
@@ -14,24 +8,19 @@ public class Test {
 
 
     public static void main(String[] args) {
-        int[] numberArr1 = {1, 2, 3,0,0,0};
+        int[] numberArr1 = {1, 2, 3, 0, 0, 0};
         int[] numberArr2 = {2, 5, 6};
+        merger(numberArr1, 3, numberArr2, numberArr2.length);
 
-
-        merger(numberArr1,3, numberArr2,numberArr2.length);
-
-
-
+//        for (int i : numberArr1)
+//            System.out.println(i);
     }
 
-    public static  void merger(int[] nums1, int m, int[] nums2, int n) {
-//        int[] nums1Copy = new int[m];
-//        System.arraycopy(nums1, 0, nums1Copy, 0, m);
-
+    public static void merger(int[] nums1, int m, int[] nums2, int n) {
         int i = m - 1;
         int j = n - 1;
 
-        for(int k = m + n - 1;k >= 0; k--) {
+        for (int k = m + n - 1; k >= 0; k--) {
             if (j < 0 || (i >= 0 && nums1[i] >= nums2[j])) {
                 nums1[k] = nums1[i];
                 i--;
@@ -40,6 +29,19 @@ public class Test {
                 j--;
             }
         }
+
+
+    }
+
+    //比较，
+    public static void mm(int[] nums1, int m, int[] nums2, int n) {
+        int i = m + 1;
+        int j = n + 1;
+        for(int k = m+n-1;k>=0;k--){
+            if (j<0|| ())
+        }
+
+
     }
 
 
