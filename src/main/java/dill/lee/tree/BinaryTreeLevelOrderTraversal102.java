@@ -33,13 +33,11 @@ public class BinaryTreeLevelOrderTraversal102 {
 
     static List<List<Integer>> levels = new ArrayList<>();
 
-    public static List<Integer> levelOrder_1(TreeNode root) {
+    public static List<Integer> levelOrder1(TreeNode root) {
         List<Integer> numList = new ArrayList<>();
-
         if (root == null) {
             return numList;
         }
-
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.offer(root);
 
@@ -58,8 +56,7 @@ public class BinaryTreeLevelOrderTraversal102 {
     }
 
 
-    public static ArrayList<Integer> levelOrder_2(TreeNode root) {
-
+    public static ArrayList<Integer> levelOrder2(TreeNode root) {
         ArrayList<Integer> lists = new ArrayList<Integer>();
 
         if (root == null) {
@@ -115,7 +112,7 @@ public class BinaryTreeLevelOrderTraversal102 {
             helper(node.right, level + 1);
     }
 
-    public static List<List<Integer>> levelOrder_3(TreeNode root) {
+    public static List<List<Integer>> levelOrder3(TreeNode root) {
         if (root == null) {
             return levels;
         }
@@ -133,10 +130,8 @@ public class BinaryTreeLevelOrderTraversal102 {
         treeNode.right.left = new TreeNode(6);
         treeNode.right.right = new TreeNode(7);
 
-        List<Integer> d = levelOrder_1(treeNode);
-
-        List<List<Integer>> ll = levelOrder_3(treeNode);
-
-        System.err.println(ll);
+        List<Integer> d = levelOrder2(treeNode);
+        List<List<Integer>> ll = levelOrder3(treeNode);
+        System.err.println(d);
     }
 }
