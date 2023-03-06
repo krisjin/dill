@@ -28,13 +28,13 @@ import java.util.Stack;
  */
 public class BinaryTreeInorderTraversal94 {
 
-    public List<Integer> inorderTraversal(TreeNode root) {
+    public static List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         inorder(root, res);
         return res;
     }
 
-    public void inorder(TreeNode root, List<Integer> res) {
+    public static void inorder(TreeNode root, List<Integer> res) {
         if (root == null) {
             return;
         }
@@ -113,9 +113,8 @@ public class BinaryTreeInorderTraversal94 {
         treeNode.right.left = new TreeNode(6);
         treeNode.right.right = new TreeNode(7);
 
-        BinaryTreeInorderTraversal94 inorder = new BinaryTreeInorderTraversal94();
 
-        List<Integer> nodes = inorder.inorderTraversal(treeNode);
+        List<Integer> nodes = inorderTraversal(treeNode);
 //        List<Integer> nodes = c0094.inorderTraversalWithStack(treeNode);
 
         //后续递归测试
@@ -123,8 +122,6 @@ public class BinaryTreeInorderTraversal94 {
 //        postOrderTraversal(treeNode, nums);
         Integer[] a = {1, 2, 3, 4, 5, 6, 7};
         TreeNode t = TreeNodBuilder.buildTreeNode(a);
-
-
         //后续非递归测试
         List nums = postOrderWithStack(t);
         System.out.println(nodes);
