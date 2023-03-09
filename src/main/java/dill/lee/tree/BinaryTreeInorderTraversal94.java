@@ -103,23 +103,18 @@ public class BinaryTreeInorderTraversal94 {
     }
 
     public static void main(String[] args) {
-        TreeNode treeNode = new TreeNode(1);
+        TreeNode root = new TreeNode(1);
 
-        treeNode.left = new TreeNode(2);
-        treeNode.left.left = new TreeNode(4);
-        treeNode.left.right = new TreeNode(5);
+        root.left = new TreeNode(2);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
 
-        treeNode.right = new TreeNode(3);
-        treeNode.right.left = new TreeNode(6);
-        treeNode.right.right = new TreeNode(7);
+        root.right = new TreeNode(3);
+        root.right.left = new TreeNode(6);
+        root.right.right = new TreeNode(7);
 
 
-        List<Integer> nodes = inorderTraversal(treeNode);
-//        List<Integer> nodes = c0094.inorderTraversalWithStack(treeNode);
-
-        //后续递归测试
-//        List nums = new ArrayList<Integer>();
-//        postOrderTraversal(treeNode, nums);
+        List<Integer> nodes = inorderTraversal(root);
         Integer[] a = {1, 2, 3, 4, 5, 6, 7};
         TreeNode t = TreeNodBuilder.buildTreeNode(a);
         //后续非递归测试
