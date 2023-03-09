@@ -3,7 +3,7 @@ package dill.lee.tree;
 import dill.base.TreeNode;
 
 /**
- * 验证二叉搜索树
+ * 验证二叉搜索树，二叉搜索树的特点
  * https://leetcode.cn/problems/validate-binary-search-tree/
  * <pre>
  * 给你一个二叉树的根节点 root ，判断其是否是一个有效的二叉搜索树。
@@ -29,12 +29,9 @@ import dill.base.TreeNode;
  * </pre>
  */
 public class ValidateBinarySearchTree98 {
-
-
     public static boolean isValidBST(TreeNode root) {
         return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
-
 
     public static boolean isValidBST(TreeNode node, long lower, long upper) {
         if (node == null) {
@@ -46,20 +43,14 @@ public class ValidateBinarySearchTree98 {
         return isValidBST(node.left, lower, node.val) && isValidBST(node.right, node.val, upper);
     }
 
-
     public static void main(String[] args) {
-
         TreeNode root = new TreeNode(5);
-
         TreeNode right = new TreeNode(4);
         right.left = new TreeNode(3);
         right.right = new TreeNode(6);
-
         root.left = new TreeNode(1);
         root.right = right;
-
         boolean result = isValidBST(root);
         System.err.println(result);
-
     }
 }
