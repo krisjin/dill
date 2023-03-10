@@ -53,7 +53,6 @@ public class ReverseList206 {
 
 
     public static void main(String[] args) {
-        //构建单链表
         ListNode head = new ListNode(1);
         head.next = new ListNode(2);
         head.next.next = new ListNode(3);
