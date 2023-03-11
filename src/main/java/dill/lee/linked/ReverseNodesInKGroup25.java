@@ -38,10 +38,8 @@ public class ReverseNodesInKGroup25 {
     public static ListNode reverseKGroup(ListNode head, int k) {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
-
         ListNode pre = dummy;
         ListNode end = dummy;
-
         while (end.next != null) {
             for (int i = 0; i < k && end != null; i++) {
                 end = end.next;
@@ -61,8 +59,6 @@ public class ReverseNodesInKGroup25 {
 
 
     /**
-     * 做为一个单独链表进行反转
-     *
      * @param head
      * @return
      */
