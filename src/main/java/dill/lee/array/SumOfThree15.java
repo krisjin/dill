@@ -44,8 +44,8 @@ public class SumOfThree15 {
         List<List<Integer>> ans = new ArrayList();
         int len = nums.length;
         if (nums == null || len < 3) return ans;
-        Arrays.sort(nums); // 排序
-        for (int i = 0; i < len; i++) { //第一层循环 i
+        Arrays.sort(nums);
+        for (int i = 0; i < len; i++) {
             if (nums[i] > 0) break; // 如果当前数字大于0，则三数之和一定大于0，所以结束循环
             if (i > 0 && nums[i] == nums[i - 1]) continue; // i去重,相邻数据相同跳过
             int l = i + 1; //左指针 i+1

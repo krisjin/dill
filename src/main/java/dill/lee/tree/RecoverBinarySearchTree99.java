@@ -62,6 +62,7 @@ public class RecoverBinarySearchTree99 {
         return new int[]{x, y};
     }
 
+
     public void recover(TreeNode root, int count, int x, int y) {
         if (root != null) {
             if (root.val == x || root.val == y) {
@@ -76,12 +77,18 @@ public class RecoverBinarySearchTree99 {
     }
 
     public static void main(String[] args) {
+//        TreeNode root = new TreeNode(1);
+//        root.left = new TreeNode(3);
+//        root.left.right = new TreeNode(2);
 
-        TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(3);
-        root.left.right = new TreeNode(2);
+        TreeNode root = new TreeNode(3);
+        root.left = new TreeNode(1);
+        root.right = new TreeNode(4);
+        root.right.left = new TreeNode(2);
 
         RecoverBinarySearchTree99 recoverBinary = new RecoverBinarySearchTree99();
+
+
         recoverBinary.recoverTree(root);
         System.err.println(1);
 
