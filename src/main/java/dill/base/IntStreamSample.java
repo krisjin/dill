@@ -12,11 +12,8 @@ public class IntStreamSample {
 
 
     public static void main(String[] args) {
-
 //        initIntStream();
-
         sumList();
-
     }
 
 

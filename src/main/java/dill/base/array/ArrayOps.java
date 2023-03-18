@@ -50,6 +50,12 @@ public class ArrayOps {
     }
 
 
+    /**
+     * 反转数组
+     *
+     * @param arr
+     * @return
+     */
     public static int[] reverseArray(int[] arr) {
         int left = 0;
         int right = arr.length - 1;
