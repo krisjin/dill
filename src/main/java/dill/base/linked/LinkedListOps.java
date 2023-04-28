@@ -7,7 +7,10 @@ import java.util.List;
 
 public class LinkedListOps {
 
-
+    /**
+     * @param head    头结点
+     * @param newNode 待插入的新结点
+     */
     public static void insert(ListNode head, ListNode newNode) {
         ListNode tmp = head.next;//待插入前驱节点
         head.next = newNode;//将前驱节点next 赋值给插入节点
