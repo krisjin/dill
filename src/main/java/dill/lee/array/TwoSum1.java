@@ -12,8 +12,6 @@ import java.util.Map;
  * 9=7+2,  2=9-7, 通过将加法的方式，改成减法 ，这就是一个思路转换，遍历整数数组，目标值减去遍历值target - arr[i] 得到另一个变量值。
  * 将另一个数组元素、元素下标存储起来，方便返回，这是使用map进行存储，key=element  value = index , 在每次遍历时，
  * //
- * <p>
- *
  * <pre>
  * 给定一个整数数组 nums和一个目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回他们的数组下标。
  *
@@ -32,7 +30,6 @@ import java.util.Map;
  * 思路：通过给出的已知条件：1.给定的数组中存在两个数相加等于目标值，要想求出求出数组中两个数的和等于目标值，
  * 可以在遍历数组时，先求出另一个值(目标值减当前遍历值)，并将该值存在map中。求出另一个值后，没次都要去map中查找该值，
  * 如果有那就直接返回了。没有就将当前遍历的值存如map中。key为元素值，value为元素索引
- *
  * </pre>
  */
 public class TwoSum1 {
@@ -40,6 +37,11 @@ public class TwoSum1 {
     //使用map
     Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 
+    /**
+     * @param nums   整数数组
+     * @param target 目标值
+     * @return
+     */
     public int[] twoSum(int[] nums, int target) {
         for (int i = 0; i < nums.length; ++i) {
             int temp = target - nums[i];//获取另一个值
